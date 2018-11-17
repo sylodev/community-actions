@@ -9,6 +9,7 @@ Command files should follow this format:
 Command Name:
 Bot Response:
 Command Description:
+Required Permissions:
 ```
 
 ### How to contribute
