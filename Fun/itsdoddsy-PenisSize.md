@@ -8,7 +8,7 @@
 
 **Command Description:** Generates a penis based on the calling user's discriminator.
 
-**Usage:** `a!penis`
+**Usage:** `a!penisgen`
 
 **Recommended Settings:**
 * None
