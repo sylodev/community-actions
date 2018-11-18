@@ -1,3 +1,8 @@
+More commands, mainly ones that allow you to earn money, will be added in the near future.
+Please stand by!
+
+
+
 Before running any of these economy commands, you *must* create a role exactly named `🏦 Account Holder`.
 If you do not create that role, *none* of the commands will work.
 
