@@ -1,5 +1,5 @@
 **Command Name:**
-Password Generator
+`a!password`
 
 **Bot Response:**
 ```{a!say;Password generated. Check your direct messages.}🔒 **Here is Your Ultra Secure Password:** `{randstr;qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890;{args}}`{set;var;{args}} ({get;var} characters)```
