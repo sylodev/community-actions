@@ -14,4 +14,4 @@ Recommended Settings:
 ```
 
 ### How to contribute
-Clone this repo, upload your commits and submit a pull request.
+Fork this repo, clone your fork, upload your commits to the fork and submit a pull request.
