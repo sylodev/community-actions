@@ -1,4 +1,4 @@
-**WARNING** Users can pay themselves with this command, doubling their balance. This command is not recommended to be used at all!
+**NOTE:** The reason this command is restricted to Administrators/Moderators is because users can pay themselves, effectively doubling their balance. It is highly recommended that you keep these restrictions.
 
 **Command Name:**
 `a!pay`
@@ -16,4 +16,4 @@ Send money to other users.
 `a!pay @JaMcSu 10`
 
 **Recommended Settings:**
-* Exempt Roles - `🏦 Account Holder`
+* Exempt Roles - Equivalent of: (Administrator or Moderator)
