@@ -4,10 +4,10 @@
   <br>
 </h1>
 <p align="center">
-        <a href="https://github.com/itsdoddsy/atlas-custom-commands/tree/master/Misc/Deny%20Access/">
+        <a href="https://github.com/itsdoddsy/atlas-custom-commands/tree/master/Misc/Deny%20Access/Deny%20Access/">
 	<img src="https://img.shields.io/badge/Command-Deny-red.svg?maxAge=300" alt="Deny Command">
     </a>
-        <a href="https://github.com/itsdoddsy/atlas-custom-commands/tree/master/Misc/Deny%20Access/">
+        <a href="https://github.com/itsdoddsy/atlas-custom-commands/tree/master/Misc/Deny%20Access/Allow%20Access/">
 	<img src="https://img.shields.io/badge/Command-Allow-green.svg?maxAge=300" alt="Allow Command">
     </a>
 </p>
