@@ -8,7 +8,7 @@
 Allows a denied user, server access.
 
 **Usage:**
-`a!allow `Denied User Name``
+`a!allow "Denied User Name"`
 
 **Recommended Settings:**
 * Exempt Roles - `Your Moderator Role`
