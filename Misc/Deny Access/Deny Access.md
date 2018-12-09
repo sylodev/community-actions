@@ -12,4 +12,4 @@ Denies a user access to the server.
 `a!deny`
 
 **Recommended Settings:**
-* Exempt Roles:`Your Moderator Role`
+* Exempt Roles: `Your Moderator Role`
