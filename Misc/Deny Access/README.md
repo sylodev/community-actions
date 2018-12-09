@@ -17,7 +17,7 @@
   <br>
 </h4>
 
-* For these commands to work, the user should have no roles (unless you can configure it yourself) and you'll need to create a new channel exactly called `denied` and a new role called `Denied` with only the following permissions:
+* For these commands to work, you'll need to add both commands, the user should have no roles (unless you can configure it yourself) and you'll need to create a new channel exactly called `denied` and a new role called `Denied` with only the following permissions:
   * `Read Text Channels & See Voice Channels`
   * `Read Message History`
 
