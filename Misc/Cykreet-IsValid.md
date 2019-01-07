@@ -1,8 +1,8 @@
 **Command Name:**
 `a!isvalid`
 
-**Bot Response:** `{if;{args;1};!==;{user.username;{args;1}};{a!advancedembed;--color="#fc5858";--title="{args;1} is not a member in the server.";--timestamp}}
-{if;{args;1};===;{user.username;{args;1}};{a!advancedembed;--color="#58fc78";--title="{user.tag;{args;1}} is a member in the server.";--timestamp}}`
+**Bot Response:** `{if;{args};!==;{user.username;{args}};{a!advancedembed;--color="#fc5858";--title="{args} is not a member in the server.";--timestamp}}
+{if;{args};===;{user.username;{args}};{a!advancedembed;--color="#58fc78";--title="{user.tag;{args}} is a member in the server.";--timestamp}}`
 
 **Command Description:**
 Checks if the user specified is in the server
