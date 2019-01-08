@@ -1,14 +1,14 @@
-# atlas-custom-commands
-This repo serves as a way to share custom commands, as well as view examples to create your own.
+# atlas-custom-actions
+This repo serves as a way to share custom actions, as well as view examples to create your own.
 
 ## Naming conventions
-Custom commands should be placed in the folder they apply to the most - i.e faux artificial economy commands in economy, fun-related commands in fun - and must follow the naming "CommandAuthor-CommandName.md".
+Custom actions should be placed in the folder they apply to the most - i.e faux artificial economy actions in economy, fun-related actions in fun - and must follow the naming "ActionAuthor-ActionName.md".
 
-Command files should follow this format:
+Action files should follow this format:
 ```
-Command Name:
+Action Name:
 Bot Response:
-Command Description:
+Action Description:
 Usage:
 Recommended Settings:
 ```
