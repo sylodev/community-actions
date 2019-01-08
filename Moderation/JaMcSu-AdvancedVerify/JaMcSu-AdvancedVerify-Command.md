@@ -13,5 +13,6 @@ Command
 **Recommended Settings:**
 * Reply (Direct Message)
 * Fall back to invocation channel - OFF
+* Delete invocation message - ON
 * Role Whitelist - Unverified
 * Channel Whitelist - #verify
