@@ -1,3 +1,5 @@
+These actions will enable advanced verification on your server. When people join, they will be DM'ed a unique verification code that they have to paste in a special channel to gain access to the rest of your server. Here's how to set it up:
+
 * To use this action library, you must first create a role named `Unverified` and give it no permissions.
 * Next go to the **Roles** module on your guild's dashboard, and select the `Unverified` role as a Join Role.
 * Create a channel named `#verify` and restrict `@everyone`'s permissions to it, except for the `Unverified` role.
