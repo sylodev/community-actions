@@ -6,3 +6,4 @@ Member Join
 
 **Recommended Settings:**
 * Reply (Direct Message)
+* Fall back to invocation channel - OFF
