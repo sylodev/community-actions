@@ -7,7 +7,8 @@ Custom actions should be placed in the folder they apply to the most - i.e faux 
 Action files should follow this format:
 ```
 Action Name:
-Bot Response:
+Action Type:
+Action Content:
 Action Description:
 Usage:
 Recommended Settings:
