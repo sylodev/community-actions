@@ -6,7 +6,7 @@ If you're interested in importing one of the custom actions found within our rep
 * Navigate the repository files and find the action file you want to import.
 * Open the action file and right click **`Raw`**.
 * Save the file somewhere, and remember where!
-* On the Actions page, click the "Import" button.
+* Back to the Dashboard, on the Actions page, click the "Import" button.
 * In the window that appears, navigate to where you saved the file and upload it.
 
 ## Contributing Actions to This Repository
