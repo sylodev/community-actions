@@ -5,8 +5,8 @@ Welcome to the Atlas custom actions repository. This repository serves as a way 
 If you're interested in importing one of the custom actions found within our repository into your guild, heres how to do it.
 * Navigate the repository files and find the action file you want to import.
 * Open the action file and right click **`Raw`**.
-* Save the file somewhere, and remember where!
-* Back to the Dashboard, on the Actions page, click the "Import" button.
+* Click `Save link as` and save the file somewhere you will remember!
+* Return to the dashboard, navigate to the actions page, and click the "Import" button.
 * In the window that appears, navigate to where you saved the file and upload it.
 
 ## Contributing Actions to This Repository
