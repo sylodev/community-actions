@@ -16,7 +16,7 @@ Have an awesome action you want to share? Heres how to get it on this repository
 * Click the `Export` button.
 * Rename your action file in correspondence to the **File Naming Format** found at the bottom of this page.
 * Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click **`Upload files`**.
-* Select your action file and commit the changes.
+* Select your action file and commit the changes to your fork.
 * Create a pull request and wait for it to be approved by the repository moderators.
 
 ### File Naming Format
