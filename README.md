@@ -6,7 +6,7 @@ If you're interested in importing one of the custom actions found within our rep
 * Navigate the repository files and find the action file you want to import.
 * Open the action file and right click **`Raw`**.
 * Click `Save link as` and save the file somewhere you will remember!
-* Return to the dashboard, navigate to the actions page, and click the `Import` button.
+* Navigate to the [dashboard](https://atlasbot.xyz/), find the actions page of your guild and click the `Import` button.
 * In the window that appears, navigate to where you saved the file and upload it.
 
 ## Contributing Actions to This Repository
@@ -14,7 +14,7 @@ Have an awesome action you want to share? Heres how to get it on this repository
 * Fork this repository via the **`Fork`** button in the top-right of the screen.
 * Select your action from the actions list on your [dashboard](https://atlasbot.xyz/).
 * Click the `Export` button.
-* Rename your action file in correspondence to the **Naming Format** found at the bottom of this page.
+* Rename your action file in correspondence to the **File Naming Format** found at the bottom of this page.
 * Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click **`Upload files`**.
 * Select your action file and commit the changes.
 * Create a pull request and wait for it to be approved by the repository moderators.
