@@ -24,6 +24,8 @@ Have an awesome action you want to share? Heres how to get it on this repository
 All action files should follow the naming format: ```AuthorName-ActionName.action```
 For example: ```JaMcSu-Math.action```
 
+----------
+
 #### Current Repository Moderators
 * Doddsy - node#2153 (Atlas Support Staff)
 * JaMcSu - JaMcSu#8608 (Atlas Support Staff)
