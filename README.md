@@ -1,18 +1,30 @@
-# atlas-custom-actions
-This repo serves as a way to share custom actions, as well as view examples to create your own.
+# Atlas Custom Actions Repository
+Welcome to the Atlas custom actions repository. This repository serves as a way to upload and download awesome Atlas actions made by the community. While this service *is* recognised by the [Atlas Bot](https://atlasbot.xyz/) staff team, it *does not* explicitly belong to them. Even though the moderators of this repository screen all actions submitted for malicious content, a few may slip through the cracks. Understand that you take full responsibility of any damages incurred by importing any action files from this source.
 
-## Naming conventions
-Custom actions should be placed in the folder they apply to the most - i.e faux artificial economy actions in economy, fun-related actions in fun - and must follow the naming "ActionAuthor-ActionName.md".
+## Importing Actions From This Repository
+If you're interested in importing one of the custom actions found within our repository into your guild, heres how to do it.
+* Navigate the repository files and find the action file you want to import.
+* Open the action file and right click **`Raw`**.
+* Click `Save link as` and save the file somewhere you will remember!
+* Return to the dashboard, navigate to the actions page, and click the `Import` button.
+* In the window that appears, navigate to where you saved the file and upload it.
 
-Action files should follow this format:
-```
-Action Name:
-Action Type:
-Action Content:
-Action Description:
-Usage:
-Recommended Settings:
-```
+## Contributing Actions to This Repository
+Have an awesome action you want to share? Heres how to get it on this repository for everyone to see.
+* Fork this repository via the **`Fork`** button in the top-right of the screen.
+* Select your action from the actions list on your [dashboard](https://atlasbot.xyz/).
+* Click the `Export` button.
+* Rename your action file in correspondence to the **Naming Format** found at the bottom of this page.
+* Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click **`Upload files`**.
+* Select your action file and commit the changes.
+* Create a pull request and wait for it to be approved by the repository moderators.
 
-### How to contribute
-Fork this repo, clone your fork, upload your commits to the fork and submit a pull request.
+### File Naming Format
+All action files should follow the naming format: ```AuthorName-ActionName.action```
+For example: ```JaMcSu-Math.action```
+
+----------
+
+#### Current Repository Moderators
+* doddsy - node#2153 (Atlas Support Staff)
+* JaMcSu - JaMcSu#8608 (Atlas Support Staff)
