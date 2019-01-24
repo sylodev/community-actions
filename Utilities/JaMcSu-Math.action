@@ -1,0 +1,1 @@
+{"flags":{"ttl":0,"cooldown":0,"enabled":true,"silent":false,"delete":false,"quiet":false},"restrictions":{"mode":"blacklist","roles":[],"channels":[]},"trigger":{"type":"label","content":"math"},"content":[{"fallback":true,"_id":"5c4705c55339663990b75112","type":"channel","message":"{math;{args}}"}],"formatVersion":"1.0"}
