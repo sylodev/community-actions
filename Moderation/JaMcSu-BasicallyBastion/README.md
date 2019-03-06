@@ -1,5 +1,5 @@
 # BasicallyBastion Documentation
-BasicallyBastion is a recreation of the proprietary Bastion bot which does some menial tasks on the [Atlas support server](https://atlasbot.xyz/support), including handling suggestions. Currently this is Bastion's only job so this action-pack emulates that feature using custom actions within Atlas itself. If you don't know what that means, you probably shouldn't be using this...
+BasicallyBastion is a recreation of the proprietary Bastion bot which does some menial tasks on the [Atlas support server](https://atlasbot.xyz/support), including handling suggestions. Currently this is Bastion's only job, so this action-pack emulates that feature using custom actions within Atlas itself. If you don't know what that means, you probably shouldn't be using this...
 
 ## Initial Setup
 * Follow the steps on the [repository README](https://github.com/doddsy/atlas-custom-actions/blob/master/README.md) for importing action files.
