@@ -28,3 +28,5 @@ BasicallyBastion is a recreation of the proprietary Bastion bot which does some 
 **Command Action**
 * Channel Whitelist - Same channel as `SuggestionApprovalChannel`
 * Role Whitelist - Same roles that have access to `SuggestionApprovalChannel` **(OPTIONAL)**
+
+**Alright! BasicallyBastion should now be properly setup on your server. Once someone inputs a suggestion, use the** `a!suggestion approve <ID>` **or the** `a!suggestion deny <ID>` **command in the** `SuggestionApprovalChannel` **to approve or deny suggestions.**
