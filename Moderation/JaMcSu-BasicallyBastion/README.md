@@ -31,5 +31,4 @@ BasicallyBastion is a recreation of the proprietary Bastion bot which does some 
 
 **Alright! BasicallyBastion should now be properly setup on your server. Once someone inputs a suggestion, use the** `a!suggestion approve <ID>` **or the** `a!suggestion deny <ID>` **command in the** `SuggestionApprovalChannel` **to approve or deny suggestions.**
 
-#### Note
-Dont like all the deletion messages in your action logs? Paste `actionlog-ignore` in the channel topic to bypass it.
+**Note:** Dont like all the deletion messages in your action logs? Paste `actionlog-ignore` in the channel topic to bypass it.
