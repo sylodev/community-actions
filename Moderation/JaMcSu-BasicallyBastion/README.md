@@ -13,7 +13,8 @@ BasicallyBastion is a recreation of the proprietary Bastion bot which does some 
 * @everyone - Send Messages | Allow
 * @everyone - Add Reactions | Deny
 * Atlas - Add Reactions | Allow
-* Slow-Mode - Enabled | Minimum of 15 seconds. (This is actually required for it to not break because of how messageCreate functions)
+* Slow-Mode - Enabled | Minimum of 15 seconds.
+(This step is actually required for it to not break because of how Discord handles **messageCreate**)
 
 **Suggestion Approval Channel**
 * @everyone - Read Messages | Deny
