@@ -1,5 +1,5 @@
 # BasicallyBastion Documentation
-BasicallyBastion is a recreation of the proprietary Bastion bot which does some menial tasks on the [Atlas support server](https://atlasbot.xyz/support), including handling suggestions. Currently this is Bastion's only job, so this action-pack emulates that feature using custom actions within Atlas itself (a lot easier than trying to host a local instance of Bastion). This action-pack is **meant to be edited by the user**, right now it *exactly* emulates Bastion so the messages are *very* server specific. If you don't know what that means, you probably shouldn't be using this...
+BasicallyBastion is a recreation of the proprietary Bastion bot which does some menial tasks on the [Atlas support server](https://atlasbot.xyz/support), including handling suggestions. Currently this is Bastion's only job, so this action-pack emulates that feature using custom actions within Atlas itself (a lot easier than trying to host a local instance of Bastion). This action-pack is **meant to be edited by the user**, right now it *exactly* emulates Bastion so the messages are *very* server specific. If you don't know what any of that means, you probably shouldn't be using this...
 
 ## Initial Setup
 * Follow the steps on the [repository README](https://github.com/doddsy/atlas-custom-actions/blob/master/README.md) for importing action files.
@@ -14,7 +14,7 @@ BasicallyBastion is a recreation of the proprietary Bastion bot which does some 
 * @everyone - Add Reactions | Deny
 * Atlas - Add Reactions | Allow
 * Slow-Mode - Enabled | Minimum of 15 seconds.
-(This step is actually required for it to not break because of how Discord handles **messageCreate**)
+(This step is actually required for it to not break because of how Discord handles **messageCreate** actions)
 
 **Suggestion Approval Channel**
 * @everyone - Read Messages | Deny
