@@ -3,7 +3,8 @@ BasicallyBastion is a recreation of the proprietary Bastion bot which does some 
 
 ## Initial Setup
 * Follow the steps on the [repository README](https://github.com/doddsy/atlas-custom-actions/blob/master/README.md) for importing action files.
-* Once both action files are imported into your guild, click on the **Message Create** action and edit the values for the `SuggestionApprovalChannel` & `SuggestionChannel` fields according to your servers preferences. (See **Recommended Permissions , Restrictions & Settings**)
+* Once both action files are imported into your guild, click on the **Message Create** action and edit the values for the `SuggestionApprovalChannel` & `SuggestionChannel` fields according to your server's preferences. (See **Recommended Permissions , Restrictions & Settings**)
+* Next, edit the values for the `UpvoteEmoji` & `DownvoteEmoji` fields according to your server's preference.
 * Thats it, it's pretty plug-and-play!
 
 ### Recommended Permissions, Restrictions & Settings
