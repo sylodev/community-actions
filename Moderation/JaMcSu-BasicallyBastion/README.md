@@ -1,4 +1,7 @@
 # BasicallyBastion Documentation
+
+**NOTE: As of April 28th, 2019 we *will not* provide any action support regarding BasicallyBastion nor will we release patches should something break in a future Atlas update. Atlas now has a built-in, premium-only Suggestions plugin which, unlike this, *will* be actively maintained. Please use it instead.**
+
 BasicallyBastion is a recreation of the proprietary Bastion bot which does some menial tasks on the [Atlas support server](https://atlasbot.xyz/support), including handling suggestions. Currently this is Bastion's only job, so this action-pack emulates that feature using custom actions within Atlas itself (a lot easier than trying to host a local instance of Bastion). This action-pack is **meant to be edited by the user**, right now it *exactly* emulates Bastion so the messages are *very* server specific. If you don't know what any of that means, you probably shouldn't be using this...
 
 ## Initial Setup
