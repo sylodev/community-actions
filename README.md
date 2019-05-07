@@ -28,4 +28,4 @@ For example: ```JaMcSu-Math.action```
 #### Current Repository Moderators
 * doddsy - node#2153 (Atlas Support Staff)
 * JaMcSu - JaMcSu#8608 (Atlas Support Staff)
-* Cykreet - Cykreet#1234 (Atlas Support Staff)
+* Cykreet - Cykreet#5758 (Atlas Support Staff)
