@@ -24,9 +24,9 @@ Have an awesome action you want to share? Heres how to get it on this repository
 * If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), you must put these into their own folder and include a `README.md` on what your superaction does and if it requires any special setup. See [AdvancedAuth](https://github.com/doddsy/atlas-custom-actions/tree/master/Moderation/JaMcSu-AdvancedAuth) for an example.
 
 ## File Naming Format
-* All superactions should follow the following naming format: ```AuthorName-SuperActionName```
-For example ```JaMcSu-AdvancedAuth```
-* All action files should follow the naming format: ```AuthorName-ActionName.action```
+* **All superaction folders should follow the following naming format:** ```AuthorName-SuperActionName```
+For example: ```JaMcSu-AdvancedAuth```
+* **All action files should follow the naming format:** ```AuthorName-ActionName.action```
 For example: ```JaMcSu-Math.action```
 
 ----------
