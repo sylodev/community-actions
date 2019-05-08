@@ -19,6 +19,11 @@ Have an awesome action you want to share? Heres how to get it on this repository
 * Select your action file and commit the changes to your fork.
 * Create a pull request and wait for it to be approved by the repository moderators.
 
+## Requirements for contributing to this repository
+* If your action is a command and has subcommands or any kind of {args} usage, you must include a help menu that shows how your action is used.
+    * To add onto this, it **must** be callable through both `a!<command trigger>` (on its own) and `a!<command trigger> help`.
+* If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), you must put these into their own folder (following the file naming format below, just excluding the `.action` suffix) and include a `README.md` on what your superaction does and if it requires any special "setup". For an example, see [JaMcSu's "Advanced Auth"](https://github.com/doddsy/atlas-custom-actions/tree/master/Moderation/JaMcSu-AdvancedAuth).
+
 ### File Naming Format
 All action files should follow the naming format: ```AuthorName-ActionName.action```
 For example: ```JaMcSu-Math.action```
