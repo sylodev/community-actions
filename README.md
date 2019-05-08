@@ -20,7 +20,7 @@ Have an awesome action you want to share? Heres how to get it on this repository
 * Create a pull request and wait for it to be approved by the repository moderators.
 
 ## Requirements for Contributing
-* If your action is a command that contains subcommands or any kind of function that changes the outcome based on an `{args}` input, you must include an embedded help menu that shows how your action is used which **must** be callable through both `a!<command trigger>` (on its own) and the `a!<command trigger> help` subcommand.
+* If your action is a command that contains subcommands or any kind of function that changes the outcome based on an `{args}` input, you must include an embedded help menu that shows how your action is used which **must** be callable through both `a!<command trigger>` (on its own) and the `a!<command trigger> help` subcommand. Alternatively, if you wish for no help embed to be posted upon `a!<command trigger>`, posting a message directing you to the help embed is also acceptable.
 * If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), you must put these into their own folder and include a `README.md` on what your superaction does and if it requires any special setup. See [AdvancedAuth](https://github.com/doddsy/atlas-custom-actions/tree/master/Moderation/JaMcSu-AdvancedAuth) for an example.
 
 ## File Naming Format
