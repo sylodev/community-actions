@@ -27,7 +27,9 @@ Have an awesome action you want to share? Heres how to get it on this repository
 ## File Naming Format
 * **All superaction folders should follow the following naming format:** ```AuthorName-SuperActionName```
 For example: ```JaMcSu-AdvancedAuth```
-* **All action files should follow the naming format:** ```AuthorName-ActionName.action```
+* **All action files within a superaction should follow the naming format:** ```AuthorName-SuperActionName-ActionName.action```
+For example: ```JaMcSu-AntiPing-Command.action```
+* **All standalone action files should follow the naming format:** ```AuthorName-ActionName.action```
 For example: ```JaMcSu-Math.action```
 
 ----------
