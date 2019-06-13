@@ -14,4 +14,4 @@ AntiPing is a custom solution for discouraging tagging individual users from a p
 * If you wish to remove a user's AntiPing infractions, you must have Administrator permissions to execute the command: `a!eval {perset;<user id here>_PingCount;}`. This may be a built-in feature in a future AntiPing update but for now, this is how it's done. Note that this will *only* reset their AntiPing infractions count, it *will not* remove any warnings they recieved.
 
 **Last Tested on Atlas Version:**
-`8.3.12`
+`8.3.12` - (June 12, 2019)
