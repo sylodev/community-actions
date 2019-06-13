@@ -12,3 +12,6 @@ AntiPing is a custom solution for discouraging tagging individual users from a p
 * By default, AntiPing will hand out a verbal warning for the first AntiPing infraction and an official Atlas warning for every subsequent infraction. Currently the way actions use Discord permissions is a bit broken so muting, kicking, banning is not a possibility. In a future Atlas update, this should be fixed and AntiPing will be updated to reflect those changes.
 * AntiPing keeps internal track of infractions dealt out to users who trigger the AntiPing, any time a user mentions someone on the AntiPing list, it will generate one perset *per user* to keep an accurate count. Persets are a limited resource, each guild is alotted 500 by default, so take this into consideration when importing AntiPing.
 * If you wish to remove a user's AntiPing infractions, you must have Administrator permissions to execute the command: `a!eval {perset;<user id here>_PingCount;}`. This may be a built-in feature in a future AntiPing update but for now, this is how it's done. Note that this will *only* reset their AntiPing infractions count, it *will not* remove any warnings they recieved.
+
+**Last Tested on Atlas Version:**
+`8.3.12`
