@@ -43,6 +43,6 @@
     
  <h4 align="center">
   <br>
-  Disclaimer: The "Denied" role should not have not have the "Read Messages" permission in any other public channels.
+  Note: The "Denied" role should not have not have the "Read Messages" permission in any other public channels.
   <br>
 </h4>
