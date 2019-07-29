@@ -5,7 +5,6 @@ AntiPing is a custom solution for discouraging tagging individual users from a p
 * Follow the instructions for importing action files into your guild by following the steps found on the repository [README](https://github.com/doddsy/atlas-custom-actions/blob/master/README.md).
 * Once imported to your guild, navigate to the **messageCreate** part of the action on your dashboard and populate the `NotifChannel` and `AP_List` variables at the top of the action according to the settings you want.
 * On the **messageCreate** action, blacklist any roles you dont want to be affected by the AntiPing. On the **Command** action, whitelist the roles you want to be able to use the command.
-* Optionally you can also enable `Delete invocation message` on the **messageCreate** action to delete the message whenever a user mentions someone on the AntiPing list.
 * Woopdeedoo, if you didn't screw it up, AntiPing should be up and functioning in your guild. Try executing `a!ap help` in a text channel to see a complete list of AntiPing commands.
 
 ### Things to Note
