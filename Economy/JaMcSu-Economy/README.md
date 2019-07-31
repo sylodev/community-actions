@@ -1,3 +1,6 @@
+# DEPRECATION NOTICE - 2019/07/31
+### This is a *really* old superaction that was originally made in Atlas v7, I do not suggest using it. However I am developing a new economy superaction but I cannot guarantee a definite release date. Join our support server for updates about this.
+
 More commands, mainly ones that allow you to earn money, will be added in the near future.
 Please stand by!
 
