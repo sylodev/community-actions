@@ -21,6 +21,7 @@ Have an awesome action you want to share? Heres how to get it on this repository
 
 ## Requirements for Contributing
 * If your action is a command that contains subcommands or any kind of function that changes the outcome based on an `{args}` input, you must include an embedded help menu that shows how your action is used which **must** be callable through both `a!<command trigger>` (on its own) and the `a!<command trigger> help` subcommand. Alternatively, if you wish for no help embed to be posted upon `a!<command trigger>`, posting a message directing you to the help embed is also acceptable.
+    * One exemption to the *"`a!command` must show the help message too"* rule is if doing `a!command` on it's own would show different information to the invoking user. If `a!command` on its own shows the same thing to anyone who does it, it should show the help message.
 * If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), you must put these into their own folder and include a `README.md` on what your superaction does and if it requires any special setup. See [AdvancedAuth](https://github.com/doddsy/atlas-custom-actions/tree/master/Moderation/JaMcSu-AdvancedAuth) for an example.
 * If your action (or any action files comprising a superaction) requires end-user input to function such as a specific channel name or ID, message ID, username or ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.imgur.com/dVldQxo.png) for an example.
 
@@ -31,6 +32,9 @@ For example: ```JaMcSu-AdvancedAuth```
 For example: ```JaMcSu-AntiPing-Command.action```
 * **All standalone action files should follow the naming format:** ```AuthorName-ActionName.action```
 For example: ```JaMcSu-Math.action```
+
+* **If multiple people contributed to an action's development, the other author(s) name should be appended to the first author's name:** ```Author1Name-Author2Name-Author3Name.action```
+For example: ```doddsy-JaMcSu-Cykreet-Example.action
 
 ----------
 
