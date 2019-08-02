@@ -27,14 +27,14 @@ Have an awesome action you want to share? Heres how to get it on this repository
 
 ## File Naming Format
 * **All superaction folders should follow the following naming format:** ```AuthorName-SuperActionName```
-For example: ```JaMcSu-AdvancedAuth```
+    * For example: ```JaMcSu-AdvancedAuth```
 * **All action files within a superaction should follow the naming format:** ```AuthorName-SuperActionName-ActionName.action```
-For example: ```JaMcSu-AntiPing-Command.action```
+    * For example: ```JaMcSu-AntiPing-Command.action```
 * **All standalone action files should follow the naming format:** ```AuthorName-ActionName.action```
-For example: ```JaMcSu-Math.action```
+    * For example: ```JaMcSu-Math.action```
 
 * **If multiple people contributed to an action's development, the other author(s) name should be appended to the first author's name:** ```Author1Name-Author2Name-Author3Name.action```
-For example: ```doddsy-JaMcSu-Cykreet-Example.action
+    * For example: ```doddsy-JaMcSu-Cykreet-Example.action```
 
 ----------
 
