@@ -1,0 +1,15 @@
+daysUntilStale: 1
+daysUntilClose: 1
+onlyLabels:
+  - "Changes Required"
+exemptLabels: []
+exemptProjects: true
+exemptMilestones: true
+exemptAssignees: false
+staleLabel: stale
+pulls:
+  markComment: >
+    This pull request has been automatically marked as outdated because it has not had
+    recent activity. It will be closed if no further activity occurs. Thank you
+    for your contributions.
+limitPerRun: 30
