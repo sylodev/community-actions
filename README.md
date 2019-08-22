@@ -2,7 +2,7 @@
 Welcome to the **Atlas Community Action Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions with others in the Atlas community. This repository *is not* an official Atlas resource, however it is maintained and moderated by the Atlas staff team. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing actions from this source into your server.
 
 ## How To
-### Import Actions From This Repository Into Your server
+### Import Actions From This Repository Into Your Server
 If you're interested in importing one of the custom actions found within our repository into your server, here's how to do it:
 * Ensure that Atlas is in your server and has the proper permissions to speak, read messages, moderate, etc. If it is not currently in your server, [click here](https://atlasbot.xyz/get) to invite it now. If you have never used Atlas before you may be asked to log in with your Discord account.
 * Navigate to the [My Servers](https://atlasbot.xyz/@me/guilds) page and select the server you want to import the action into.
