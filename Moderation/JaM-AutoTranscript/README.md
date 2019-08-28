@@ -1,0 +1,1 @@
+Automatically transcripts tickets upon closing.
