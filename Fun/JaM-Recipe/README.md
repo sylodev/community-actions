@@ -1,4 +1,4 @@
-Generates a random recipe from a database of over 20,0000 recipes.
+Generates a random recipe from a database of over 29,000 recipes.
 
 **Usage:** `a!recipe`
 
