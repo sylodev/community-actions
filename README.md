@@ -7,8 +7,8 @@ If you're interested in importing one of the custom actions found within our rep
 * Ensure that Atlas is in your server and has the proper permissions to speak, read messages, moderate, etc. If it is not currently in your server, [click here](https://atlasbot.xyz/get) to invite it now. If you have never used Atlas before you may be asked to log in with your Discord account.
 * Navigate to the [My Servers](https://atlasbot.xyz/@me/guilds) page and select the server you want to import the action into.
 * Back on GitHub, navigate the repository files and find the action file you want to import.
-* Open the action file and right click **`Raw`**.
-* Click `Save link as` and save the file somewhere you will remember!
+* Open the action file and right click ![Raw](https://i.imgur.com/98icse9.png).
+* Click **Save link as** and save the file somewhere you will remember!
 * Back on the Atlas dashboard, click on the **Actions** plugin and click the ![Import](https://i.imgur.com/cX5eSQ3.png) Import button. This will open a prompt for you to select the `.action` file you just downloaded. Find it and upload it.
 * Congratulations! The imported action should now show up in the **Actions** sidebar.
 
