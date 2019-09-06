@@ -1,0 +1,1 @@
+Send channel messages anonymously by prefacing your message with `sudo`.
