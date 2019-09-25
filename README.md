@@ -14,7 +14,7 @@ If you're interested in importing one of the custom actions found within our rep
 
 ### Contribute Actions to This Repository
 Have an awesome action you want to share? Here's how to get it on this repository for everyone to see. Before uploading your action, you might want to take a look at our **[Guidelines for Contributing](https://github.com/doddsy/atlas-custom-actions#guidelines-for-contributing)** to see if it meets our standards.
-* Fork this repository via the **`Fork`** button in the top-right of the screen.
+* Fork this repository via the ![Fork](https://i.imgur.com/oazJQxh.png) button in the top-right of the screen.
 * On the Atlas dashboard, select your action from the actions list on your [dashboard](https://atlasbot.xyz/).
 * Click the ![Export](https://i.imgur.com/dvXMSce.png) Export button to save the `.action` file to your local computer.
 * Rename your action file in correspondence to the **[Folder Format Requirements](https://github.com/doddsy/atlas-custom-actions#folder-format-requirements)** found at the bottom of this page.
