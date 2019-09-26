@@ -1,1 +1,31 @@
-098d83438c80fa2ab7bc244a68b045e341df3083a5b646cc3e7a7ebdcca57cb26bdd14044e45d6b85f5948f178ee2c9944aa02666aa79c094eef579d976542170fa32b57156a97ee083226592b61e46f2f58dde4f72c9c7020728de032f757703ff79d3775cb3bc1c7dd7d2d5f1cdeee459b4a88ddfcff2095bbb515b3c9e36f2dd952ac038ef4c106bacd6ae65f76db79e891f8126470aa27b46a7b35bb9007ed838abfc68a0a56a07bc9aaee63ba66b0f317386454510c32a7193396e75b040e9d0b76de1f21aece2ee29f396560cc5fc25d77eca4cc73541212247a219ac85d27a2bb1461701264fd71e7e999b7a78395c5ed405b2414f9dba3eb0569d7cf88fef55471b88372b1a6dda4a31b9f871fbd277c3be4447732ae6ba4f5080f2f308b329680978e74c01fbfeb924ea4307312075e9b2e07aa4d22c0696e8740ec07b668dbd7ef41d4900c3708c838580943f67bb0cf0bf3932996513296d66141b00035f09d79586cffd149155c99602a837e1c58deb626396c0cd1ea3dc662479e5f30bd8ff0fdfb777fd71c239ebd450f8c32d1b3f5b6342a3a5ed1a81f88e494465b74e122b00f32f81a0af4d9615798398a318409ae1e76d188f580a306d1422075f4e6154978e1d7593b4ba3d1bfe674ea8828167fc62b293c27a55738f743f67bb0cf0bf3932996513296d66141b00035f09d79586cffd149155c99602a837e1c58deb626396c0cd1ea3dc662479e5f30bd8ff0fdfb777fd71c239ebd450f8c32d1b3f5b6342a3a5ed1a81f88e494465b74e122b00f32f81a0af4d961576d2f647b152a8a0aa5ad6f5e2729cbbed3623d298905e476272e02391b80f0535955f1ea45c4c680fe5a2e8976bb96534e3eeaf89544e8ad227d43e12fcf6e0ee33ad7f89a5e2dabddec63ae8c43f50289bbc46e7ea6bdb52260b3a02fbdf6b4debd0a204e1f67eb9017ae1308c3fe4984fd127897b54f63b966c26c9932c4c2244a6429e0ae5f1f1142c478e63c7e7a444ae11557c5d12042fb6cd32fdcb22d51c728e62628d30d7b98721e563b612c6722c93a155e777932521db4035aa212076b872b389555b76a27530c9f70823013b988cadbd840598740dcf27364b04331c66fb93ceb9ee36c22d121f6c2cb73e046ff57773e68122b6ea4f2658d328dc356f58f9792474583af01860b9819e1
+{
+  "meta": "Exported for https://atlasbot.xyz via https://github.com/atlasbot/action-decryptor",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "messageCreate",
+    "content": null
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{args};a;ɐ};b;B};c;ɔ};d;p};e;ǝ};f;ɟ};g;ƃ};h;ɥ};i;ı};j;ɾ};k;ʞ};l;ן};m;ɯ};n;u};o;o};p;d};q;b};r;ɹ};s;s};t;ʇ};u;n};v;ʌ};w;ʍ};x;x};y;ʎ};z;z};!;¡};?;¿};_;‾}",
+      "channel": null,
+      "id": "5d6572d9c33ba00023faa6ba"
+    }
+  ],
+  "formatVersion": "1.1"
+}

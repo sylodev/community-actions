@@ -1,1 +1,30 @@
-098d83438c80fa2ab7bc244a68b045e341df3083a5b646cc3e7a7ebdcca57cb26bdd14044e45d6b85f5948f178ee2c9944aa02666aa79c094eef579d976542170fa32b57156a97ee083226592b61e46f2f58dde4f72c9c7020728de032f757703ff79d3775cb3bc1c7dd7d2d5f1cdeee459b4a88ddfcff2095bbb515b3c9e36f2dd952ac038ef4c106bacd6ae65f76db79e891f8126470aa27b46a7b35bb9007ed838abfc68a0a56a07bc9aaee63ba66b0f317386454510c32a7193396e75b040e9d0b76de1f21aece2ee29f396560cce01b42d8b8ce28d11ff6be3a0022db5fe2568ccf9b96fffaeadd70d768357190fcab957477c6a0404e522e9889015f2888fef55471b88372b1a6dda4a31b9f871fbd277c3be4447732ae6ba4f5080f2f308b329680978e74c01fbfeb924ea4307312075e9b2e07aa4d22c0696e8740ecbf2fadb56757cb96e33edc25a2a3f14b3181b43862d5c7f9d99aeeb892c85726de3a11de78b854d3df6d4a0d5e872f39a54d3ec9077abca023dea258419f4293b835ca7cc5b3ebceff0ac4bc716ef2b5f40fb0fac3da35117b25af6873e218d61c8b754bea8b206667807a50780fc19d2d4d096b5207b4c1599031e7b60821c41b73ec3516ad42133e27d244f32eefcb33d863010d498e7f3993a7bd7ecf172b6e94d5a67aadd75db3b9db43426825b64492664985b2939f1e6242936f0f3b3e9d8db1808f2f10e9c940082c494915e82b2074f2cd51838d9c6c669cc7075d81482ee6a155a6a657aaca69db473eeb5d0e3227ad19402d93ccfea046142f916ce26f21e5c30b44ccd2a3e077a06accad4471a019ed5b41b99eb34a276db74b1f8272ddbf9cd581e6c1e0b4b14f74e9250b29e5928d3a43348d2ab4e03d485acd186f3102675e821e2758d74cee258f922bcccf4963b10d10bcd6cb90b35538c5bf631d2a838902378cf395116cbd1f55cf65102c1e664c5b444b47754d19e3aa
+{
+  "meta": "Exported for https://atlasbot.xyz via https://github.com/atlasbot/action-decryptor",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "location"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{set;LatitudeWhole;{choose;-;}{range;0;90}}{set;LongitudeWhole;{choose;-;}{range;0;180}}\n{set;LatitudeDecimal;{range;0;9999999}}{set;LongitudeDecimal;{range;0;9999999}}\n\nhttps://www.google.com/maps/@{get;LatitudeWhole}.{get;LatitudeDecimal},{get;LongitudeWhole}.{get;LongitudeDecimal},10000m/data=!3m1!1e3",
+      "id": "5d65725ac33ba00023faa6b5"
+    }
+  ],
+  "formatVersion": "1.1"
+}

@@ -1,1 +1,30 @@
-098d83438c80fa2ab7bc244a68b045e341df3083a5b646cc3e7a7ebdcca57cb26bdd14044e45d6b85f5948f178ee2c9944aa02666aa79c094eef579d976542170fa32b57156a97ee083226592b61e46f76c692f237b28bde65d600f1da6e0b90e9889b2842ad0ab868b42cabd72d92c0657154062d1f3e5afd6ac1baaccbddcebcd3cc8667b14939892092663599dda7c58fef537e01396e30f165cb236c753bebbb0f8b9bd824269603ce569a08d4b62ccc313b132f9d5dda437207843bc13fbafa63c3e236d7c408d866fcb5dec9ca406890e5f59681f6fcc34c53f1afb85b843629d881a6129a078440acf338837a33dd610e1b870a010ffbaa3159ffd2b7911cefd399fcb0da8455a1f42496aa4f36ca9d25325cec9cb509ace32499ef7b643236aeb87f6da9533b75d566154e354a65dc3a102c6f16b47e63b62eefdf5a35e32fdc7b26cf239528818333f49fa44c09b30812f5e1517b64d982296ccf2d0f83821f90f88630258cd659be49a0c2d327556ddec1817e57c1adb53ffcfd5831935d8f1df9f1ac6220ffeb6d1df820bc8d784b15fb3dfec97da927b2d54594bda39f71d601c0f614db5049cc9d308467126b8268c4fe6238bf78e598e5cc3f6cb741512339c4eeab48b101ef1625d5
+{
+  "meta": "Exported for https://atlasbot.xyz via https://github.com/atlasbot/action-decryptor",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": true,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "keyword",
+    "content": "sudo"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{set;args;{find;{args};^(?:sudo\\s)(.*)$}}\n{a!say;{get;args}}",
+      "id": "5d72b86a21f3e5002364db08"
+    }
+  ],
+  "formatVersion": "1.1"
+}

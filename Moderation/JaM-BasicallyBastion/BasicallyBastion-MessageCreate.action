@@ -1,1 +1,30 @@
-098d83438c80fa2ab7bc244a68b045e341df3083a5b646cc3e7a7ebdcca57cb26bdd14044e45d6b85f5948f178ee2c9944aa02666aa79c094eef579d976542170fa32b57156a97ee083226592b61e46f2f58dde4f72c9c7020728de032f757703ff79d3775cb3bc1c7dd7d2d5f1cdeee459b4a88ddfcff2095bbb515b3c9e36f4716f5486b4ed73a067dbc8b59b32f1479e891f8126470aa27b46a7b35bb9007ed838abfc68a0a56a07bc9aaee63ba66b0f317386454510c32a7193396e75b040e9d0b76de1f21aece2ee29f396560cc5fc25d77eca4cc73541212247a219ac85d27a2bb1461701264fd71e7e999b7a78395c5ed405b2414f9dba3eb0569d7cf88fef55471b88372b1a6dda4a31b9f871fbd277c3be4447732ae6ba4f5080f2f308b329680978e74c01fbfeb924ea4307312075e9b2e07aa4d22c0696e8740ecd227a26655971d1eb56c5fb9092f5cb4c0f9dc93df9d707ba4553fda25f99f2fd8280d7ee9aed6ecfac4f9a7ed27e639ad9b1e2167b2ca114b24088f04f668702965dd2562b0f552609b49bb48649aabeb2756af997089096fb7e35689bb16d6f960b89f7cac08312258e138d3aca87c0f7205d2ace7e7da62613df2905212ee3587fb2bae1f3dea21dbcdb23bbbccc0a857f979a1e6876155aaf535104d790b562848f8c6852df3ac25c99816e21ad864fed8527aa925a8f552fb605a58daa97aa30d18ea3242f26550b0a4e49926ce50bab1bad08e8a9cb4a4487e72e4c9658c8bcb99bc49eadc066a9539d2d1e52450952b4813b4489cada61e76201e20daca43383a8162543d191072e1abba6230b169e39601b60f45b4b288c51936424b0dcc5a039b46e4103a8ec34f10830be139690b8da6780e9b09904a9d10a1f92a2b4f049466b51f55ae94ec5e9c380f35c5c16143873e044fef551b86f5eaac479f6b013a1e3b8c06efb38ead180db2c9ac2374654de4c95c59070964436f03fbcde2d02b0215878d925378874e473623a0e0cf37d3664ec747cc8a9dd9480c733ec7950911c08d9bebf02686738fa944f35790fcd413d513af132b338131114e117bfb8ad31c9dbd4a85fa942ae70f08440e3b17d2711e2406294d2a92fcb660f29fb533a4d60f12ca10717adac7b78be4c994edd8788581a46a10c616d0adb83bb527beff444eeb3052b0c037c04e9eacbe1e1499f03c5aa45a41efa0349ac52b8ff03c1d8657ea44ab39e30a05c0409d6390906866179ea5f2c35033aeb880c28ec7a4cd0298eaf4113475521adf9bbeebe628e41695aa99393df3c8746dd60e96deb353e383253fda0c136dbb9b1d403d18a99f8c4c5539a96f6dfe95a17dfd8a8b2932e933959e66e218d5588783f6ccc9f66ed6768e11f923d3bcde3f88658107b4d1bfd699bf0e39e8e3a22b1a9453d9b888326a0e8aebe5994d023735b0da09c4a080706a6731dcfa87b51f8e89513342ca76853ffb63997ca2c8fb2a9e7d81c403fa30c6a726b5a12c7553ecbbfc8532cf8b9b956191653747bf0eb83bc70504e83cf60000ed735a940bdbda9c71a6237ae7fc87267efa47495d8be21c97f24413cb1192e85618a4558c0e4a9516e513136fc5d53d937365215e43057dc5c69ea7d921dec634000c84526fb752cf5b6a369edc3b55b37426acab41418949912c5d43e438a3303cd80152ba976621d368ff86ac885b3ba25516731b92bf9ef5e9d190b8512c0987fad2f44f30bd61938e23c68b80c236eb8248eec0e1c847efea9b7fe315be2afff7eb21cafcee4942e4d08a72bf9c13f548388a212936038a57bd05ec6bbfc57b9bfefd090d23fb133e9c8640a1b0e03f719d00eafd8e5aebe4546b6e6c31e03226c930b3910b52c71903390e6cd667210091b6f90de67e224856a9f94966fe9c9ceeb76b3005c1415767625865c61c89adff73c14aa3c063a776697e4a3a0448119679f52321cba620935c78fceacf47f2dcbb23070950f6fb2b6c0c6579374af30a653cb5e9ebb251b9ffb8b28aeeeb3da39dc487381a7d13b8d2abcef9017f642bcd634c99384dca6892e32abb8bee4d2fabb6a915d35e00170fb8e9fd2210dc7159c81a9c2f02b867d448cdeb5f0ea169d443a6f0b1df4e82d12c5ea308b3c8f8053aa6123c67da3ed4684590b2142ca524a1d0bbcfe481670ac34deafa4c54d285f2ff14665029d1765985f161622595b52e28
+{
+  "meta": "Exported for https://atlasbot.xyz via https://github.com/atlasbot/action-decryptor",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "messageCreate",
+    "content": null
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note; Change the two values below to the names or IDs of the respective channels on your guild.}\n{perset;SuggestionApprovalChannel;CHANNEL_NAME_OR_ID_HERE}\n{perset;SuggestionChannel;CHANNEL_NAME_OR_ID_HERE}\n\n{note; Change the to values below to the names or IDs of the respective emoji.}\n{perset;UpvoteEmoji;EMOJI_NAME_OR_ID_HERE}\n{perset;DownvoteEmoji;EMOJI_NAME_OR_ID_HERE}\n\n{set;SuggestionID;{randstr;1234567890;4}}\n\n{message.delete}{channel.send;{a!ae;--title=\"New Suggestion\";--description=\"{args}\";--field1name=\"Suggested by\";--field1value=\"{user.tag} ({user.id})\";--footer=\"ID: {get;SuggestionID}\";--timestamp};{perget;SuggestionApprovalChannel}}\n\n{perset;{get;SuggestionID}-ID;{channel.lastMessageID;{perget;SuggestionApprovalChannel}}}\n{perset;{get;SuggestionID}-Content;{args}}\n{perset;{get;SuggestionID}-Author;{user.id}}\n\n{user.send;{a!ae;--title=\"Suggestion Pending Approval\";--description=\"Your suggestion (**`{args}`**) is now pending approval.\\n\\nIf the staff team approves it, your suggestion will be voted on. If your suggestion gets enough votes, it could be added to Atlas.\"}}",
+      "id": "5d6563a8c33ba00023faa620"
+    }
+  ],
+  "formatVersion": "1.1"
+}

@@ -1,1 +1,30 @@
-098d83438c80fa2ab7bc244a68b045e341df3083a5b646cc3e7a7ebdcca57cb26bdd14044e45d6b85f5948f178ee2c9944aa02666aa79c094eef579d976542170fa32b57156a97ee083226592b61e46f2f58dde4f72c9c7020728de032f757703ff79d3775cb3bc1c7dd7d2d5f1cdeee459b4a88ddfcff2095bbb515b3c9e36f2dd952ac038ef4c106bacd6ae65f76db79e891f8126470aa27b46a7b35bb9007ed838abfc68a0a56a07bc9aaee63ba66b0f317386454510c32a7193396e75b040e9d0b76de1f21aece2ee29f396560cc5fc25d77eca4cc73541212247a219ac85d27a2bb1461701264fd71e7e999b7a75950691c830ce5f6f7efb9ee3f2b92f447875e410e54f42367a9b66692a85176f98da49f53473c660bc5c79afd252308ebb81d724d3eaf27f662b15d76c9fda3dedc2dba3675fb17881efdf77ff54c02e7eedf0cc590d82813ec6e7a5412b7fd33713abb496a94b81d9ee25db126bf02f2a90c8cec7a42be91758083bc573a86312764a2cc986efda2340e2748a0ccdf106d4ace53d80f00b01708bc150f1774ae4358d15b7f273f1c65505ae8a96a3df9b430f7cd2c04d7d21cd2ee7f77c21dac661545163128d9eba25d90cffc33015b51f0c46cdb56fdb3de591d827ce0d097f5d9ac46017cec7a0d5ca7e0e2d8a2e64b263e37f2e3b57df5a6ae3ffabc67aae68a093017b4e6d2bf2cde96c5d457c0156052dd16767fd31967cb010cbecb54609392bd4afcffd638976d578b13b22ccec58cf8f35b2e0e16cfff026264ecfdbd17053b2a6279e17bcffc02725e8836d8bcef46321e74324f54b98e8bf6f6ac24be175c11430cf7b49da2091a1f0485fced7a9b553d53b5e5e4abd5496a5613233500e03b5bbf5e94419e592312391892035f08bcf1772a9e2cde3849e2bb1a4309d40d716cc893ad5e1c139632428a01d790f95875b4366f036d14e13c85712f224b6b96f0aef1b7305ea77a7511ef70bc8035e2b31f8141efecb352addd5b6629a3930fc7ef9872d87f4299fc4ead248222b02ff13c63cfdc6f7717f388026666b3be326da33ede4e0f4b5b16a7099f1b4f74f333c202aefb9b74ff3f1374c57994f73bd28311d5fd7dd17d223182ec4e04888da464023bb996b31e71814851919d75b5493faa4735575741879bad015adba866fdb6e6a0b8da5ce4566a0f2779e447467188c65a146929248be615dcc1d485be1120190f49e6a419ee85
+{
+  "meta": "Exported for https://atlasbot.xyz via https://github.com/atlasbot/action-decryptor",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "messageCreate",
+    "content": "611998888983003160"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{find;{message.content};((youtu\\.be\\/)|((music\\.)?youtube\\.com\\/watch\\?v=)|(soundcloud\\.com\\/)|(open\\.spotify\\.com\\/(track|artist|album)))};==;;{delete}\n{a!say;Your message should only contain any of the following types of links, {user.mention}:\n- `youtube.com`\n- `youtu.be`\n- `soundcloud.com`\n- `music.youtu.be`\n- `open.spotify.com`}\n{set;Message;{channel.lastMessageID}}{sleep;20}{message.delete;{get;Message}}}",
+      "id": "5d599601a261b20023b4772b"
+    }
+  ],
+  "formatVersion": "1.1"
+}
