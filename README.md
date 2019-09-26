@@ -1,5 +1,5 @@
 # Atlas Community Actions Repository
-Welcome to the **Atlas Community Action Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions with others in the Atlas community. This repository *is not* an official Atlas resource, however it is maintained and moderated by the Atlas staff team. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing actions from this source into your server.
+Welcome to the **Atlas Community Action Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing actions from this source into your server.
 
 ## How To
 ### Import Actions From This Repository Into Your Server
