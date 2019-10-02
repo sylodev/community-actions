@@ -1,0 +1,32 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": true
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [],
+    "channels": [
+      "627199895396286464"
+    ],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "reactionAdd",
+    "content": "👍"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{user.send;\n{if;{perget;AuthLevel};===;1;\n{user.removerole;{perget;UnverifiedRole}}{perset;{user.id}_AuthKey;}{a!say;You have been authenticated. Welcome to **{guild.name}**!}}}",
+      "id": "5d8e4cbff00a630023be60d3"
+    }
+  ],
+  "formatVersion": "1.2"
+}

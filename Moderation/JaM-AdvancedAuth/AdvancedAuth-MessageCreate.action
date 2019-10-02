@@ -1,0 +1,34 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": true,
+    "quiet": true
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [
+      "627199646808408093"
+    ],
+    "channels": [
+      "627199895396286464"
+    ],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "messageCreate",
+    "content": "627199895396286464"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{user.send;\n{if;{find;{perget;AuthLevel};([2-4])};!==;;\n{if;{args;1};===;{perget;{user.id}_AuthKey};\n{user.removerole;{perget;UnverifiedRole}}{a!say; Your authentication key has been accepted. Welcome to **{guild.name}**!}{perset;{user.id}_AuthKey;};\n{a!say;Authentication key incorrect. If you believe this is a mistake, please contact a server administrator.}}}}",
+      "id": "5d8e4cbff00a630023be60d4"
+    }
+  ],
+  "formatVersion": "1.2"
+}
