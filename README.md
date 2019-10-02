@@ -35,7 +35,7 @@ Have an awesome action you want to share? Here's how to get it on this repositor
 	* A complete list of all valid subcommands.
 	* At least one command example.
 
-**4.** - If your (super)action requires end-user input to function such as a specific channel name or ID, message name ID, username or ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.imgur.com/dVldQxo.png) for an example. You must also declare that there is end-user input required in your (super)action README.
+**4.** - If your (super)action requires static end-user input to function such as a specific channel name or ID, message ID, user ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.imgur.com/dVldQxo.png) for an example. You must also declare that there is end-user input required in your (super)action README.
 
 **5.** - Wrappers or aliases for existing Atlas commands do not meet our requirements for contributing. Any action that is submitted in which its soul purpose is to execute a native Atlas command under a disguised name will be automatically denied.
 
