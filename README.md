@@ -53,7 +53,7 @@ We impose restrictions on how files are uploaded and organized to keep the repos
 >**Folder Contents:**    
 >`ActionName-TriggerType.action`    
 >`...`    
->`README.MD`    
+>`README.md`    
 * **If multiple people contributed to a (super)action's development, the other author(s) name should be appended to the original author's name:**
 >`AuthorName-AuthorName-AuthorName-(Super)ActionName`
 -----
