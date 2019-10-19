@@ -13,11 +13,11 @@ If you're interested in importing one of the custom actions found within our rep
 * Congratulations! The imported action should now show up in the **Actions** sidebar.
 
 ### Contribute Actions to This Repository
-Have an awesome action you want to share? Here's how to get it on this repository for everyone to see. Before uploading your action, you might want to take a look at our **[Guidelines for Contributing](https://github.com/doddsy/atlas-custom-actions#guidelines-for-contributing)** to see if it meets our standards.
+Have an awesome action you want to share? Here's how to get it on this repository for everyone to see. Before uploading your action, you might want to take a look at our **[Guidelines for Contributing](https://github.com/atlasbot/community-actions#guidelines-for-contributing)** to see if it meets our standards.
 * Fork this repository via the ![Fork](https://i.imgur.com/oazJQxh.png) button in the top-right of the screen.
 * On the Atlas dashboard, select your action from the actions list on your [dashboard](https://atlasbot.xyz/).
 * Click the ![Export](https://i.imgur.com/dvXMSce.png) Export button to save the `.action` file to your local computer.
-* Rename your action file in correspondence to the **[Folder Format Requirements](https://github.com/doddsy/atlas-custom-actions#folder-format-requirements)** found at the bottom of this page.
+* Rename your action file in correspondence to the **[Folder Format Requirements](https://github.com/atlasbot/community-actions#folder-format-requirements)** found at the bottom of this page.
 * Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click ![Upload Files](https://i.imgur.com/PmO960X.png)
 * Select your action file and commit the changes to your fork.
 * Create a pull request and wait for it to be approved by the repository moderators.
@@ -25,7 +25,7 @@ Have an awesome action you want to share? Here's how to get it on this repositor
 ## Guidelines for Contributing
 **1.** - All uploaded actions  _must_  be submitted in fluent, understandable English. Any pull requests that are made in a language other than English or that contain excessive typos will be automatically denied.
 
-**2.** - All submitted actions must be placed in a folder per the **[Folder Format Requirements](https://github.com/doddsy/atlas-custom-actions#folder-format-requirements)** along with a `README.md` file with a short (or long) description of what the action does. If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), include any special setup required in the README.
+**2.** - All submitted actions must be placed in a folder per the **[Folder Format Requirements](https://github.com/atlasbot/community-actions#folder-format-requirements)** along with a `README.md` file with a short (or long) description of what the action does. If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), include any special setup required in the README.
 
 **3.** - All submitted actions with a **Command** trigger type *must* include a [predefined embedded help menu](https://pastebin.com/raw/HiV8ZszK). There are two categories that all uploaded commands fall into; you must decide which category your command falls in and follow the requirements for either category accordingly:
 *  **A. - Command with no subcommands** - If your action does not contain *any* subcommands (or outputs that are altered based upon user input) you must include an embedded help menu triggered by `a!<command> help` that displays the following:
