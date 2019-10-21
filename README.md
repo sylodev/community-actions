@@ -1,10 +1,12 @@
 # Atlas Community Actions Repository
-Welcome to the **Atlas Community Action Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing actions from this source into your server.
+Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions and snippets of code with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
 
 ## How To
+The following information is for actions only. For information on how to import snippets, see [here](https://github.com/atlasbot/community-actions/Snippets/README.md).
+
 ### Import Actions From This Repository Into Your Server
 If you're interested in importing one of the custom actions found within our repository into your server, here's how to do it:
-* Ensure that Atlas is in your server and has the proper permissions to speak, read messages, moderate, etc. If it is not currently in your server, [click here](https://atlasbot.xyz/get) to invite it now. If you have never used Atlas before you may be asked to log in with your Discord account.
+* Ensure that Atlas is in your server and has the proper permissions to send and read messages, moderate, etc. If it is not currently in your server, [click here](https://atlasbot.xyz/get) to invite it now. If you have never used Atlas before you may be asked to login with your Discord account.
 * Navigate to the [My Servers](https://atlasbot.xyz/@me/guilds) page and select the server you want to import the action into.
 * Back on GitHub, navigate the repository files and find the action file you want to import.
 * Open the action file and right click [![](https://i.imgur.com/98icse9.png)](https://www.youtube.com/watch?v=q5Dj5G1kaqI "It's Raw!")
@@ -13,17 +15,18 @@ If you're interested in importing one of the custom actions found within our rep
 * Congratulations! The imported action should now show up in the **Actions** sidebar.
 
 ### Contribute Actions to This Repository
+
 Have an awesome action you want to share? Here's how to get it on this repository for everyone to see. Before uploading your action, you might want to take a look at our **[Guidelines for Contributing](https://github.com/atlasbot/community-actions#guidelines-for-contributing)** to see if it meets our standards.
-* Fork this repository via the ![Fork](https://i.imgur.com/oazJQxh.png) button in the top-right of the screen.
+* Fork this repository via the ![Fork](https://i.imgur.com/oazJQxh.png) button located in the top-right corner of this repository.
 * On the Atlas dashboard, select your action from the actions list on your [dashboard](https://atlasbot.xyz/).
-* Click the ![Export](https://i.imgur.com/dvXMSce.png) Export button to save the `.action` file to your local computer.
+* Click the ![Export](https://i.imgur.com/dvXMSce.png) Export button to save the `.action` file to your device.
 * Rename your action file in correspondence to the **[Folder Format Requirements](https://github.com/atlasbot/community-actions#folder-format-requirements)** found at the bottom of this page.
 * Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click ![Upload Files](https://i.imgur.com/PmO960X.png)
 * Select your action file and commit the changes to your fork.
 * Create a pull request and wait for it to be approved by the repository moderators.
 
 ## Guidelines for Contributing
-**1.** - All uploaded actions  _must_  be submitted in fluent, understandable English. Any pull requests that are made in a language other than English or that contain excessive typos will be automatically denied.
+**1.** - All uploaded actions  _must_  be submitted in fluent, understandable English. Any pull requests that are made in a language other than English or that contain excessive typos will be automatically closed.
 
 **2.** - All submitted actions must be placed in a folder per the **[Folder Format Requirements](https://github.com/atlasbot/community-actions#folder-format-requirements)** along with a `README.md` file with a short (or long) description of what the action does. If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), include any special setup required in the README.
 
