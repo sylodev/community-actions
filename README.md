@@ -2,7 +2,7 @@
 Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions and snippets of code with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
 
 ## How To
-The following information is for actions only. For information on how to import snippets, see [here](https://github.com/atlasbot/community-actions/Snippets/README.md).
+The following information is for actions only. For information on how to import snippets, see [here](https://github.com/atlasbot/community-actions/tree/master/Snippets#what-are-snippets).
 
 ### Import Actions From This Repository Into Your Server
 If you're interested in importing one of the custom actions found within our repository into your server, here's how to do it:
