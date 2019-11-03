@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "ticket"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Set the variable below to the name or ID of the channel you ticket logs to be forwarded to. If the value is empty, it will forward the ticket logs to your action log channel. If you don't have an action log channel configured, you won't be able to close tickets.}\n{set;TicketLogChannel;}\n\n{if;{args;1};===;close;\n\n\t{if;{get;TicketLogChannel};\n\n    \t{a!ticket;transcript}\n        {sleep;1}\n        {set;TranscriptLink;{find;{message.cleanContent;{channel.lastMessageID}};(https?:\\/\\/atlasbot.xyz\\/transcript\\/[0-9a-f]+)}}\n        {channel.send;\n        \t{a!ae;--field1name=\"Opened By\";--field1value=\"{user.tag;{ticket.author}}\\n{user.id;{ticket.author}}\";--field1inline;--field2name=\"Closed By\";--field2value=\"{user.tag}\\n{user.id}\";--field2inline;--field3name=\"Closed Date\";--field3value=\"{utils.time}\";--field3inline;--field4name=\"Transcript Link\";--field4value=\"{get;TranscriptLink}\";--field4inline;--color=\"#F8E71C\";--title=\"__Ticket Archived__\"};{get;TicketLogChannel}}\n        {a!ticket;close};\n\n\t{if;{settings;plugins.moderation.logs.action};\n        \n        {a!ticket;transcript}\n        {sleep;1}\n        {set;TranscriptLink;{find;{message.cleanContent;{channel.lastMessageID}};(https?:\\/\\/atlasbot.xyz\\/transcript\\/[0-9a-f]+)}}\n        {channel.send;\n        \t{a!ae;--field1name=\"Opened By\";--field1value=\"{user.tag;{ticket.author}}\\n{user.id;{ticket.author}}\";--field1inline;--field2name=\"Closed By\";--field2value=\"{user.tag}\\n{user.id}\";--field2inline;--field3name=\"Closed Date\";--field3value=\"{utils.time}\";--field3inline;--field4name=\"Transcript Link\";--field4value=\"{get;TranscriptLink}\";--field4inline;--color=\"#F8E71C\";--title=\"__Ticket Archived__\"};{settings;plugins.moderation.logs.action}}\n        {a!ticket;close};\n        \n\t{a!say;You cannot close this ticket! You have no log channel set.}}}\n\n;{a!ticket;{args;1;infinity}}}",
+      "id": "5dbe2b0b36f00100233117ee"
+    }
+  ],
+  "formatVersion": "1.2"
+}
