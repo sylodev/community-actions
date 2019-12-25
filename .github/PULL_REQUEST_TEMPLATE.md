@@ -10,11 +10,13 @@ please fill out this template that explains your (super)action.
 - This is a...
   - [x] Superaction    
   - [ ] Action
+  - [ ] Snippet
   
 -->
 - This is a...
   - [ ] Superaction    
   - [ ] Action
+  - [ ] Snippet
 - [ ] I have followed the Guidelines for Contributing as closely as possible.
 - [ ] I have thoroughly tested my (super)action and ensured that it works properly, even when used incorrectly.
 - [ ] My action is not a wrapper/alias for another command - it has an actual use.
