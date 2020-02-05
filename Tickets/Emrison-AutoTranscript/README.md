@@ -1,1 +1,1 @@
-Action that automatically transcripts tickets upon closing.
+Action that automatically transcripts tickets upon closing. Wraps the `ticket close` subcommand.
