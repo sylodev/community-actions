@@ -1,0 +1,35 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": true
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [
+      "672080420556242944",
+      "672080477779263489",
+      "672117031541407744",
+      "672458484410744835"
+    ],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "messageCreate",
+    "content": null
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Replace \"YOUR_CHANNEL_ID_HERE\" with the channel you want.}\n\n{set;og_channel;{channel.mention}}\n{set;designed_channel;YOUR_CHANNEL_ID_HERE}\n\n{if;{args};includes;https://youtu.be/;{message.delete}{channel.send;**From {user.tag} ({user.id}) in {get;og_channel}:** {args};{get;designed_channel}};{if;{args};includes;https://www.youtube.com/watch?v=;{message.delete}{channel.send;**From {user.tag} ({user.id}) in {get;og_channel}:** {args};{get;designed_channel}};{if;{args};includes;https://m.youtube.com/watch?v=;{message.delete}{channel.send;**From {user.tag} ({user.id}) in {get;ogchannel}:** {args};{get;designed_channel}}}}}\n\n\n",
+      "id": "5e4ad3a71942690026c7a107"
+    }
+  ],
+  "formatVersion": "1.2"
+}
