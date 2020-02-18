@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "leaderboard"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "You can view this server's leaderboard at <https://atlasbot.xyz/leaderboard/{guild.id}>.",
+      "id": "5de1de28e5613600231c5620"
+    }
+  ],
+  "formatVersion": "1.2"
+}
