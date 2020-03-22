@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "owoify"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{set;kaomoji;{choose;(・`ω´・);^w^;^W^;OWO;OwO;owo;UWU;UwU;uwu;(´･ω･`);x3;X3;:3;o///o;(⌒▽⌒)☆;\n(* ^ ω ^);(⌒ω⌒);(*´▽`*);(o･ω･o);(⁄ ⁄•⁄ω⁄•⁄ ⁄);>_>;<_<;>_<;(´-ω-`);( ╥ω╥ );\n(￣ω￣{semi});(^ω~);(>ω^);(シ. .)シ;|･ω･);|ω･)ﾉ;(=^･ω･^=);(=`ω´=);(=^-ω-^=);(ﾉ>ω<)ﾉ :｡･:*:･ﾟ’★,｡･:*:･ﾟ’☆;( ´-ω･)︻┻┳══━一;＼(￣▽￣)＼;⁽⁽◝( • ω • )◜⁾⁾;>w>;<w<;>w<;o3o;(－‸ლ);(◕‿◕✿);ଘ(੭ˊ꒳ˋ)੭✧;( ＾▽＾)っ✂╰⋃╯;{semi}w{semi}}}\n{set;kaomoji2;{choose;(・`ω´・);^w^;^W^;OWO;OwO;owo;UWU;UwU;uwu;(´･ω･`);x3;X3;:3;o///o;(⌒▽⌒)☆;\n(* ^ ω ^);(⌒ω⌒);(*´▽`*);(o･ω･o);(⁄ ⁄•⁄ω⁄•⁄ ⁄);>_>;<_<;>_<;(´-ω-`);( ╥ω╥ );\n(￣ω￣{semi});(^ω~);(>ω^);(シ. .)シ;|･ω･);|ω･)ﾉ;(=^･ω･^=);(=`ω´=);(=^-ω-^=);(ﾉ>ω<)ﾉ :｡･:*:･ﾟ’★,｡･:*:･ﾟ’☆;( ´-ω･)︻┻┳══━一;＼(￣▽￣)＼;⁽⁽◝( • ω • )◜⁾⁾;>w>;<w<;>w<;o3o;(－‸ლ);(◕‿◕✿);ଘ(੭ˊ꒳ˋ)੭✧;( ＾▽＾)っ✂╰⋃╯;{semi}w{semi}}}\n\n{set;weeb;{choose;uwaa!!;rawr;murr;nyaaaa!;awaaa!!;desuuuuu!;kawaiii!;kyaaa!;pasuuu;nyaaan!;awaaauu!!}}\n\n{if;{args;1};==;help;{if;{args;2};==;;{set;help;true}}}\n{if;{args;1};==;;{set;help;true}}\n\n\n{if;{get;help};==;true;{a!ae;--message=\"{get;weeb} {get;kaomoji}\";--title=\"Usage\";--description=\"**{get;kaomoji2}** `{guild.prefix}owoify <your text here>` **{get;kaomoji2}**\";--field1name=\"Notice\";--field1value=\"I'm fairly sure you've already seen many bots with the `owoify` command, but this one is borderline incomprehensible. Use it at your own risk.\\n\\nI'm not responsible for the brain damage caused by the extra owoness of this action.\";--field1inline;--footer=\"Command ran by {user.tag} • Created by Shylke#8325\"};{get;kaomoji} {replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{lower;\n{args}};na;nya};ma;mya};ne;nye};no;nu};ka;kya};ko;kyo};ku;kyu};ke;kye};fu;fyu};beautiful;kawaii};cute;kawaii};what;wat};you;u};ore;oar};yes;ye};because;cuz};this;dis};that;dat};r;w};l;w};v;w};e;we};i;wi};ove;uv};good;gud};yes;ye} {get;weeb} {get;kaomoji2}}",
+      "id": "5e77555136c899002e004948"
+    }
+  ],
+  "formatVersion": "1.2"
+}
