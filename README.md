@@ -30,12 +30,9 @@ Have an awesome action you want to share? Here's how to get it on this repositor
 
 **2.** - All submitted actions must be placed in a folder per the **[Folder Format Requirements](https://github.com/atlasbot/community-actions#folder-format-requirements)** along with a `README.md` file with a short (or long) description of what the action does. If you make a pull request comprised of multiple `.action` files (hereby referred to as a superaction), include any special setup required in the README.
 
-**3.** - All submitted actions with a **Command** trigger type *must* include a [predefined embedded help menu](https://pastebin.com/raw/HiV8ZszK). There are two categories that all uploaded commands fall into; you must decide which category your command falls in and follow the requirements for either category accordingly:
-*  **A. - Command with no subcommands** - If your action does not contain *any* subcommands (or outputs that are altered based upon user input) you must include an embedded help menu triggered by `a!<command> help` that displays the following:
-	* A description of what the command does.
-* **B. - Command with subcommands** - If your action *does* contain subcommands of any sort, you must include an embedded help menu triggered by **both** `a!<command> help` and `a!command` (no arguments provided) that displays the following:
-	* A description of what the (super)action does.
-	* A complete list of all valid subcommands.
+**3.** - All submitted actions with a **Command** trigger type that contain *any* subcommands (`a!command subcommandOne subcommandTwo etc.`) *must* include an embedded help menu triggered by `a!<command> help` that displays the following:
+	* A description of what the (super)action, as a whole, does.
+	* A complete list of all valid subcommands and a description of what each one does.
 	* At least one command example.
 
 **4.** - If your (super)action requires static end-user input to function such as a specific channel name or ID, message ID, user ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.imgur.com/dVldQxo.png) for an example. You must also declare that there is end-user input required in your (super)action README.
