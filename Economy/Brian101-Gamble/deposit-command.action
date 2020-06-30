@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "deposit"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Values}\n{set;input;{args;1}}\n{set;pocket;{find;{perget;{user.id}_currencyData};Pocket: (-?(\\d+))}}\n{set;vault;{find;{perget;{user.id}_currencyData};Vault: (-?(\\d+))}}\n{set;whitelisted;{find;{perget;{user.id}_currencyData};Whitelisted: (\\w+)}}\n{set;space;150000001}\n{set;min;0}\n{set;max;{get;space}}\n\n{note;RegEx arguement (accepts scientific notations, all/max for whole wallet or numbers)}\n{note;IS WHITELISTED?}\n{if;{get;whitelisted};==;true;\n{if;{find;{args;1};(-?\\d*\\.?\\d+e?\\d+|^[0-9]*$|all|max)};!==;;\n\t\n    {if;{args;1};==;;\n    {a!ae;--field1name=\"{guild.prefix}deposit <amount>\";--field1value=\"deposit your specified amount\";--field2name=\"{guild.prefix}deposit [all | max]\";--field2value=\"deposits all your money from your bank\";--title=\"deposit\";--color=\"{user.color;true;338222603829510164}\";--description=\"Deposit some money that can fit to your bank space, from your wallet.\"}\n    ;\n\t{if;{find;{args;1};(all|max)};!==;;\n    \t{set;input;{get;pocket}}\n        {note;Bank = Space}\n        {if;{get;vault};>=;{get;space};\n        \t{channel.send;you have already have a full bank therfore you can't deposit coins.}\n        }\n        {note;Bank < Space}\n        {if;{get;vault};<;{get;space};\n        \n        \t{note;pocket > (space - vault)}\n            {if;{get;pocket};>;{math;{get;space}-{get;vault}};\n        \t{set;a;{math;{get;space}-{get;vault}}}\n            {note;pocket - dep}\n            {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Pocket: (-?(\\d+));Pocket: {math;{get;pocket}-{get;a}}}}\n            {note;vault + dep}\n            {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Vault: (-?(\\d+));Vault: {math;{get;vault}+{get;a}}}}\n            {channel.send;**{replace;{get;a};(\\d)(?=(\\d\\d\\d)+$);$1,}** coins deposited}\n            }\n            \n            {note;pocket < (space - vault)}\n            {if;{get;pocket};<;{math;{get;space}-{get;vault}};\n            {set;b;{get;pocket}}\n            {set;min;0}\n            {note;vault + pocket}\n            {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Vault: (-?(\\d+));Vault: {math;{get;vault}+{get;pocket}}}}\n            {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Pocket: (-?(\\d+));Pocket: {math;{get;pocket}-{get;pocket}}}}\n            {channel.send;**{replace;{get;b};(\\d)(?=(\\d\\d\\d)+$);$1,}** coins deposited}\n            }\n        }\n    }\n    \n    {if;{find;{args;1};(-?\\d*\\.?\\d+e?\\d+|^[0-9]*$)};!==;;\n    \t{set;input;{math;{args;1}+0}}\n        {note;Bank = Space}\n        {if;{get;vault};>=;{get;space};\n        \t{channel.send;you have already have a full bank therfore you can't deposit coins.}\n        }\n        {note;Bank < Space}\n        {if;{get;vault};<;{get;space};\n        \n        \t{note;dep > (space - vault)}\n            {if;{get;input};>;{math;{get;space}-{get;vault}};\n        \t{channel.send;You can only hold **{replace;{get;space};(\\d)(?=(\\d\\d\\d)+$);$1,}** coins in your vault right now. To hold more, use currency commands more.}\n            }\n            \n            {note;pocket < (space - vault)}\n            {if;{get;input};<=;{math;{get;space}-{get;vault}};\n            \n            {if;{and;{if;{get;input};>;0;true};{if;{get;input};<=;{get;pocket};true}};==;true;\n            {set;b;{get;input}}\n            {set;min;0}\n            {note;vault + dep}\n            {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Vault: (-?(\\d+));Vault: {math;{get;vault}+{get;input}}}}\n            {note;pocket - dep}\n            {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Pocket: (-?(\\d+));Pocket: {math;{get;pocket}-{get;input}}}}\n            {channel.send;{replace;{get;b};(\\d)(?=(\\d\\d\\d)+$);$1,} coins deposited}\n            ;\n            {channel.send;Your argument should be either a number and no more than what you have in your wallet ({replace;{get;space};(\\d)(?=(\\d\\d\\d)+$);$1,}), or `max`}\n            }\n            \n            }\n        }\n    }\n    }\n}\n;\n{channel.send;You are not whitelisted to use this command!}\n}{note;END OF IS WHITELISTED}",
+      "id": "5efad534759b320027854846"
+    }
+  ],
+  "formatVersion": "1.2"
+}

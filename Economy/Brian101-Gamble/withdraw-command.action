@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "withdraw"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Values}\n{set;input;{args;1}}\n{set;pocket;{find;{perget;{user.id}_currencyData};Pocket: (-?(\\d+))}}\n{set;vault;{find;{perget;{user.id}_currencyData};Vault: (-?(\\d+))}}\n{set;whitelisted;{find;{perget;{user.id}_currencyData};Whitelisted: (\\w+)}}\n\n{note;RegEx arguement (accepts scientific notations, all/max for whole wallet or numbers)}\n{note;IS WHITELISTED?}\n{if;{get;whitelisted};==;true;\n{if;{find;{args;1};(-?\\d*\\.?\\d+e?\\d+|^[0-9]*$|all|max)};!==;;\n\n{note;NON-EMPTY ARGUEMENT}\n{if;{args;1};!==;;\n{if;{find;{get;input};^(max|all)$};!==;;\n\n\t{set;input;{get;vault}}\n\t{perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Pocket: (-?(\\d+));Pocket: {math;{get;vault}+{get;pocket}}}}\n    {perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Vault: (-?(\\d+));Vault: {math;{get;vault}-{get;vault}}}}\n    {sleep;1}\n    {channel.send;**{replace;{get;input};(\\d)(?=(\\d\\d\\d)+$);$1,}** coins withdrawn}\n    \n\t;\n    \n\t{set;input;{math;{get;input}+0}}\n    \n\t{note;INPUT > VAULT}\n\t{if;{get;input};>;{get;vault};\n\t\t{channel.send;Your second argument should be a number and no more than what you have in your bank ({replace;{get;vault};(\\d)(?=(\\d\\d\\d)+$);$1,})}\n\t}\n\n\t{note;INPUT <= VAULT}\n\t{if;{get;input};<=;{get;vault};\n\t\t{perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Vault: (-?(\\d+));Vault: {math;{get;vault}-{get;input}}}}\n\t\t{perset;{user.id}_currencyData;{replace;{perget;{user.id}_currencyData};Pocket: (-?(\\d+));Pocket: {math;{get;pocket}+{get;input}}}}\n\t\t{sleep;1}\n\t\t{channel.send;{replace;{get;input};(\\d)(?=(\\d\\d\\d)+$);$1,} coins withdrawn}\n\t}\n    \n}\n\n;\n{a!ae;--field1name=\"{guild.prefix}withdraw <amount>\";--field1value=\"withdraw your specified amount\";--field2name=\"{guild.prefix}withdraw [all | max]\";--field2value=\"withdraws all your money from your bank\";--title=\"withdraw\";--color=\"{user.color;true;338222603829510164}\";--description=\"Withdraw some money from your bank.\"}\n}\n}\n;\n{channel.send;You are not whitelisted to use this command!}\n}{note;END OF IS WHITELISTED}",
+      "id": "5efad408759b32002785482f"
+    }
+  ],
+  "formatVersion": "1.2"
+}
