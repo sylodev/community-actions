@@ -37,7 +37,7 @@ Have an awesome action you want to share? Here's how to get it on this repositor
 
 **4.** - If your (super)action requires static end-user input to function such as a specific channel name or ID, message ID, user ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.imgur.com/dVldQxo.png) for an example. You must also declare that there is end-user input required in your (super)action README.
 
-**5.** - Wrappers or aliases for existing Atlas commands do not meet our requirements for contributing. Any action that is submitted in which its soul purpose is to execute a native Atlas command under a disguised name will be automatically denied. The only exception to this guideline is if the wrapper adds a specific functionality to the execution of the command that is not available when running the native command alone.
+**5.** - Wrappers or aliases for existing Atlas commands do not meet our requirements for contributing. Any action that is submitted in which its sole purpose is to execute a native Atlas command under a disguised name will be automatically denied. The only exception to this guideline is if the wrapper adds a specific functionality to the execution of the command that is not available when running the native command alone.
 
 ## Folder Format Requirements
 We impose restrictions on how files are uploaded and organized to keep the repository neat and tidy. Please remember to follow these requirements when you upload your (super)action or it may be denied.
