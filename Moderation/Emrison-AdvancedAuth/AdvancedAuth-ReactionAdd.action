@@ -24,7 +24,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{user.send;\n{if;{perget;AuthLevel};===;1;\n{user.removerole;{perget;UnverifiedRole}}{perset;{user.id}_AuthKey;}{a!say;You have been authenticated. Welcome to **{guild.name}**!}}}",
+      "message": "{user.send;\n{if;{perget;AuthLevel};===;1;\n{user.removerole;{perget;UnverifiedRole}}{perset;{user.id}_AuthKey;}You have been authenticated. Welcome to **{guild.name}**!}}",
       "id": "5d8e4cbff00a630023be60d3"
     }
   ],

@@ -22,7 +22,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{set;args;{find;{args};^(?:sudo\\s)(.*)$}}\n{a!say;{get;args}}",
+      "message": "{set;args;{find;{args};^(?:sudo\\s)(.*)$}}\n{channel.send;{get;args}}",
       "id": "5d72b86a21f3e5002364db08"
     }
   ],

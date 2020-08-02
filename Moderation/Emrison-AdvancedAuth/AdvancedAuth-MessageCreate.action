@@ -26,7 +26,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{user.send;\n{if;{find;{perget;AuthLevel};([2-4])};!==;;\n{if;{args;1};===;{perget;{user.id}_AuthKey};\n{user.removerole;{perget;UnverifiedRole}}{a!say; Your authentication key has been accepted. Welcome to **{guild.name}**!}{perset;{user.id}_AuthKey;};\n{a!say;Authentication key incorrect. If you believe this is a mistake, please contact a server administrator.}}}}",
+      "message": "{user.send;\n{if;{find;{perget;AuthLevel};([2-4])};!==;;\n{if;{args;1};===;{perget;{user.id}_AuthKey};\n{user.removerole;{perget;UnverifiedRole}}Your authentication key has been accepted. Welcome to **{guild.name}**!{perset;{user.id}_AuthKey;};\nAuthentication key incorrect. If you believe this is a mistake, please contact a server administrator.}}}",
       "id": "5d8e4cbff00a630023be60d4"
     }
   ],
