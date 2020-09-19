@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlasbot.xyz",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "messageCreate",
+    "content": null
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;The message that will be sent}\n{set;Message;Your_Message_Here}\n\n{if;{perget;StickyMessage};===;;\n{channel.send;{get;Message}}\n{perset;StickyMessage;{channel.lastMessageID}}\n;\n{if;{message.id};!===;{perget;StickyMessage};\n{channel.send;{get;Message}}\n{message.delete;{perget;StickyMessage}}\n{perset;StickyMessage;{channel.lastMessageID}};\n}}",
+      "id": "5f63dbcb0ab82d0027386dd0"
+    }
+  ],
+  "formatVersion": "1.2"
+}
