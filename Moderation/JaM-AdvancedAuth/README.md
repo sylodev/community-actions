@@ -24,7 +24,7 @@ New users are dropped into a ticket channel where they can chat one-on-one with 
 Setting this superaction up in your guild is a bit harder than a normal superaction. If you're not familiar with importing or editing actions, you should consider not using this superaction. 
 * First, let's create a role named `Unverified` (or a name you like better) that has it's **Read Messages & Send Messages** permissions denied. We will also create a channel named `verification` (or a name you like better), deny `@everyone`'s **Read Messages, Send Messages, & Add Reactions** permissions to that channel, and allow the `@Unverified` role **Read Messages & Send Messages** permissions. Enable channel slow-mode and set to `10 seconds`.
 * We will need the IDs for both the `#verification` channel and the `@Unverified` role you just created. To do so, execute the `a!id <ROLE_NAME_HERE>` or `a!id <CHANNEL_NAME_HERE>` command and save the outputs for later.
-* Next, let's head over to your [dashboard](https://atlasbot.xyz/@me/guilds), select the guild you want to install AdvancedAuth in, and import all of the `.action` files found within this superaction. For a step-by-step on how to do this, see [here](https://github.com/doddsy/atlas-custom-actions#import-actions-from-this-repository-into-your-server).
+* Next, let's head over to your [dashboard](https://atlas.bot/@me/guilds), select the guild you want to install AdvancedAuth in, and import all of the `.action` files found within this superaction. For a step-by-step on how to do this, see [here](https://github.com/doddsy/atlas-custom-actions#import-actions-from-this-repository-into-your-server).
 * Select the **Command** action, scroll down to **Script One**, and replace the value of the `UnverifiedRole` variable with the ID of the `Unverified` role.
 * Navigate to the **Member Join** action, scroll down to **Script One**, and replace the value of the `VerifyChannel` variable with the ID of the `#verification` channel.
 	* (OPTIONAL STEP) In the same **Member Join** action, edit the value of the `SVMessage` variable to something more personalized to your server. This message will only show up with **Level 5** authentication enabled.
@@ -46,7 +46,7 @@ For these authentication levels, you may want to write a short message in your `
 * **Level 5 - STAFF VERIFICATION**
 This authentication level requires the **Tickets** plugin to be enabled in your guild to function. You will also be alerted of this when you execute the command to set your authentication level to `5 | STAFF VERIFICATION`. You may also want to write a short message in your `#verification` channel to the effect of: **`We have opened a private channel for you to talk to one of our staff members. If accepted, you will gain access to the entirety of GUILD_NAME_HERE.`**
 
-**Tip: If you want to make any of the above messages a bit fanicier, use our [Embed Builder](https://atlasbot.xyz/embed-builder)**.
+**Tip: If you want to make any of the above messages a bit fanicier, use our [Embed Builder](https://atlas.bot/embed-builder)**.
 
 -----
 

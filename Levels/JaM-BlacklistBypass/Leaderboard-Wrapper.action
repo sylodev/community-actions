@@ -22,7 +22,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "You can view this server's leaderboard at <https://atlasbot.xyz/leaderboard/{guild.id}>.",
+      "message": "You can view this server's leaderboard at <https://atlas.bot/leaderboard/{guild.id}>.",
       "id": "5de1de28e5613600231c5620"
     }
   ],

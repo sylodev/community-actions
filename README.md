@@ -1,13 +1,13 @@
 # Atlas Community Actions Repository
-Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlasbot.xyz) Discord bot to share custom-made actions and snippets of code with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
+Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlas.bot) Discord bot to share custom-made actions and snippets of code with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
 
 ## How To
 The following information is for actions only. For information on how to import snippets, see [here](https://github.com/atlasbot/community-actions/tree/master/Snippets#what-are-snippets).
 
 ### Import Actions From This Repository Into Your Server
 If you're interested in importing one of the custom actions found within our repository into your server, here's how to do it:
-* Ensure that Atlas is in your server and has the proper permissions to send and read messages, moderate, etc. If it is not currently in your server, [click here](https://atlasbot.xyz/get) to invite it now. If you have never used Atlas before you may be asked to login with your Discord account.
-* Navigate to the [My Servers](https://atlasbot.xyz/@me/guilds) page and select the server you want to import the action into.
+* Ensure that Atlas is in your server and has the proper permissions to send and read messages, moderate, etc. If it is not currently in your server, [click here](https://atlas.bot/get) to invite it now. If you have never used Atlas before you may be asked to login with your Discord account.
+* Navigate to the [My Servers](https://atlas.bot/@me/guilds) page and select the server you want to import the action into.
 * Back on GitHub, navigate the repository files and find the action file you want to import.
 * Open the action file and right click [![](https://i.imgur.com/98icse9.png)](https://www.youtube.com/watch?v=q5Dj5G1kaqI "It's Raw!")
 * Click **Save link as** and save the file somewhere you will remember!
@@ -18,7 +18,7 @@ If you're interested in importing one of the custom actions found within our rep
 
 Have an awesome action you want to share? Here's how to get it on this repository for everyone to see. Before uploading your action, you might want to take a look at our **[Guidelines for Contributing](https://github.com/atlasbot/community-actions#guidelines-for-contributing)** to see if it meets our standards.
 * Fork this repository via the ![Fork](https://i.imgur.com/oazJQxh.png) button located in the top-right corner of this repository.
-* On the Atlas dashboard, select your action from the actions list on your [dashboard](https://atlasbot.xyz/).
+* On the Atlas dashboard, select your action from the actions list on your [dashboard](https://atlas.bot/).
 * Click the ![Export](https://i.imgur.com/dvXMSce.png) Export button to save the `.action` file to your device.
 * Rename your action file in correspondence to the **[Folder Format Requirements](https://github.com/atlasbot/community-actions#folder-format-requirements)** found at the bottom of this page.
 * Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click ![Upload Files](https://i.imgur.com/PmO960X.png)

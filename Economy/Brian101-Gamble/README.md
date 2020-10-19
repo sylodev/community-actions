@@ -1,7 +1,7 @@
 <div align=center>
 
 # Gamble
-A simple gamble game made for [Atlas](https://atlasbot.xyz)!
+A simple gamble game made for [Atlas](https://atlas.bot)!
 
 </div>
 
