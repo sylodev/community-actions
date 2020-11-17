@@ -35,4 +35,4 @@ gamble | gamble your coins | `a!gamble <amount \| all \| max \| half>`
 
 
 ### Credits
-* JaM#8608 - [Number Formatter](https://github.com/atlasbot/community-actions/tree/master/Snippets/JaM3141-NumberFormatter)
+* JaM#8608 - [Number Formatter](https://github.com/sylo-digital/community-actions/tree/master/Snippets/JaM3141-NumberFormatter)
