@@ -59,6 +59,6 @@ We impose restrictions on how files are uploaded and organized to keep the repos
 -----
 #### Repository Moderators
 All current moderators of this repository are Atlas staff members.
-* doddsy - node#2153
+* metronode-uk - node#2153
 * JaM3141 - JaM#8608
-* Cykreet - Cykreet#5758
+* cykreet - Cykreet#1083
