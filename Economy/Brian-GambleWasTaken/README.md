@@ -16,7 +16,7 @@ A very fun, easy-to-use gambling game made for Atlas.
 
 ### Setup
 
-1. Follow the instructions on how to import actions into your Atlas dashboard first.
+1. Follow the instructions on [how to import actions into your Atlas dashboard](../../README.md#import-actions-from-this-repository-into-your-server) first.
 2. After importing, you first, should whitelist yourself for testing purposes:
 	* `a!currency whitelist @user` - `@user` resolves the rest of the command arguments after `whitelist`
 	* `a!currency whitelist` - leaving the `@user` argument will auto whitelist the invocation user
