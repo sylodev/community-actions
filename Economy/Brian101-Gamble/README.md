@@ -17,7 +17,7 @@ A very fun, easy-to-use gambling game made for Atlas.
 ### Setup
 
 1. Follow the instructions on how to import actions into your Atlas dashboard first.
-2. After importing, you should whitelist yourself for testing purposes first:
+2. After importing, you first, should whitelist yourself for testing purposes:
 	* `a!currency whitelist @user` - `@user` resolves the rest of the command arguments after `whitelist`
 	* `a!currency whitelist` - leaving the `@user` argument will auto whitelist the invocation user
 3. You're now done! You can now play the game.
@@ -26,7 +26,7 @@ A very fun, easy-to-use gambling game made for Atlas.
 ### Command Information
 > **Legend**\
 **<>** - required arguments\
-**[]** - optional arguments\
+**[]** - optional arguments
 
 Command | Description | Usage | Permissions | Requires Whitelist
 :---: | :---: | :---: | :---: | :---:
