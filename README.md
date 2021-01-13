@@ -61,3 +61,5 @@ We impose restrictions on how files are uploaded and organized to keep the repos
 All current moderators of this repository are Atlas staff members.
 * [JaM3141](https://github.com/JaM3141) - JaM#8608
 * [cykreet](https://github.com/cykreet) - Cykreet#1083
+* [Shylke](https://github.com/Shylke) - Shylke#8325
+* [DracoClaw](https://github.com/DracoClaw) - DracoClaw#0065
