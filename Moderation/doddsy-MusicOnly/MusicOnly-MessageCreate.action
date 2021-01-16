@@ -22,7 +22,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{if;{find;{message.content};((youtu\\.be\\/)|((music\\.)?youtube\\.com\\/watch\\?v=)|(soundcloud\\.com\\/)|(open\\.spotify\\.com\\/(track|artist|album)))};==;;{delete}\n{a!say;Your message should only contain any of the following types of links, {user.mention}:\n- `youtube.com`\n- `youtu.be`\n- `soundcloud.com`\n- `music.youtu.be`\n- `open.spotify.com`}\n{set;Message;{channel.lastMessageID}}{sleep;20}{message.delete;{get;Message}}}",
+      "message": "{if;{find;{message.content};((youtu\\.be\\/)|((music\\.)?youtube\\.com\\/watch\\?v=)|(soundcloud\\.com\\/)|(open\\.spotify\\.com\\/(track|artist|album)))};==;;{delete}\n{channel.send;Your message should only contain any of the following types of links, {user.mention}:\n- `youtube.com`\n- `youtu.be`\n- `soundcloud.com`\n- `music.youtu.be`\n- `open.spotify.com`}\n{set;Message;{channel.lastMessageID}}{sleep;20}{message.delete;{get;Message}}}",
       "id": "5d599601a261b20023b4772b"
     }
   ],
