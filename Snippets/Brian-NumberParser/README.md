@@ -11,5 +11,5 @@ This snippet parses number resolvables into a valid integer. Very useful when wo
 * **Input:** `a!parse 6.942e6`\
   **Output:** `6942000`
   
-* **Input:** `a!parse 56.4k`
+* **Input:** `a!parse 56.4k`\
   **Output:** `56400`
