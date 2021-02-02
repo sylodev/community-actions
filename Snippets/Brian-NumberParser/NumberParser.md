@@ -3,7 +3,7 @@
 
 **Code**
 ```js
-/* normal numbers */
+/* normal floats */
 {math;abs(INPUT_HERE)}
 
 /* numbers ending with "k" or "thousand" */
