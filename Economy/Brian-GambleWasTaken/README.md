@@ -11,7 +11,6 @@ A very fun, easy-to-use gambling game made for Atlas.
 * **Boss fights** - Interact with atlas to redeem your win!
 * **Customizable** - you have the freedom to modify/control your gameplay.
 * **Bug free** - Exploiting is nearly 100% impossible.
-* **Shop Menu** - A cool, shop menu to spend your coins to.
 * **Compatability** - The economy system works with 500 or less than members.
 
 ### Setup
