@@ -14,5 +14,5 @@
  * * m - million
  * * b - billion
 */
-{math;abs()}
+{math;abs({replace;{replace;{replace;INPUT_HERE;k$;e3};m$;e6};b$;e9})}
 ```
