@@ -19,8 +19,14 @@ Awesome, we have all our needed permissions and channels, now we will go to our 
 
 * Final Setup.
 
-Alright, if you followed everything correctly, now we can setup the last things, instead of going to your action and searching the persets, I have made a setup process included in the `ts` command. Just run `a!ts setup` and a series of prompts will trigger, provide the channel ID of the ticket channnel your created, the redirect channel ID and finally the reason role ID. If you need time searching the ID's, each prompt will trigger after 300 seconds of no response or if you say `cancel`. 
+Alright, if you followed everything correctly, now we can setup the last things, instead of going to your action and searching the persets, I have made a setup process included in the `ts` command. Just run `a!ts setup` and a series of prompts will trigger, provide the channel ID of the ticket channnel your created, the redirect channel ID and finally the reason role ID. If you need time searching the ID's, each prompt will cancel after 300 seconds of no response or if you say `cancel`. 
 This should be everything, feel free to give it a test, you can use `a!ts help` to see all the subcommands and information.
+
+* Extra Information
+
+The `ticket` command, is kinda an alias of Atlas' native command but I added new embeds to send via DM to the user when closing the ticket with an closing reason if the ticket closer provides one, for example: `a!ticket close Issue solved`. 
+
+Please do no try to edit the code if you don't know what you're doing, you're free to edit the embeds for the prompts, but if you don't know how, DON'T DO IT. You will end with a messed up code.
 
 * Support Server
 
