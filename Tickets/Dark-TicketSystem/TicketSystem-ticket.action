@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "ticket"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{args;1};==;close;\n{if;{user.roles};includes;{settings;plugins.tickets.options.support};\n\n{if;{perget;{user.id;{ticket.author}}-ts};!==;Blacklisted;{perset;{user.id;{ticket.author}}-ts;No Ticket}}\n\n{set;reason;{if;{args;2;9999};{args;2;9999};None Specified}}\n{set;executor;{user.mention}}\n\n{user.send;{a!ae;--title=\"Ticket Closed\";--color=\"#f15d58\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"{guild.name}'s Ticket System - Created by dark#8901\";--timestamp=\"true\";--description=\"Hello, {user.username}!\\nYour ticket has been closed, we hope we solved any question or issue you had. Feel free to create another ticket if you need it.\\n\\nHere is some information about your ticket:\\n\\n`Ticket Reason`: {ticket.reason}\\n\\n`Ticket Closed By`: {get;executor}\\n\\n`Closing Reason`: {get;reason}\\n\\nIf you think this is an error, contact a server administrator.\"};{ticket.author}}\n\n{a!ticket;close;{args}};\n\n{channel.send;{a!ae;--title=\"Insufficient Permissions\";--color=\"#f15d58\";--footer=\"Ticket System - Created by dark#8901\";--timestamp=\"true\";--description=\"{emoji.char;x} You do not have the required permissions to use this command. You must have the {catch;{role.mention;{settings;plugins.tickets.options.support}\\n};`No Role set` (Navigate to your dashboard, tickets plugin and set a support role)} role if you wish you execute this command and subcommands.\"}}};\n\n{if;{lower;{args;1}};==;create;\n{if;{perget;{user.id}-ts};==;Ticket Opened;\n\n{user.send;{a!ae;--title=\"Ticket Opened\";--color=\"#f15d58\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"{guild.name}'s Ticket System\";--timestamp=\"true\";--description=\"You have already opened a ticket with {guild.name}'s ticket system! You are only able to open one ticket, so please stick in your ticket channel.\"}};\n\n{if;{perget;{user.id}-ts};==;Blacklisted;{user.send;{a!ae;--title=\"Blacklisted User\";--color=\"#1c1c1c\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"{guild.name}'s Ticket System\";--timestamp=\"true\";--description=\"You are blacklisted from opening tickets with {guild.name}'s ticket system. If you think this is an error, please contact a server administrator.\"}};\n\n{perset;{user.id}-ts;Ticket Opened}\n{channel.send;{a!ae;--title=\"Prompt\";--color=\"#dcddcd\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"This prompt will cancel in 30 seconds.\";--description=\"Please state your ticket reason, this will allow us to assist you faster.\"}}\n\n{sleep;0.25}\n\n{set;msg1;{channel.lastMessageID}}\n\n{set;ticketReason;{channel.awaitMessage;{user.id};30}}\n\n{sleep;0.25}\n{set;msg2;{channel.lastMessageID}}\n{channel.send;{a!ticket;create;{get;ticketReason}};{perget;redirectChannel}}\n{sleep;0.5}\n{message.delete;{get;msg1}}{message.delete;{get;msg2}}\n{channel.send;{a!ae;--timestamp=\"true\";--title=\"Ticket Created\";--color=\"#94cc2c\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"Ticket System\";--description=\"Your ticket has been created successfully!\"}}\n\n}};\n{a!ticket;{args}}}}\n\n\n",
+      "id": "6023fee7014e9900267dd1e4"
+    }
+  ],
+  "formatVersion": "1.2"
+}
