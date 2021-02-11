@@ -24,9 +24,11 @@ This should be everything, feel free to give it a test, you can use `a!ts help` 
 
 * Extra Information
 
-The `ticket` command, is kinda an alias of Atlas' native command but I added new embeds to send via DM to the user when closing the ticket with an closing reason if the ticket closer provides one, for example: `a!ticket close Issue solved`. 
+The `ticket` command, is kinda an alias of Atlas' native command but I added new embeds to send via DM to the user with information about the ticket when closing it. Also, with an optional closing reason, for example: `a!ticket close Issue solved`. 
 
 Please do no try to edit the code if you don't know what you're doing, you're free to edit the embeds for the prompts, but if you don't know how, DON'T DO IT. You will end with a messed up code.
+
+The `a!ticket create` is still able to be used, the command respects the blacklists and ticket opened status. It uses prompts too, but only delete the reason question and answer, the embed that says "successfully created..." stays there.
 
 * Support Server
 
