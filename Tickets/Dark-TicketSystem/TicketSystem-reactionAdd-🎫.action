@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": true
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "reactionAdd",
+    "content": "🎫"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{perget;{user.id}-ts};==;Ticket Opened;\n\n{user.send;{a!ae;--title=\"Ticket Opened\";--color=\"#F5A623\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"{guild.name}'s Ticket System\";--timestamp=\"true\";--description=\"You have already opened a ticket with {guild.name}'s ticket system! You are only able to open one ticket, so please stick in your ticket channel.\"}};\n\n{if;{perget;{user.id}-ts};==;Blacklisted;{user.send;{a!ae;--title=\"Blacklisted User\";--color=\"#1c1c1c\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"{guild.name}'s Ticket System\";--timestamp=\"true\";--description=\"You are blacklisted from opening tickets with {guild.name}'s ticket system. If you think this is an error, please contact a server administrator.\"}};\n\n{user.addrole;{perget;reasonRole}} {perset;{user.id}-ts;Ticket Opened}\n{channel.send;{a!ae;--title=\"Prompt\";--color=\"#dcddcd\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"This prompt will cancel in 30 seconds.\";--description=\"Please state your ticket reason, this will allow us to assist you faster.\"}}\n\n{sleep;0.25}\n\n{set;msg1;{channel.lastMessageID}}\n\n{set;ticketReason;{channel.awaitMessage;{user.id};30}}\n\n{sleep;0.25}\n\n{set;msg2;{channel.lastMessageID}}\n\n{channel.send;{a!ticket;create;{get;ticketReason}};{perget;redirectChannel}}\n\n{user.removerole;{perget;reasonRole}}\n\n{message.delete;{get;msg1}}{message.delete;{get;msg2}}\n{channel.send;{a!ae;--title=\"Ticket Created\";--color=\"#94cc2c\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"{guild.name}'s Ticket System\";--description=\"Your ticket has been created successfully!\"}}\n\n{message.delete;{channel.lastmessageID}}}}",
+      "id": "602400fd014e9900267dd25e"
+    }
+  ],
+  "formatVersion": "1.2"
+}
