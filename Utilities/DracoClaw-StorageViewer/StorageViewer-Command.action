@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "perval"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{settings;persistent};!==;[];\n{set;key;{settings;persistent}}\n{set;key1;{replace;{get;key};[[\";{l}perset{semi}}}\n{set;key2;{replace;{get;key1};\"]];{r}}}\n{set;key3;{replace;{get;key2};\",\";{semi}}}\n{set;key4;{replace;{get;key3};\"],[\";{r}\\n{l}perset{semi}}}\n{a!ae;--title=\"Persistent Storage Keys\";--description=\"{get;key4}\";--footer=\"{settings;persistent.length}/500\"};\n{channel.send;This server has no keys set.}}\n",
+      "id": "6031a8159104ed002ecb9a60"
+    }
+  ],
+  "formatVersion": "1.2"
+}
