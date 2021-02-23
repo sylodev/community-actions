@@ -1,0 +1,32 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": [
+      "manageMessages"
+    ]
+  },
+  "trigger": {
+    "type": "label",
+    "content": "warn"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{args;1};===;view;{a!warn;{args}}{set;sc;T}}\n{if;{args;1};===;remove;{a!warn;{args}}{set;sc;T}}\n{if;{args};===;;{a!warn;{args}}{set;sc;T}}\n{if;{args;1};===;add;{set;sc;T}\n{if;{args};includes;--nodm;{a!warn;{args}}{channel.send;They were not notified of the action.};\n{if;{catch;{user.id;{args;2}};Error};!==;Error;\n{if;{args;3};===;;{a!warn;{args};--nodm};\n{a!warn;{args};--nodm}\n{catch;\n{user.send;You have been warned in {if;{args;3};!==;;{guild.name} for `{args;3;infinity}`;{guild.name}}. You now have **{user.infractions;{user.id;{args;2}}}** warning{if;{user.infractions;{user.id;{args;2}}};!==;1;s}. Improve your behaviour or you will be removed from the server.;{user.id;{args;2}}}\n;{user.username;{args;2}}'s dms are not open, and they were not notifed of the action.}\n};{a!warn;{args};--nodm}\n}}}\n\n{if;{get;sc};===;;\n{if;{args};includes;--nodm;{a!warn;add;{args}}{channel.send;They were not notified of the action.};\n{if;{catch;{user.id;{args;1}};Error};!==;Error;\n{if;{args;2};!==;;\n{a!warn;add;{args};--nodm}\n{catch;\n\n{user.send;You have been warned in {if;{args;2};!==;;{guild.name} for `{args;2;infinity}`;{guild.name}}. You now have **{user.infractions;{user.id;{args;1}}}** warning{if;{user.infractions;{user.id;{args;1}}};!==;1;s}. Improve your behaviour or you will be removed from the server.;{user.id;{args;1}}}\n\n\n;{user.username;{args;1}}'s dms are not open, and they were not notifed of the action.};{a!warn;{args};--nodm}};\n{a!warn;add;{args};--nodm}}}\n}",
+      "id": "5fc6ba6d77d0ac0026fc7dd4"
+    }
+  ],
+  "formatVersion": "1.2"
+}

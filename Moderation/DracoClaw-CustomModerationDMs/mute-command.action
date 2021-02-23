@@ -1,0 +1,32 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [
+      "723281594286080100"
+    ],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "mute"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{set;time;\n{if;{args;2};includes;s;second{if;{find;{args;2};\\d+};!==;1;s}}\n{if;{args;2};includes;m;minute{if;{find;{args;2};\\d+};!==;1;s}}\n{if;{args;2};includes;h;hour{if;{find;{args;2};\\d+};!==;1;s}}\n{if;{args;2};includes;d;day{if;{find;{args;2};\\d+};!==;1;s}}\n{if;{args;2};includes;w;week{if;{find;{args;2};\\d+};!==;1;s}}\n{if;{args;2};includes;y;year{if;{find;{args;2};\\d+};!==;1;s}}}\n\n{if;{args};!==;;\n{if;{catch;{user.nickname;{args;1}};Error};!==;Error;\n{if;{args;2};!==;;\n{if;{args;2};!==;na;\n{a!mute;{args}}\n{sleep;0.5}\n{if;{user.roles;{args;1}};includes;728452700244803695;\n{if;{args};includes;--nodm;;\n{catch;\n\n{user.send;You have been temporarily muted in {guild.name} {if;{args;4};!==;;for {find;{args;2};\\d+} {get;time} for {args;4;infinity};for {find;{args;2};\\d+} {get;time}}.;{user.id;{args;1}}}\n\n\n;{user.username;{args;1}}'s dms are not open, and they were not notifed of the action.}}};\n{if;{catch;{user.addrole;728452700244803695;{args;1}};Error};!==;Error;\n{user.tag;{args;1}} has been permanently muted.;Failed to permanently mute {user.tag;{args;1}}\n{if;{args};includes;--nodm;;\n{catch;\n{user.send;You have been permenantly muted {if;{args;4};!==;;in {guild.name} for `{args;4;infinity}`.;in {guild.name}.};{user.id;{args;1}}};{user.username;{args;1}}'s dms are not open, and they were not notifed of the action.}}\n}}\n;Please include a valid mute duration.}\n;I couldn't find that user.}\n;Please include a user to mute!}",
+      "id": "60070058014e9900267a4e2e"
+    }
+  ],
+  "formatVersion": "1.2"
+}

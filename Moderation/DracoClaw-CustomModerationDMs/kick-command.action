@@ -1,0 +1,32 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": [
+      "kickMembers"
+    ]
+  },
+  "trigger": {
+    "type": "label",
+    "content": "kick"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{args};!==;;\n{if;{catch;{user.id;{args;1}};Error};!==;Error;\n{if;{args};includes;--nodm;;\n{catch;{user.send;You have been kicked from {if;{args;2};!==;;{guild.name} for `{args;2;infinity}`;{guild.name}}.;{user.id;{args;1}}};{user.username;{args;1}}'s dms are not open, and they were not notifed of the action.}}\n}}\n{a!kick;{args};--nodm}\n{if;{args};includes;--nodm;{channel.send;They were not notified of the action.}}",
+      "id": "5fc6b63e77d0ac0026fc7d58"
+    }
+  ],
+  "formatVersion": "1.2"
+}
