@@ -5,7 +5,7 @@ Basic Giveaway action to ping Members with a nice(ish) looking embed with all th
 ## Usage
 [p] = Prefix 
 
-note: the | are important and are required for the last 2 examples to work
+note: the | are important and are required for the last 2 to work
 * [p]giveaway [message]
 * [p]giveaway [prize] | [message]
 * [p]giveaway [prize] | [message] | [sponsor]
