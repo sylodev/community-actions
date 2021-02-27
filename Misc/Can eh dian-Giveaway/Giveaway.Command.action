@@ -5,7 +5,7 @@
     "cooldown": 0,
     "enabled": true,
     "silent": false,
-    "delete": false,
+    "delete": true,
     "quiet": false
   },
   "restrictions": {
