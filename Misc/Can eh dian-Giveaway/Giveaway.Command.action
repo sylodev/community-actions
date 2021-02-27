@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "giveaway"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Replace the ROLE_ID with the role id of the role you want to ping}\n{set;giveaway_ping;ROLE_ID}\n\n{note;HOW TO RUN THE ACTION PROPERLY \n<> = required\n[] = optional\n[p] = Prefix \n\nDifferent ways to run the command are as follows\n\n[p]giveaway [message]\n[p]giveaway <prize> | <message>\n[p]giveaway <prize> | <message> | <sponsor>\nnote: the | are important and are required for the last 2 examples to work\n}\n\n{if;{args};!includes;|;\n    {set;message;{args}}\n    {channel.send;{a!ae;--message=\"{catch;{role.mention;{get;giveaway_ping}};You need to add the proper role id at the top of the action}\";--title=\":tada: Giveaway :tada:\";--color=\"#7ed321\";--description=\"{if;{get;message};**Message:** {get;message}}\"}};\n\n    {note;finds whether or not it needs a 3/2 arg splitter}\n    {if;{find;{args};^(.+)(?:\\s?\\|\\s?)(.*?)(?:\\s?\\|\\s?)(.*?)$};\n        {set;regexp;^(.*?)(?:\\s?\\|\\s?)(.*?)(?:\\s?\\|\\s?)(.*?)$};\n        {set;regexp;^(.*?)(?:\\s?\\|\\s?)(.*?)$}\n    }\n    {set;prize;{find;{args};{get;regexp};1}}\n    {set;message;{find;{args};{get;regexp};2}}\n    {note;if the sponsor comes back as an error / if sponsor is empty it returns as the command invoker's mention}\n    {set;sponsor;{catch;{user.mention;{find;{args};{get;regexp};3}};{user.mention}}}\n\n    {channel.send;{a!ae;--message=\"{catch;{role.mention;{get;giveaway_ping}};You need to add the proper role id at the top of the action}\";--title=\":tada: Giveaway :tada:\";--color=\"#7ed321\";--description=\"**Sponsor:** {get;sponsor}\\n**Prize:** {get;prize}\\n**Message:** {get;message}\"}}\n}",
+      "id": "603ab6959104ed002eccc513"
+    }
+  ],
+  "formatVersion": "1.2"
+}
