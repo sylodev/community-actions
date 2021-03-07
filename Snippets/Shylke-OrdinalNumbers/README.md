@@ -4,10 +4,11 @@ This snippet adds `st`, `nd`, `rd`, and `th` to your numbers. There are two vers
 
 * The diffence is, as it follows;
 
+<br> 
+
 > **Normal:**
 > `st`, `nd`, `rd`, `th`
 
-<br>
 <br>
 
 > **Superscript:**
