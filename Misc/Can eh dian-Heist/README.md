@@ -10,6 +10,6 @@ Basic Dank Memer Heist ping action, Pings members with an embed with all the inf
 
 * [p]heist [Sponsor] [Amount] [Requirement]
 
-* [sponsor] Sponsor of the heist, can either be ID or Ping
-* [amount] Heist amount, supports K, M, B, E as inputs
-* [requirement] Can be left blank if there is no requirement for the heist
+- [sponsor] Sponsor of the heist, can either be ID or Ping
+- [amount] Heist amount, supports K, M, B, E as inputs
+- [requirement] Can be left blank if there is no requirement for the heist
