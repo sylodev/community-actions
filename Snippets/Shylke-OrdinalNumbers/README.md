@@ -5,12 +5,12 @@ This snippet adds `st`, `nd`, `rd`, and `th` to your numbers. There are two vers
 <br> 
 
 > **Normal:**
-> `st`, `nd`, `rd`, `th`
+> `1st`, `2nd`, `3rd`, `4th`
 
 <br>
 
 > **Superscript:**
-> `ˢᵗ`, `ⁿᵈ`, `ʳᵈ`, `ᵗʰ`
+> `1ˢᵗ`, `2ⁿᵈ`, `3ʳᵈ`, `4ᵗʰ`
 
 <br>
 
