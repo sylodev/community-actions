@@ -11,3 +11,7 @@ This snippet adds `st`, `nd`, `rd`, and `th` to your numbers. There are two vers
 
 > **Superscript:**
 > `ˢᵗ`, `ⁿᵈ`, `ʳᵈ`, `ᵗʰ`
+
+<br>
+
+That's it.
