@@ -1,4 +1,4 @@
-**Note:** Feel free to replace `{args}` with any other tag you might need in your own action (ex. `{guild.memberCount}`.
+**Note:** Feel free to replace `{args}` with any other tag/number you might need in your own action (ex. `{guild.memberCount}`.
 
 <br>
 
