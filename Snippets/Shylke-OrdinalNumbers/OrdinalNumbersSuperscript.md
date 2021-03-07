@@ -4,4 +4,4 @@
 
 **Code:**
 
-`{if;{args};endswith;11;ᵗʰ;{if;{args};endswith;12;ᵗʰ;{if;{args};endswith;13;ᵗʰ;{if;{args};endswith;1;ˢᵗ;{if;{args};endswith;2;ⁿᵈ;{if;{args};endswith;3;ʳᵈ;ᵗʰ}}}}}}`
+```{if;{args};endswith;11;ᵗʰ;{if;{args};endswith;12;ᵗʰ;{if;{args};endswith;13;ᵗʰ;{if;{args};endswith;1;ˢᵗ;{if;{args};endswith;2;ⁿᵈ;{if;{args};endswith;3;ʳᵈ;ᵗʰ}}}}}}```
