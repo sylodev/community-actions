@@ -1,4 +1,6 @@
-**Note:** This version is reserved for parsing role: names, and IDs.
+**This version is reserved for validating the following:** 
+* Role Names — `@Members`
+* Role IDs — `123456`
 
 **Instructions:**
 * Replace `DO_THIS` with the code you want to run if validation is successful.

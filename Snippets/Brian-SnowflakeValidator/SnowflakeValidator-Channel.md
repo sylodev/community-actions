@@ -1,4 +1,6 @@
-**Note:** This version is reserved for parsing channel: names, and IDs.
+**This version is reserved for validating the following:** 
+* Channel Names — [`#rules`](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+* Channel IDs — `123456`
 
 **Instructions:**
 * Replace `DO_THIS` with the code you want to run if validation is successful.

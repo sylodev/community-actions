@@ -3,8 +3,8 @@
 - Replace `OPTION_#` with the options (in lowercase) you wish.
 - Replace `DO_THIS` with tags you want to execute if they select that option.
 - You can delete `...` and add as many similar `{if}` statements as you want if you want more options.
-- Replace `OPTIONS_ARE_WRONG` with tags you want to run if none of the options were met.
-- Whenever you add new options, add the option on our `{find}` tag located to our last
+- Replace `OPTIONS_ARE_WRONG` with tags you want to run if none of the options were chosen.
+- Whenever you add new options, add it option on our `{find}` tag located on our last
   `{if}` statement separated by a `|` pipeline.
 
 **Code**
