@@ -4,9 +4,9 @@ The goal of the custom DM is to provide the target with aditional information ab
 
 The default message is `You have been [action] in {guild.name} for <reason>.`
 
-These wrappers maintian the function of the `--nodm` flag, so if you would still like to not have the target notified of the action you can add the flag.
+These wrappers maintain the function of the `--nodm` flag, so if you would still like to not have the target notified of the action you can add the flag.
 
-The commands `a!ban`, `a!kick`, and `a!purgeban` retain all original functions with only the new user DM.
+The commands `a!ban` and `a!kick` retain all original functions with only the new user DM.
 
 The following command have been given additional features:
 
