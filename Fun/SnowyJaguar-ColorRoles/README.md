@@ -12,7 +12,7 @@ There are a few parts of this action command that you need to setup before you c
 5. Congrats! you have your color role action all set up 🎉.
 
 ## Optional
-You can remove Use `{guild.prefix}color help` to get help with this action if you do not wnat to be told how to bring up the help menu evey time you use ?color (which would be everytime you use one of the subcommands).
+You can remove Use `{guild.prefix}color help` to get help with this action if you do not wnat to be told how to bring up the help menu evey time you use `a!color` (which would be everytime you use one of the subcommands).
 
 ## Planned Addons
 - A command to make a color role with specified hex.
