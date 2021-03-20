@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": true
+  },
+  "restrictions": {
+    "mode": "whitelist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "reactionAdd",
+    "content": "🎫"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{perget;{user.id}-ts};==;Ticket Opened;\n\n{user.send;{a!ae;--title=\"Ticket Opened\";--color=\"#fbb13c\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"Ticket information\";--footer-icon=\"{guild.iconURL}\";--timestamp=\"true\";--description=\"Hey, {user.mention}! We want to inform you, that you already have opened a ticket with us, here at {guild.name}.\\n\\nPlease stick in one ticket channel, and do not try to create more!\"}};\n\n{if;{perget;{user.id}-ts};==;Blacklisted;{user.send;{a!ae;--title=\"Blacklisted\";--color=\"#fe4a49\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"Ticket information\";--footer-icon=\"{guild.iconURL}\";--timestamp=\"true\";--description=\"Hey, {user.mention}! We want to inform you, that you are blacklisted, you can not open any ticket with us.\\n\\nIf you think this is an error, please contact a support team member or a server administrator!\"}};\n{if;{user.roles};!includes;{perget;reasonRole};\n\n{user.addrole;{perget;reasonRole}} {perset;{user.id}-ts;Ticket Opened}\n{channel.send;{a!ae;--timestamp=\"true\";--title=\"Prompt\";--color=\"#909cc2\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--footer=\"This prompt will automatically cancel in 30 seconds\";--description=\"Please state your ticket reason, this will allow us to help you faster when your ticket gets created.\\n\\nSay **cancel** to cancel.\"}}\n{sleep;0.1}\n{set;msg1;{channel.lastMessageID}}\n{set;ticketReason;{channel.awaitMessage;{user.id};30}}\n{set;msg2;{channel.lastMessageID}}\n\n{if;{lower;{get;ticketReason}};==;cancel;{message.delete;{get;msg1}} {sleep;0.1} {message.delete;{channel.lastMessageID}} {user.removerole;{perget;reasonRole}}\n{perset;{user.id}-ts};\n{if;{get;ticketReason};!==;;\n{channel.send;{a!ticket;create;{get;ticketReason}};{perget;redirectChannel}}\n\n{user.removerole;{perget;reasonRole}}\n\n{message.delete;{get;msg1}} {message.delete;{get;msg2}}\n{channel.send;{a!ae;--timestamp=\"true\";--title=\"Ticket Created\";--color=\"#70d775\";--icon=\"{user.avatarURL}\";--name=\"{user.tag}\";--description=\"Your ticket has been created successfully!\"}}\n{sleep;0.1}\n{set;msg3;{channel.lastMessageID}}\n{sleep;10}\n{message.delete;{get;msg3}};\n\n{message.delete;{get;msg1}}\n{user.removerole;{perget;reasonRole}}\n{perset;{user.id}-ts}\n}}}}}",
+      "id": "604a321e9104ed002ece7b1f"
+    }
+  ],
+  "formatVersion": "1.2"
+}
