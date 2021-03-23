@@ -8,9 +8,9 @@ There are a few parts of this action command that you need to setup before you c
 2. Replace `NUMBER` in `{set;roles_amount;NUMBER}` to the number of color roles you just created.
 3. Change `COLOR_ROLE_ID` in `{set;1;COLOR_ROLE_ID}` to the ID of your color role.\
    You can add more roles by copy pasting the `{set;1}` tag and replacing them with numbers `2`, `3`, `etc...`
-4. If you already added (or removed) a color role, you would need to ament the first `{if}` statement and add in `2` and do the same for the `{role.mention;{get;2}}` tag.
+4. If you already added (or removed) a color role, you would need to amend the first `{if}` statement and add in `2` and do the same for the `{role.mention;{get;2}}` tag.
 5. Congrats! you have your color role action all set up 🎉.
 
 ## Optional
-You can remove Use `{guild.prefix}color help` to get help with this action if you do not wnat to be told how to bring up the help menu evey time you use `a!color` (which would be everytime you use one of the subcommands).
+You can remove the 'Use `{guild.prefix}color help` to get help with this action' if you do not want to be told how to bring up the help menu evey time you use `a!color` (which would be everytime you use one of the subcommands).
 
