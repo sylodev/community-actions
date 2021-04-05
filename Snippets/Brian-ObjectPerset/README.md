@@ -11,5 +11,10 @@ NumberedKey: 420
 AnotherKey: value
 ```
 
+## Versions
+Currently, ObjectPerset only has 2 versions and those are:
+- [**Numbered**](./ObjectPerset-Number.md) - fetch, overwrite and math.
+- [**Stringed**](./ObjectPerset-String.md) - fetch and overwrite.
+
 ## Acknowledgements
 - [regexr.com](https://regexr.com)
