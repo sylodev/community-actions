@@ -15,12 +15,12 @@ Job: Clown
 ### Code (Fetching)
 > **This code fetches the `Name` key from our `user` perset.**
 ```sh
-{set;name;{find;{perget;fruits};Name: (\w+)}}}
+{set;name;{find;{perget;fruits};Name: (\w+)}}
 {channel.send;User Name: {get;name}}
 ```
 > **Base Code**
 ```sh
-{set;key;{find;PERSET;KEY: (\w+)}}}
+{set;key;{find;PERSET;KEY: (\w+)}}
 {channel.send;Key Value: {get;key}}
 ```
 
