@@ -1,8 +1,10 @@
 # Note
 You're currently viewing the **Numbered** version of this snippet so this version obviously parses numbered keys for your perset.
 
-## Instructions
-- Yes
+## Instructions (Base Code)
+- Replace every instance of `PERSET` with the name of your perset.
+- Replace all `KEY` with the key in your perset.
+- 
 
 ## Example Perset
 > **Perset Name:** `fruits`
@@ -13,28 +15,20 @@ Apple: 42
 ```
 
 ### Code (Fetching)
-> **Base Code**
-```sh
-{set;volatile_key;{find;PERSET;KEY: (\d+)}}}
-{channel.send;Volatile Key Count: {get;volatile_key}}
-```
 > **This code fetches the `Avocado` key from our `fruits` perset.**
 ```sh
 {set;avocado;{find;{perget;fruits};Avocado: (\d+)}}}
 {channel.send;Avocado Count: {get;avocado}}
 ```
-
-### Code (Overwriting)
 > **Base Code**
 ```sh
-{set;new_value;NEW_VALUE}
-{set;key;{find;{perget;PERSET};KEY: (\d+)}}
-
-{perset;PERSET;{find;{perget;PERSET};KEY: (\d+);KEY: {get;new_value}}}
-{set;key;{find;{perget;PERSET};KEY: (\d+)}}
-
-{channel.send;New Key Count: {get;key}}
+{set;key;{find;PERSET;KEY: (\d+)}}}
+{channel.send;Key Count: {get;key}}
 ```
+
+
+
+### Code (Overwriting)
 > **This code overwrites the `Ponkan` key from our `fruits` perset.**
 ```sh
 {set;new_value;123}
@@ -45,6 +39,18 @@ Apple: 42
 
 {channel.send;New Ponkan Count: {get;ponkan}}
 ```
+> **Base Code — Replace `NEW_VALUE` with a numerical value.**
+```sh
+{set;new_value;NEW_VALUE}
+{set;key;{find;{perget;PERSET};KEY: (\d+)}}
+
+{perset;PERSET;{find;{perget;PERSET};KEY: (\d+);KEY: {get;new_value}}}
+{set;key;{find;{perget;PERSET};KEY: (\d+)}}
+
+{channel.send;New Key Count: {get;key}}
+```
+
+
 
 ### Code (Math Operations)
 > **This code does `{math}`s on our `Apple` key from our `fruits` perset.**
@@ -56,4 +62,14 @@ Apple: 42
 {set;apple;{find;{perget;fruits};Apple: (\d+)}}
 
 {channel.send;New Apple Count: {get;apple}}
+```
+> **Base Code — Replace `ADD_VALUE` with a numerical value.**
+```sh
+{set;add_value;ADD_VALUE}
+{set;key;{find;{perget;PERSET};KEY: (\d+)}}
+
+{perset;fruits;{find;{perget;PERSET};KEY: (\d+);KEY: {math;{get;key}+{get;add_value}}}}
+{set;key;{find;{perget;PERSET};KEY: (\d+)}}
+
+{channel.send;New Key Count: {get;key}}
 ```
