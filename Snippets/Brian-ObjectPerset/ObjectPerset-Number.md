@@ -4,7 +4,6 @@ You're currently viewing the **Numbered** version of this snippet so this versio
 ## Instructions (Base Code)
 - Replace every instance of `PERSET` with the name of your perset.
 - Replace all `KEY` with the key in your perset.
-- 
 
 ## Example Perset
 > **Perset Name:** `fruits`
