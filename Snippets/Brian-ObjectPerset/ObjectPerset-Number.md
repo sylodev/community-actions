@@ -16,12 +16,12 @@ Apple: 42
 ### Code (Fetching)
 > **This code fetches the `Avocado` key from our `fruits` perset.**
 ```sh
-{set;avocado;{find;{perget;fruits};Avocado: (\d+)}}}
+{set;avocado;{find;{perget;fruits};Avocado: (\d+)}}
 {channel.send;Avocado Count: {get;avocado}}
 ```
 > **Base Code**
 ```sh
-{set;key;{find;PERSET;KEY: (\d+)}}}
+{set;key;{find;PERSET;KEY: (\d+)}}
 {channel.send;Key Count: {get;key}}
 ```
 
