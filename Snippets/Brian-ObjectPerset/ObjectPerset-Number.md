@@ -1,9 +1,9 @@
 # Note
-You're currently viewing the **Numbered** version of this snippet so this version obviously parses numbered keys for your perset.
+You're currently viewing the **Number**ed version of this snippet so this version obviously parses numbered keys for your perset.
 
 ## Instructions (Base Code)
 - Replace every instance of `PERSET` with the name of your perset.
-- Replace all `KEY` with the key in your perset.
+- Replace all `KEY`s with a key from your own perset.
 
 ## Example Perset
 > **Perset Name:** `fruits`
@@ -21,7 +21,7 @@ Apple: 42
 ```
 > **Base Code**
 ```sh
-{set;key;{find;PERSET;KEY: (\d+)}}
+{set;key;{find;{perget;PERSET};KEY: (\d+)}}
 {channel.send;Key Count: {get;key}}
 ```
 
