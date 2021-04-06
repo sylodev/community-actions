@@ -33,7 +33,7 @@ Apple: 42
 {set;new_value;123}
 {set;ponkan;{find;{perget;fruits};Ponkan: (\d+)}}
 
-{perset;fruits;{find;{perget;fruits};Ponkan: (\d+);Ponkan: {get;new_value}}}
+{perset;fruits;{replace;{perget;fruits};Ponkan: (\d+);Ponkan: {get;new_value}}}
 {set;ponkan;{find;{perget;fruits};Ponkan: (\d+)}}
 
 {channel.send;New Ponkan Count: {get;ponkan}}
@@ -43,7 +43,7 @@ Apple: 42
 {set;new_value;NEW_VALUE}
 {set;key;{find;{perget;PERSET};KEY: (\d+)}}
 
-{perset;PERSET;{find;{perget;PERSET};KEY: (\d+);KEY: {get;new_value}}}
+{perset;PERSET;{replace;{perget;PERSET};KEY: (\d+);KEY: {get;new_value}}}
 {set;key;{find;{perget;PERSET};KEY: (\d+)}}
 
 {channel.send;New Key Count: {get;key}}
@@ -57,7 +57,7 @@ Apple: 42
 {set;add_value;123}
 {set;apple;{find;{perget;fruits};Apple: (\d+)}}
 
-{perset;fruits;{find;{perget;fruits};Apple: (\d+);Apple: {math;{get;apple}+{get;add_value}}}}
+{perset;fruits;{replace;{perget;fruits};Apple: (\d+);Apple: {math;{get;apple}+{get;add_value}}}}
 {set;apple;{find;{perget;fruits};Apple: (\d+)}}
 
 {channel.send;New Apple Count: {get;apple}}
@@ -67,7 +67,7 @@ Apple: 42
 {set;add_value;ADD_VALUE}
 {set;key;{find;{perget;PERSET};KEY: (\d+)}}
 
-{perset;fruits;{find;{perget;PERSET};KEY: (\d+);KEY: {math;{get;key}+{get;add_value}}}}
+{perset;fruits;{replace;{perget;PERSET};KEY: (\d+);KEY: {math;{get;key}+{get;add_value}}}}
 {set;key;{find;{perget;PERSET};KEY: (\d+)}}
 
 {channel.send;New Key Count: {get;key}}
