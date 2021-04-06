@@ -32,7 +32,7 @@ Job: Clown
 {set;new_value;Star}
 {set;job;{find;{perget;fruits};Job: (\d+)}}
 
-{perset;user;{find;{perget;fruits};Job: (\w+);Job: {get;new_value}}}
+{perset;user;{replace;{perget;fruits};Job: (\w+);Job: {get;new_value}}}
 {set;job;{find;{perget;fruits};Job: (\d+)}}
 
 {channel.send;New Job: {get;job}}
@@ -42,7 +42,7 @@ Job: Clown
 {set;new_value;NEW_VALUE}
 {set;key;{find;{perget;PERSET};KEY: (\w+)}}
 
-{perset;PERSET;{find;{perget;PERSET};KEY: (\w+);KEY: {get;new_value}}}
+{perset;PERSET;{replace;{perget;PERSET};KEY: (\w+);KEY: {get;new_value}}}
 {set;key;{find;{perget;PERSET};KEY: (\w+)}}
 
 {channel.send;New Key Value: {get;key}}
