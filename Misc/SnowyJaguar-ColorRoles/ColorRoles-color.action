@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "color"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Check the README.MD for setup instructions}\n\n{note;Section where users input how mnay color roles they have}\n{set;roles_amount;NUMBER}\n\n{note;section where the role ID's are assigned a shorter identifier number}\n{set;3;COLOR_ROLE_ID}\n{set;2;COLOR_ROLE_ID} {set;1;COLOR_ROLE_ID}\n\n{if;{args;1};==;;{set;help;true};\n    {if;{args;1};==;help;{set;help;true};\n\n        {note;Color Role List Embed}\n        {if;{args;1};==;list;{a!ae;\n        {note;General Settings}\n            --title=\"Color Roles\";\n            --color=\"#ca9d33\";\n            --icon=\"{user.avatarURL;365262543872327681}\";\n            --name=\"Created by: {user.tag;365262543872327681}\";\n            --footer=\"Requested by: {user.tag} | {user.id}\";\n            --footer-icon=\"{user.avatarURL}\";\n            --timestamp=\"true\";\n            --description=\"1. {role.mention;{get;1}} | 2. {role.mention;{get;2}} | 3. {role.mention;{get;3}}\\n}}\n\n        {note;Command which creates roles}\n        {if;{args;1};==;create;{a!role;create;{args;2;infinity}}}\n\n        {note;Command which deletes roles}\n        {if;{args;1};==;delete;{a!role;delete;{args;2;infinity}}}\n\n        {note;Command which sends you a random color hex}\n        {if;{args;1};==;hex;{a!randomcolor}}\n\n        {note;Command which adds the roles to a user}\n        {if;{args;1};==;=;\n            {if;{math;abs({args;2})};<=;{get;roles_amount};\n                {channel.send;{user.mention} has recieved {role.name;{get;{math;abs({args;2})}}}}\n                {user.addrole;{get;{math;abs({args;2})}}};\n                That is not a valid number!😡\n            }\n        }\n\n        {note;Command which removes the roles from a user}\n        {if;{args;1};==;remove;\n            {if;{math;abs({args;2})};<=;{get;roles_amount};\n                {channel.send;{user.mention} no longer has the color {role.name;{get;{math;abs({args;2})}}}}\n                {user.removerole;{get;{math;abs({args;2})}}};\n                That is not a valid number!😡\n            }\n        };\n    }\n}\n\n{note;Help Menu Embed}\n{if;{get;help};==;true;{a!ae;\n    {note;Field 1 Settings}\n        --field1name=\"list\";\n        --field1value=\"Fetches the list of color roles curated by the server staff.\\n\n            Example: `{guild.prefix}color list`\";\n            \n    {note;Field 2 Settings}\n        --field2name=\"help\";\n        --field2value=\"Brings up this help menu 👋\\n\n            Example: `{guild.prefix}color help` or `{guild.prefix}color`\";\n            \n    {note;Field 3 Settings}\n        --field3name=\"hex\";\n        --field3value=\"Returns the hex of a random color. You can then make a role using that color hex.\\n\n            Example: `{guild.prefix}color hex`\";\n            \n    {note;Field 4 Settings}\n        --field4name=\"=\";\n        --field4value=\"Gives you the color role you chose.\\n\n            Example: `{guild.prefix}color = <Color role number>`\";\n\n    {note;Field 5 Settings}\n        --field5name=\"remove\";\n        --field5value=\"Lets users remove a color role.\\n\n            Example: `{guild.prefix}color remove <Color role number>`\";\n                \n    {note;Field 6 Settings}\n        --field6name=\"create\";\n        --field6value=\"Lets users create a color role.\\n\n            Example: `{guild.prefix}color create <Color role name>`\\n\n            *Note: This does not allow users to set a roles color, that still needs to be done via the server role settings*\\n\n            > **Only users with the `Manage Roles` permission can perform this command**\";\n                \n    {note;Field 7 Settings}\n        --field7name=\"delete\";\n        --field7value=\"Lets users delete a color role.\\n\n            Example: `{guild.prefix}color delete <Color role name>`\\n\n            > **Only users with the `Administrator` permission can perform this command**\"; \n\n    {note;General Settings}\n        --title=\"Color Roles Help\";\n        --color=\"#ca9d33\";\n        --name=\"Created by: SnowyJaguar#1034\";\n        --footer=\"Requested by: {user.tag} | {user.id}\";\n        --footer-icon=\"{user.avatarURL}\";\n        --timestamp=\"true\";\n        --description=\"This action lets you assign yourself a colour role from a list curated by the server staff.\\n\n            You can do `{guild.prefix}color <command>` to run one of the following commands:\"\n    }\n}",
+      "id": "606cfd918fe7be00261c6501"
+    }
+  ],
+  "formatVersion": "1.2"
+}
