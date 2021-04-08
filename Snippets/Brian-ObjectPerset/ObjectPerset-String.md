@@ -37,7 +37,7 @@ Job: Clown
 
 {channel.send;New Job: {get;job}}
 ```
-> **Base Code — Replace `NEW_VALUE` with a numerical value.**
+> **Base Code — Replace `NEW_VALUE` with a non-numerical value.**
 ```sh
 {set;new_value;NEW_VALUE}
 {set;key;{find;{perget;PERSET};KEY: (\w+)}}
