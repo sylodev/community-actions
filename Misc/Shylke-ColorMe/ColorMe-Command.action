@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "colorme"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;Replace ColorID1|ColorID2|ColorID3|etc... with your role colors' IDs, you can add as many roles as you want as long as you separate the IDs with \"|\"}\n\n{note;If you change the credits on the help command don't come to me for help, you've been warned}\n\n{set;color;ColorID1|ColorID2|ColorID3}\n\n{if;{args;1};==;help;{a!ae;--title=\"ColorMe\";--description=\"• `{guild.prefix}colorme <color>`・gives you the specified color role.\\n• `{guild.prefix}colorme`・removes your color role.\\n• `{guild.prefix}colorme list`・list you the available color roles on this server.\\n• `{guild.prefix}colorme hex`・gets you a random hex code.\\n• `{guild.prefix}colorme hex <#hexcode>`・gets you the specified hex code.\\n• `{guild.prefix}colorme help`・take a wild guess.\";--footer=\"Created by Shylke#8325\";--timestamp;--name=\"{guild.name}\";--icon=\"{guild.iconURL}\"};\n\n{set;hex;{randstr;1234567890abcdef;6}}\n{if;{args;1};==;hex;{if;{args;2};{if;{find;{args;2};^#?([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$;1};\n{set;hex;{find;{args;2};^#?([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$;1}}\n{a!ae;--thumbnail=\"https://fakeimg.pl/256x256/{get;hex}/c0ffee/?text=%20\";--title=\"Hex Code\";--description=\"__**[#{upper;{get;hex}}](http://www.color-hex.com/color/{get;hex})**__\";--color=\"#{get;hex}\";--timestamp;--footer=\"Requested by {user.tag}\";--footer-icon=\"{user.avatarURL}\"};\n\n{a!ae;--thumbnail=\"https://fakeimg.pl/256x256/{get;hex}/c0ffee/?text=%20\";--title=\"Random Hex Code\";--description=\"__**[#{upper;{get;hex}}](http://www.color-hex.com/color/{get;hex})**__\";--color=\"#{get;hex}\";--timestamp;--footer=\"Requested by {user.tag}\";--footer-icon=\"{user.avatarURL}\"}};\n\n{a!ae;--thumbnail=\"https://fakeimg.pl/256x256/{get;hex}/c0ffee/?text=%20\";--title=\"Random Hex Code\";--description=\"__**[#{upper;{get;hex}}](http://www.color-hex.com/color/{get;hex})**__\";--color=\"#{get;hex}\";--timestamp;--footer=\"Requested by {user.tag}\";--footer-icon=\"{user.avatarURL}\"}};\n\n\n{if;{find;{get;color};\\d{17,18}};\n\n{if;{args;1};==;list;{a!ae;--field1name=\"Total Number\";--field1value=\"{math;{length;{replace;{get;color};[^|];}}+1}\";--field2name=\"Colors Available\";--field2value=\"{replace;{replace;{get;color};\\|;\\n};(\\d+);<@&$1>}\";--title=\"ColorMe List\";--name=\"{guild.name}\";--icon=\"{guild.iconURL}\";--timestamp;--footer=\"Requested by {user.tag}\";--footer-icon=\"{user.avatarURL}\"};\n\n\n{if;{find;{user.roles};({get;color})};{set;ColorR;{find;{user.roles};({get;color})}} {user.removerole;{get;ColorR}}} \n{if;{find;{role.id;{args}};({get;color})};\n{set;ColorA;{find;{role.id;{args}};({get;color})}}\n\n{user.addrole;{get;ColorA}}\n{a!ae;--color=\"{role.color;{get;ColorA}}\";--field1name=\"Role Added\";--field1value=\"<@&{get;ColorA}>\";--name=\"{guild.name}\";--icon=\"{guild.iconURL}\";--timestamp;--footer=\"Requested by {user.tag}\";--footer-icon=\"{user.avatarURL}\";{if;{get;ColorR}; --field2name=\"Role Removed\" --field2value=\"<@&{get;ColorR}>\"}};\n\n{a!ae;--color=\"{role.color;{get;ColorR}}\";--field1name=\"Role Removed\";--field1value=\"{catch;{role.mention;{get;ColorR}};No color was removed or added. Check `{guild.prefix}colorme list` to see a list of available colors, check `{guild.prefix}colorme help` for help on how to use this command.}\";--name=\"{guild.name}\";--icon=\"{guild.iconURL}\";--timestamp;--footer=\"Requested by {user.tag}\";--footer-icon=\"{user.avatarURL}\"}\n\n}};There are no set colors, or the colors added aren't correct role IDs, go on the dashboard to fix this.}}}",
+      "id": "6071f0d0f9ff73002eeb604c"
+    }
+  ],
+  "formatVersion": "1.2"
+}
