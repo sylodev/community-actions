@@ -21,7 +21,9 @@ There is a `{set;color;Color1ID|ColorID2|ColorID3}` variable at the top of the c
 * [DracoClaw#0065](https://github.com/DracoClaw) for urging me to submit it to the 🚗 **CAR**.
 * The current pandemic for locking me in my home so I can waste my life doing this shit.
 
-## Showcase
+## Preview
+
+![](https://i.imgur.com/qbo6jTg.png)
 
 ![](https://i.imgur.com/HWLDS8i.png)
 
