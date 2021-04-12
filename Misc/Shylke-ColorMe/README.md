@@ -2,12 +2,8 @@
 
 A command to let your users assign color roles to themselves effortlessly.
 
-<br>
-
 ## How to Use:
 There is a `{set;color;Color1ID|ColorID2|ColorID3}` variable at the top of the command, replace `ColorID` with your color roles' IDs, you can also add more roles by separating the IDs with `|`.
-
-<br>
 
 ## From the Help command:
 
