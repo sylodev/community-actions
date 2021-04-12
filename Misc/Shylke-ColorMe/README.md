@@ -8,15 +8,10 @@ There is a `{set;color;Color1ID|ColorID2|ColorID3}` variable at the top of the c
 ## From the Help Command:
 
 * `a!colorme <color>`・gives you the specified color role.
-
 * `a!colorme`・removes your color role.
-
 * `a!colorme list`・list you the available color roles on this server.
-
 * `a!colorme hex`・gets you a random hex code.
-
 * `a!colorme hex <#hexcode>`・gets you the specified hex code.
-
 * `a!colorme help`・take a wild guess.
 
 ## Credits
