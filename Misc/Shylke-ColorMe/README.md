@@ -2,6 +2,8 @@
 
 A command to let your users assign color roles to themselves effortlessly.
 
+**Note:** this action won't let you change the color of an existing role. This is not possible within Atlas itself, and it won't be possible through an action.
+
 ## How to Use:
 There is a `{set;color;Color1ID|ColorID2|ColorID3}` variable at the top of the command, replace `ColorID` with your color roles' IDs, you can also add more roles by separating the IDs with `|`.
 
