@@ -21,6 +21,7 @@ There is a `{set;color;Color1ID|ColorID2|ColorID3}` variable at the top of the c
 * [**Role List Format**](https://github.com/sylo-digital/community-actions/tree/master/Snippets/Sylver-JaM-RoleList) - Sylver#1058 & JaM#8608 
 * [**Arg Counter**](https://github.com/sylo-digital/community-actions/tree/master/Snippets/JaM-ArgCounter) - JaM#8608
 * [DracoClaw#0065](https://github.com/DracoClaw) for urging me to submit it to the 🚗 **CAR**.
+* [Can eh dian#0001](https://github.com/Canehdian) for supplying the correct regex for the `a!colorme list` subcommand.
 * The current pandemic for locking me in my home so I can waste my life doing this shit.
 
 ## Preview
