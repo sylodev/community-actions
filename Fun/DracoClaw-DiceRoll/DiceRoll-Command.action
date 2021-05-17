@@ -27,7 +27,7 @@
     },
     {
       "type": "channel",
-      "message": "{if;{args;1};===;;{a!ae;--title=\"Dice command help\";--color=\"#ffffff\";--footer=\"Requested by {user.tag}\";--timestamp=\"true\";--description=\"Usage: a!d [dicetype] <number of rolls>\\n\\nExample:\\n`a!d 10` rolls 1 d10.\\n`a!d 15 3` rolls 3 d15.\\n`a!d 20 5` rolls 5 d20.\"};{if;{args;1};===;help;{a!ae;--title=\"Dice command help\";--color=\"#ffffff\";--footer=\"Requested by {user.tag}\";--timestamp=\"true\";--description=\"Usage: a!d [dicetype] <number of rolls>\\n\\nExample:\\n`a!d 10` rolls 1 d10.\\n`a!d 15 3` rolls 3 d15.\\n`a!d 20 5` rolls 5 d20.\"}}}",
+      "message": "{if;{args;1};===;;{a!ae;--title=\"Dice command help\";--color=\"#ffffff\";--footer=\"Requested by {user.tag}\";--timestamp=\"true\";--description=\"Usage: {guild.prefix}{message.label} [dicetype] <number of rolls>\\n\\nExample:\\n`{guild.prefix}{message.label} 10` rolls 1 d10.\\n`{guild.prefix}{message.label} 15 3` rolls 3 d15.\\n`{guild.prefix}{message.label} 20 5` rolls 5 d20.\"};{if;{args;1};===;help;{a!ae;--title=\"Dice command help\";--color=\"#ffffff\";--footer=\"Requested by {user.tag}\";--timestamp=\"true\";--description=\"Usage: {guild.prefix}{message.label} [dicetype] <number of rolls>\\n\\nExample:\\n`{guild.prefix}{message.label} 10` rolls 1 d10.\\n`{guild.prefix}{message.label} 15 3` rolls 3 d15.\\n`{guild.prefix}{message.label} 20 5` rolls 5 d20.\"}}}",
       "channel": null,
       "fallback": true
     }

@@ -1,5 +1,5 @@
 {
-  "meta": "Exported from https://atlasbot.xyz",
+  "meta": "Exported from https://atlas.bot",
   "flags": {
     "ttl": 0,
     "cooldown": 0,
@@ -22,8 +22,8 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{note;The message that will be sent}\n{set;Message;Your_Message_Here}\n\n{if;{perget;StickyMessage};===;;\n{channel.send;{get;Message}}\n{perset;StickyMessage;{channel.lastMessageID}}\n;\n{if;{message.id};!===;{perget;StickyMessage};\n{channel.send;{get;Message}}\n{message.delete;{perget;StickyMessage}}\n{perset;StickyMessage;{channel.lastMessageID}};\n}}",
-      "id": "5f63dbcb0ab82d0027386dd0"
+      "message": "{note;The embed that will be sent. Feel free to leave the Title or Message empty.}\n{set;Title;}\n{set;Message;Your_Message_Here}\n{set;Color;#ABC123}\n\n{if;{perget;StickyMessage};===;;\n{perset;StickyMessage;\n{a!ae;--title=\"{get;Title}\";--description=\"{get;Message}\";--color=\"{get;Color}\";--returnId}\n}\n;\n{if;{message.id};!===;{perget;StickyMessage};\n{message.delete;{perget;StickyMessage}}\n{perset;StickyMessage;\n{a!ae;--title=\"{get;Title}\";--description=\"{get;Message}\";--color=\"{get;Color}\";--returnId}\n}\n}}",
+      "id": "605b4f669104ed002ed06c60"
     }
   ],
   "formatVersion": "1.2"
