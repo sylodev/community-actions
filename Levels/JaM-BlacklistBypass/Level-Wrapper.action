@@ -1,5 +1,5 @@
 {
-  "meta": "Exported from https://atlasbot.xyz",
+  "meta": "Written by Tazeki#9337 in response to JaM's level wrapper failing.",
   "flags": {
     "ttl": 0,
     "cooldown": 0,
@@ -22,8 +22,8 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{a!ae;--field1name=\"Rank\";--field1value=\"[Click Here](https://atlas.bot/leaderboard/{guild.id})\";--field1inline;--field2name=\"Level\";--field2value=\"{user.level}\";--field2inline;--field3name=\"Experience\";--field3value=\"{find;{math;{user.nextLevelXP}-{user.remainingXP}};(\\d+)\\.?}/{math;{user.nextLevelXP}-{user.levelXP}} • `{math;{utils.calcLevelXP;{user.level}}+{find;{math;{user.nextLevelXP}-{user.remainingXP}};(\\d+)\\.?}}` total\";--field3inline;--icon=\"{user.avatarURL}\";--name=\"{user.username}\"}",
-      "id": "5df115bdd4df100023108004"
+      "message": "{a!ae;--field1name=\"Level\";--field1value=\"{user.level}\";--field1inline;--field2name=\"Experience\";--field2value=\"{math;{user.levelXP}-{user.remainingXP}+{user.nextLevelXP}}/{user.nextLevelXP} | `{math;{user.remainingXP}-{user.nextLevelXP}+{user.levelXP}}` total.\";--field2inline;--field3name=\"Rank\";--field3value=\"[Click Here](https://atlas.bot/leaderboard/{guild.id})\";--field3inline;--icon=\"{user.avatarURL}\";--name=\"{user.username}\"}",
+      "id": "60da33a9eaa945873b501f19"
     }
   ],
   "formatVersion": "1.2"
