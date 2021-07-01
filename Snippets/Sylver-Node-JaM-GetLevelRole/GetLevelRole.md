@@ -9,5 +9,5 @@
 ```
 {set;LevelRole;{find;{settings;plugins.levels.options.rewards};"level":{user.level},[^{r}]+?"content": ?"([0-9]+)}}
 
-{channel.send;Congratulations {user.mention}! You just advanced to **level {user.level}**{if;{get;LevelRole};and gained the {role.mention;{get;LevelRole}} role}!}
+{channel.send;Congratulations {user.mention}! You just advanced to **level {user.level}** {if;{get;LevelRole};and gained the {role.mention;{get;LevelRole}} role}!}
 ```
