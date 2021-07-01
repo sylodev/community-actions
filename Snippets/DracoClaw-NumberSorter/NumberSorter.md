@@ -8,7 +8,7 @@
 {if;{get;A};>;{get;B};
 	{if;{get;B};>;{get;C};
     	{if;{get;D};>;{get;B};
-        	{if;D;>;{get;A};
+        	{if;{get;D};>;{get;A};
                 {set;1;D}{set;2;A}{set;3;B}{set;4;C}
             ;
                 {set;1;A}{set;2;D}{set;3;B}{set;4;C}
@@ -95,7 +95,6 @@
                     {set;1;C}{set;2;B}{set;3;A}{set;4;D}
                 }
             }
-        }
 	}
 }
 ```
