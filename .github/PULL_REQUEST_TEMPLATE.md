@@ -4,6 +4,9 @@ Hi! Thanks for choosing to upload your action to the Community Action Repository
 In order to make it easier for the repo moderators to review your action,
 please fill out this template that explains your (super)action.
 
+If your PR reaches 7 days of inactivity, it will be labelled as inactive.
+After 14 days of inactivity, your PR will be closed and you will have to create a new one.
+
 -->
 
 <!-- Please replace the space in the appropriate box with an x, i.e:

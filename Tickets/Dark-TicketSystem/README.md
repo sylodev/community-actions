@@ -33,3 +33,7 @@ The `a!ticket create` is still able to be used, the command respects the blackli
 * Support Server
 
 If you're stuck, or need help, feel free to join Atlas [support server](https://discord.gg/4HWswAxfcP) and ask for the (super)action creator, [dark#8901](https://discord.com/users/449245847767482379).
+
+* Credits 
+
+Orignally made and created by me, dark#8901, thanks to Atlas' staff for helping me trough the process, especially Shylke, who helped me testing and giving me feedbacks.
