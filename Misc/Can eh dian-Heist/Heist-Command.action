@@ -1,0 +1,30 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": true,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": []
+  },
+  "trigger": {
+    "type": "label",
+    "content": "heist"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{note;swap out the ROLE_ID with the ID of the role you want to ping with the embed}\n{set;heist_ping;ROLE_ID}\n\n{note;basically this bit just checks if there are any errors with the input and outputs an error message with info on what went wrong}\n{if;{utils.isSnowflake;{role.id;{get;heist_ping}}};===;false;\n    {channel.send;you need to add the correct role ID to the heist_ping at the top of the action};\n    {if;{args;1};===;;\n        {set;error;*<user> is required*};\n        {if;{utils.isSnowflake;{user.id;{args;1}}};===;false;\n            {set;error;*<user> must be a valid user*};\n            {if;{args;2};===;;\n                {set;error;*<amount> is required*};\n                {note;Brian-NumberParser https://github.com/sylo-digital/community-actions/tree/master/Snippets with an added support for mil and removed abs() so you cannot enter negative numbers}\n                {set;amount;{math;{replace;{replace;{replace;{replace;{args;2};k$;e3};m$;e6};mil$;e6};b$;e9}}}\n                {if;{find;{get;amount};^\\d+$};===;;\n                    {set;error;*<amount> must be a valid/positive amount*};\n                    {if;{args;3;infinity};\n                        {if;{utils.isSnowflake;{role.id;{args;3;infinity}}};===;false;\n                            {set;error;*[requirement] must be a valid role*}\n                        }\n                    }\n                }\n            }\n        }\n    }\n    {if;{get;error};\n        {channel.send;{a!ae;--title=\"Heist Command Error\";--color=\"#d0021b\";--description=\"{get;error}\\n\\n<> = Required\\n[] = Optional\\n```yaml\\nProper Usage: {guild.prefix}heist <user> <amount> [requirement]```\\n<user> - The Sponsor Of The Heist\\n<amount> - The Amount Of The Heist (supports values like K, M, Mil, B, E)\\n[requirement] - The Requirement For The Heist (can be left empty for no-req heists)\"}}\n        {sleep;0.15}\n        {set;a;{channel.lastMessageID}}\n        {sleep;10}\n        {message.delete;{get;a}};\n    \n\n\n\n        {note;now onto the actual embed stuff, the current embed is just a simple embed that you can easily change. to get the values you want you can {get} the values below (keep in mind you need to add the --message flag after creating an embed with the atlas embed builder)}\n        {note;heist_amount is a mix between Brian-NumberParser and JaM-NumberFormatter found here https://github.com/sylo-digital/community-actions/tree/master/Snippets}\n        {set;heist_amount;{replace;{math;abs({replace;{replace;{replace;{replace;{args;2};k$;e3};m$;e6};mil$;e6};b$;e9})};(\\d)(?=(\\d\\d\\d)+$);$1,}}\n        {set;sponsor;{user.mention;{args;1}}}\n        {if;{args;3;infinity};\n            {set;requirement;{role.mention;{args;3;infinity}}};\n            {set;requirement;None}\n        }\n\n        {note;if you want to change the embed use https://atlas.bot/embed-builder then copy the --message flag from the original one to the new one so it pings}\n        {channel.send;{a!ae;--message=\"{role.mention;{get;heist_ping}}\";--title=\"Heist Time!\";--color=\"#b8e986\";--description=\"**Amount: *⏣ {get;heist_amount}***\\n\\n**Sponsor: {get;sponsor}**\\n\\n**Requirement: {get;requirement}**\"}}\n    }\n\n}\n",
+      "id": "604ffa0a9104ed002ecf3abc"
+    }
+  ],
+  "formatVersion": "1.2"
+}
