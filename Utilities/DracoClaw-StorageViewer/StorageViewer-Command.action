@@ -22,7 +22,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{if;{settings;persistent};!==;[];\n{set;key;{settings;persistent}}\n{set;key1;{replace;{get;key};[[\";{l}perset{semi}}}\n{set;key2;{replace;{get;key1};\"]];{r}}}\n{set;key3;{replace;{get;key2};\",\";{semi}}}\n{set;key4;{replace;{get;key3};\"],[\";{r}\\n{l}perset{semi}}}\n{a!ae;--title=\"Persistent Storage Keys\";--description=\"{get;key4}\";--footer=\"{settings;persistent.length}/500\"};\n{channel.send;This server has no keys set.}}\n",
+      "message": "{if;{catch;{settings;persistent.length};Error};!==;Error;\n\n{a!ae;\n--title=\"Persistent Storage Keys\";\n--description=\"{replace;{replace;{replace;{replace;{settings;persistent};[[\";{l}perset{semi}};\"]];{r}};\",\";{semi}};\"],[\";{r}\\n{l}perset{semi}}\";\n--footer=\"{settings;persistent.length}/500\"};{channel.send;The server has no saved keys}}",
       "id": "6031a8159104ed002ecb9a60"
     }
   ],
