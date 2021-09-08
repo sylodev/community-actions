@@ -1,1 +1,0 @@
-Prevents sexbots from posting in channels.

@@ -1,1 +1,0 @@
-Turns text into Australian-readable format.
