@@ -1,1 +1,0 @@
-Prevents all messages except music links from being posted. Change the **Trigger Content** channel if you only want it to be active in a specific channel.
