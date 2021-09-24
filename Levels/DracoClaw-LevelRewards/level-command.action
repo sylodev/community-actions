@@ -22,7 +22,7 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{if;{find;{args};(role|roles|reward|rewards)};\n\n{set;rewards;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{settings;plugins.levels.options.rewards};[;};];};{l}\"_id\":\"([0-9a-z]){24}\",\";};level\":;Level:‏‏‎ ‎};,\"type\":\"role\",\"content\":\";‏‏‎ ‎-‏‏‎ ‎<@&};\"{r};>};,;\\n}}\n\n{a!ae;\n--title=\"Level Rewards - {length;{replace;{replace;{get;rewards};-;|};[^|];}}\";\n--description=\"{get;rewards}\";\n--footer=\"DMs: {if;{settings;plugins.levels.options.notify.enabled};==;true;✓;X} | Stack: {if;{settings;plugins.levels.options.stack};==;true;✓;X} | Sync: {if;{settings;plugins.levels.options.reassign};==;true;✓;X}\"}\n;\n{a!level;{args}}\n}",
+      "message": "{if;{find;{args};(role|roles|reward|rewards)};\n\n{set;rewards;{replace;{replace;{replace;{replace;{replace;{replace;{replace;{settings;plugins.levels.options.rewards};[;};];};{l}\"_id\":\"([0-9a-z]){24}\",\";};level\":;Level:‏‏‎ ‎};,\"type\":\"role\",\"content\":\";‏‏‎ ‎-‏‏‎ ‎<@&};\"{r};>};,;\\n}}\n\n{a!ae;\n--title=\"Level Rewards - {length;{replace;{replace;{get;rewards};-;|};[^|];}}\";\n--description=\"{if;{get;rewards};{get;rewards};There are no Level Rewards set.}\";\n--footer=\"DMs: {if;{settings;plugins.levels.options.notify.enabled};==;true;✓;X} | Stack: {if;{settings;plugins.levels.options.stack};==;true;✓;X} | Sync: {if;{settings;plugins.levels.options.reassign};==;true;✓;X}\"}\n;\n{a!level;{args}}\n}",
       "id": "6147b656aae03a45b6a547fc"
     }
   ],
