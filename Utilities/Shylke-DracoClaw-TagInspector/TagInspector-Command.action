@@ -1,0 +1,33 @@
+{
+  "meta": "Exported from https://atlas.bot",
+  "flags": {
+    "ttl": 0,
+    "cooldown": 0,
+    "enabled": true,
+    "silent": false,
+    "delete": false,
+    "quiet": false
+  },
+  "restrictions": {
+    "mode": "blacklist",
+    "roles": [],
+    "channels": [],
+    "permissions": [
+      "manageGuild"
+    ]
+  },
+  "trigger": {
+    "type": "label",
+    "content": "inspect"
+  },
+  "content": [
+    {
+      "fallback": true,
+      "type": "channel",
+      "message": "{if;{find;{settings;plugins.utilities.tags};\"name\":\"{lower;{args;1}}\",\"};\n\n{set;e;{find;{settings;plugins.utilities.tags};(?<=\"name\":\"{lower;{args;1}}\",\"content\":\")(.+)}}\n\n{set;output;{replace;{replace;{replace;{replace;{replace;{replace;{get;e};\"author\":\"(\\d{17,19})\",};\"content\":\"(.+)};\"_id\":\"([0-9a-z]){24}\",};\"name\":\"(.+)\",};{r}];{r},{l}};\"{r},{l}}}\n\n```js\n{get;output}\n```\n;\n{set;msg;{channel.send;That is not a valid tag. Run `a!tags` to view all valid tags.;{channel.id};true}}\n{sleep;25}\n{delete;{get;msg}}\n}",
+      "channel": null,
+      "id": "614ba504aae03a06f0abe0a4"
+    }
+  ],
+  "formatVersion": "1.2"
+}

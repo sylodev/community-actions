@@ -1,0 +1,1 @@
+View the RAW contents of an `a!tag`. Just run `a!inspect <TAG NAME>`.
