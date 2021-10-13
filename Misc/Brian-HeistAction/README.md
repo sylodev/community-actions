@@ -1,21 +1,16 @@
 # HeistAction
-This action allows you to manage heist events in your discord server.
+A standalone action that allows you to manage heist events in your discord server.
 
 ## Features
-- **Customizable** - Customize the heist message however you want. Either emnbed or a normal one, it's up to you really.
-- **Checkers** - OPTIONAL - Check their balance first if all required arguments are correct.
+- **Customizable** - Customize the heist message however you want. Either using embeds or a normal one, it's up to you actually.
+- **Prompting** - Check their balance first if all required arguments are present and correct. This is optional.
 
-## Instructions
-The only things you should change are the `{set}` variables on top of the action code. These variables are only roles which should be pinged as you start an event.
-1. Change what's in `role.heist` with the ID of your `Heist Ping` role
-2. Change what's in `role.manager` with the ID of your `Heist Manager` role.
-3. OPTIONAL - Change what's in `checks.bal` into a boolean ( `true` or `false` ) to check balance beforehand.
-4. OPTIONAL - Change what's in `msg.reaction` into a unicode emoji or some animated emoji to react on the heist message.
+## Notes
+This action however, depends on another bot, Dank Memer. This allows us on prompting for the sponsor's balance.
 
 ## Modifying
-These things below are variables you would need to change if you wanna replace the default heist message so make sure you do something to them like what I did in the code.
-- `{get;role.heist}` — Your `Heist Ping` role.
-- `{get;role.manager}` — Your `Heist Manager` role.
+You can find these tags within the code, especially down the code which is the heist message. 
+- `{get;heist_ping}` — Your `Heist Ping` role.
 - `{get;user}` — The heist sponsor id.
 - `{get;amount}` — The specified amount.
 
