@@ -11,7 +11,7 @@ If you're interested in importing one of the custom actions found within our rep
 * Back on GitHub, navigate the repository files and find the action file you want to import.
 * Open the action file and right click [![](https://i.imgur.com/98icse9.png)](https://www.youtube.com/watch?v=q5Dj5G1kaqI "It's Raw!")
 * Click **Save link as** and save the file somewhere you will remember!
-* Back on the Atlas dashboard, click on the **Actions** plugin and click the ![Import](https://i.imgur.com/cX5eSQ3.png) Import button. This will open a prompt for you to select the `.action` file you just downloaded. Find it and upload it.
+* Back on the Atlas dashboard, click on the **Actions** plugin and click the ![Import](https://i.sylo.digital/f/UDskf4.png) Import button. This will open a prompt for you to select the `.action` file you just downloaded. Find it and upload it.
 * Congratulations! The imported action should now show up in the **Actions** sidebar.
 
 ### Contribute Actions to This Repository
@@ -19,7 +19,7 @@ If you're interested in importing one of the custom actions found within our rep
 Have an awesome action you want to share? Here's how to get it on this repository for everyone to see. Before uploading your action, you might want to take a look at our **[Guidelines for Contributing](https://github.com/sylo-digital/community-actions#guidelines-for-contributing)** to see if it meets our standards.
 * Fork this repository via the ![Fork](https://i.imgur.com/oazJQxh.png) button located in the top-right corner of this repository.
 * On the Atlas dashboard, select your action from the actions list on your [dashboard](https://atlas.bot/).
-* Click the ![Export](https://i.imgur.com/dvXMSce.png) Export button to save the `.action` file to your device.
+* Click the ![Export](https://i.sylo.digital/f/qeTGg1.png) Export button to save the `.action` file to your device.
 * Rename your action file in correspondence to the **[Folder Format Requirements](https://github.com/sylo-digital/community-actions#folder-format-requirements)** found at the bottom of this page.
 * Navigate to the appropriate subcategory for your action (I.E. Fun folder for a dice-roll action.) and click ![Upload Files](https://i.imgur.com/PmO960X.png)
 * Select your action file and commit the changes to your fork.
@@ -33,9 +33,11 @@ Have an awesome action you want to share? Here's how to get it on this repositor
 **3.** - All submitted actions with a **Command** trigger type that contain *any* subcommands (`a!command subcommandOne subcommandTwo etc.`) *must* include an embedded help menu triggered by `a!<command> help` that displays the following:  
 * A description of what the (super)action, as a whole, does.
 * A complete list of all valid subcommands and a description of what each one does.
-* At least one command example.
+* At least one command example.  
 
-**4.** - If your (super)action requires static end-user input to function such as a specific channel name or ID, message ID, user ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.imgur.com/dVldQxo.png) for an example. You must also declare that there is end-user input required in your (super)action README.
+[Here](https://github.com/sylo-digital/community-actions/tree/master/Snippets/Deano-ActionHelp) is a snippet to help you.
+
+**4.** - If your (super)action requires static end-user input to function such as a specific channel name or ID, message ID, user ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `{note}` tag explaining what the information will be used for so the end-user can populate it correctly. See [here](https://i.at.ls/f/ShwdPw) for an example. You must also declare that there is end-user input required in your (super)action README.
 
 **5.** - Wrappers or aliases for existing Atlas commands do not meet our requirements for contributing. Any action that is submitted in which its sole purpose is to execute a native Atlas command under a disguised name will be automatically denied. The only exception to this guideline is if the wrapper adds a specific functionality to the execution of the command that is not available when running the native command alone.
 
