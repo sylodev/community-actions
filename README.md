@@ -56,9 +56,11 @@ We impose restrictions on how files are uploaded and organized to keep the repos
 >`README.md`    
 * **If multiple people contributed to a (super)action's development, the other author(s) name should be appended to the original author's name:**
 >`AuthorName-AuthorName-AuthorName-(Super)ActionName`
+* **If the (super)action takes advantage of the increased tag limits of Atlas Premium, or uses Premium only features, append a label:**
+>`AuthorName-(Super)ActionName-Premium`
 -----
 #### Repository Moderators
 All current moderators of this repository are Atlas staff members.
-* [JaM3141](https://github.com/JaM3141) - JaM#8608
-* [cykreet](https://github.com/cykreet) - Cykreet#1083
-* [DracoClaw](https://github.com/DracoClaw) - DracoClaw#0065
+* [JaM3141](https://github.com/JaM3141) - [JaM#8608](https://discord.com/users/204045630836834305)
+* [cykreet](https://github.com/cykreet) - [Cykreet#1083](https://discord.com/users/723483880291827732)
+* [DracoClaw](https://github.com/DracoClaw) - [DracoClaw#0065](https://discord.com/users/341680387979870219)
