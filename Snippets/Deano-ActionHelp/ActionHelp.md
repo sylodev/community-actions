@@ -10,7 +10,7 @@
 ;
 	{a!ae;
 		--title="**My Custom Action Help**";
-		--description="This is what my action does"
+		--description="This is what my action does";
 		--field1name="Command Usage";
 		--field1value="`{guild.prefix}myCustomCommand [help]` - Show the help dialog";
 		--field2name="Example Usage";
