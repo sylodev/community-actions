@@ -12,7 +12,7 @@ The snippet will sort the values and place them in keys.
 **Expanding:**  
 Expanding the snippte is as simple as adding another one of the modules to the end, incrementing the `{set}` value each time.  
 ```
-{set;string;{replace;{get;string};{get;4};}}
+{set;string;{replace;{get;string};/{get;4}/;}}
 {set;5;{math;max({get;string})}}
 ```
 Additionally add another `value` key to the top as well as to the `{set;string;...}`. 
