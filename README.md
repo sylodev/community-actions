@@ -1,6 +1,9 @@
 # Atlas Community Actions Repository
 Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlas.bot) Discord bot to share custom-made actions and snippets of code with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
 
+| WARNING: Folders marked as LEGACY are from the before the vX update. Working behavior may vary. |
+| --- |
+
 ## How To
 The following information is for actions only. For information on how to import snippets, see [here](https://github.com/sylo-digital/community-actions/tree/master/Snippets#what-are-snippets).
 
