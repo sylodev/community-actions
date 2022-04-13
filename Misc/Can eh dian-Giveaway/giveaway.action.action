@@ -1,0 +1,56 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2022-04-13T07:04:36.442Z",
+  "actions": [
+    {
+      "id": "addb67a4-5009-4e19-8d36-a54dafdd260e",
+      "flags": 0,
+      "name": "My Action",
+      "trigger": {
+        "name": "giveaway",
+        "description": "simple giveaway action to ping a role with info like sponsor / prize / message",
+        "parameters": [
+          {
+            "name": "prize",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "message",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "sponsor",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "type": 0,
+        "keyword": null,
+        "targetType": null,
+        "channelId": null,
+        "emoji": null,
+        "afterVerification": null,
+        "roleId": null,
+        "voiceChannelId": null,
+        "contextChannelId": null,
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "nextRun": null,
+        "lockedAt": null
+      },
+      "disabled": false,
+      "content": "// replace 'ROLE_ID' with the role ID that you want to ping when someone runs this command\n{=giveawayRole;ROLE_ID}\n\n// you can change the way the embed is set up using the variable below but it's recommended to leave it if you don't know what you're doing\n{=out;**Sponsor:** {user.mention;{option;Sponsor}}\n**Prize:** {option;prize}\n**Message:** {option;message}}\n\n{responder.text;{catch;{role.mention;{$giveawayRole}};The person who set up this action has not set a proper role at the top of the action}}\n{responder.embed;{{\n  \"title\": \":tada: Giveaway :tada:\",\n  \"color\": 15921906,\n  \"description\": \"{replace;{$out};/\\n/g;\\n}\"\n}}}\n// set the channel so that it sends directly to the channel instead of replying to the interaction, which allows it to actually ping the role\n{responder.channel;{channel.id}}\n{responder.send}\n// send an interaction response so the bot doesn't say it didn't respond\n{responder.text;Succesfully sent}\n{responder.ephemeral}",
+      "createdAt": "2022-04-13T06:48:45.491Z",
+      "updatedAt": "2022-04-13T07:04:20.643Z"
+    }
+  ]
+}
