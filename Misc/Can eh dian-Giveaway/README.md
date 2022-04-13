@@ -4,4 +4,5 @@ Basic Giveaway action to ping Members with a nice(ish) looking embed with all th
 
 ## Usage
 
-Use the slash command `/giveaway` and fill in the required options
+1) Add the ROLE ID of the role that should be pinged upon succesfully running the command at the top of the action.
+2) Use the slash command `/giveaway` in discord and fill in the required options
