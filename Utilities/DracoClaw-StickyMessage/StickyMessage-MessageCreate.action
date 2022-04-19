@@ -1,0 +1,37 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2022-04-19T17:56:49.460Z",
+  "actions": [
+    {
+      "id": "e997ea9d-7b4a-478e-a11e-93a2a56000f1",
+      "flags": 0,
+      "name": "Sticky Message",
+      "trigger": {
+        "name": "my_command",
+        "description": null,
+        "parameters": [],
+        "type": 7,
+        "keyword": null,
+        "targetType": null,
+        "channelId": null,
+        "emoji": null,
+        "afterVerification": null,
+        "roleId": null,
+        "voiceChannelId": null,
+        "contextChannelId": null,
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "nextRun": null,
+        "lockedAt": null
+      },
+      "disabled": false,
+      "content": "{=sticky;{store.get;sticky}}\n\n{=title;Your_Title_Here}\n{=description;Your_Message_Here}\n{=color;#ABC123}\n\n{if;{$sticky.{channel.id}};\n{delete;{$sticky.{channel.id}}}\n}\n\n{responder.embed title=\"{$title}\" description=\"{$description}\" color=\"{$color\"}}\n{responder.channel;{channel.id}}\n{=sticky.{channel.id};{responder.send return_id}}\n\n{store.set;sticky;{$sticky}}",
+      "createdAt": "2022-04-17T13:39:55.086Z",
+      "updatedAt": "2022-04-19T17:56:46.641Z"
+    }
+  ]
+}
