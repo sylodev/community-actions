@@ -1,5 +1,6 @@
 Have Atlas send a "Sticky Message", a mesage that is always at the bottom of the channel.
-At the begining of the action you will see multiple `{=key;value}`. This is were you set the details of the message.
+
+Use the [Embed Builder](https://atlas.bot/tools/embed-builder) to create your message. Paste it after the // Note , replacing the default example.
 
 As MessageCreate actions have a 1 minute cooldown for Humans, it is recomended to only use this action in channels with not a lot of activity.
 
