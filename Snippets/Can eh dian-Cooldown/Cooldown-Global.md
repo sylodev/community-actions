@@ -1,4 +1,5 @@
-```// replace the {responder.text} at the bottom of the script (line 15) with your code and read the note (line 13)
+```
+// replace the {responder.text} at the bottom of the script (line 15) with your code and read the note (line 13)
 // replace 'testing' with the name of your command
 {=commandName;testing}
 // replace '5m' with the cooldown time you want for your action
@@ -12,4 +13,5 @@
 }
 // keep the {store} tag together with your output if you want the cooldown to only trigger when a user succesfully uses the command, otherwise leave it just under the `{if}` above
 {store.set;{$commandName}_cd;{time;{$cooldownTime}}}
-{responder.text;wow you ran the command correctly}```
+{responder.text;wow you ran the command correctly}
+```
