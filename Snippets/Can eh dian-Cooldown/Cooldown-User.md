@@ -1,4 +1,5 @@
-```// replace the {responder.text} at the bottom of the script (line 23) with your code and read the note (line 19+20)
+```
+// replace the {responder.text} at the bottom of the script (line 23) with your code and read the note (line 19+20)
 // replace 'testing' with the name of your command
 {=commandName;testing}
 // replace '5m' with the cooldown time you want for your action
@@ -20,4 +21,5 @@
 // otherwise leave it just under the `{if}` above
 {=cdErr;{catch;{store.set;{$commandName}_cooldowns;{push return;{$cooldownArr};{user.id}-{time;{$cooldownTime}}}};err}}
 {if;{$cdErr};==;err;{=firstItem;{shift;{$cooldownArr}}}{store.set;{$commandName}_cooldowns;{push;{$cooldownArr};{user.id}-{time;{$cooldownTime}}}}}
-{responder.text;wow look at you, you ran the command correctly}```
+{responder.text;wow look at you, you ran the command correctly}
+```
