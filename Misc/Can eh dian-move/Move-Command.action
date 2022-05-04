@@ -1,0 +1,67 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2022-05-04T05:04:16.081Z",
+  "actions": [
+    {
+      "id": "7887b834-19b6-4681-8fca-f545c5d87164",
+      "flags": 0,
+      "name": "My Action",
+      "trigger": {
+        "name": "move",
+        "description": "Simple command to move messages from one channel to another",
+        "parameters": [
+          {
+            "name": "link",
+            "type": 3,
+            "description": "The link to the message you want to move",
+            "required": true
+          },
+          {
+            "name": "channel",
+            "type": 7,
+            "description": "The channel the message should be sent to",
+            "required": true
+          },
+          {
+            "name": "delete_original",
+            "type": 5,
+            "description": "Whether or not the original message should be deleted",
+            "required": true
+          }
+        ],
+        "type": 0,
+        "keyword": null,
+        "targetType": null,
+        "channelId": null,
+        "emoji": null,
+        "afterVerification": null,
+        "roleId": null,
+        "voiceChannelId": null,
+        "contextChannelId": null,
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "nextRun": null,
+        "lockedAt": null
+      },
+      "disabled": false,
+      "content": "//Do not touch anything below this note unless you know what you're doing\n{if;{catch;{message.content;{message.link;{option;link}}};err};==;err;\r\n    {return;{responder.error;That is not a valid message link}}\r\n}\r\n{=link;{message.link;{option;link}}}\r\n{=message.content;{message.content;{$link}}}\r\n{=message.embed;{message.embed;{$link}}}\r\n{if;{$message.content};{responder.text;{$message.content}}}\r\n{if;{$message.embed};\r\n    {=counter;{[0;1;2;3;4;5;6;7;8;9]}}\r\n    {for;{=count};{$counter};\r\n        {if;{message.embed index={$count};{$link}};\r\n            {responder.embed;{message.embed index={$count};{$link}}};\r\n            {break}\r\n        }\r\n    }\r\n}\r\n{responder.channel;{option;channel}}\r\n{if;{option;delete_original};\r\n    {message.delete;{$link}}\r\n}\r\n{responder.send}\r\n{responder.error;succesffully moved the message to {channel.mention;{option;channel}}}",
+      "restriction": {
+        "permissions": "8192",
+        "role": {
+          "mode": 0,
+          "value": []
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "createdAt": "2022-04-25T18:23:38.750Z",
+      "updatedAt": "2022-05-04T05:03:28.022Z"
+    }
+  ]
+}
