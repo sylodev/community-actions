@@ -2,6 +2,8 @@
 
 Basic move action to move messages from one channel to another
 
+NOTE: DOES NOT MOVE IMAGES/ATTACHMENTS YET AS ATLAS DOES NOT HAVE A TAG FOR THEM
+
 ## Usage
 
 1) [import the action](https://github.com/sylo-digital/community-actions#import-actions-from-this-repository-into-your-server)
