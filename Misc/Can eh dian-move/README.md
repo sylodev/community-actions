@@ -1,8 +1,6 @@
 # Move
 
-Basic move action to move messages from one channel to another
-
-NOTE: DOES NOT MOVE IMAGES/ATTACHMENTS YET AS ATLAS DOES NOT HAVE A TAG FOR THEM
+Basic move action to move messages from one channel to another\
 
 ## Usage
 
