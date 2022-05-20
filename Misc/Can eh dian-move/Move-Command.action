@@ -1,0 +1,68 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2022-05-14T07:57:41.166Z",
+  "actions": [
+    {
+      "id": "555b5363-f6ec-4cf3-8d11-0742c904b170",
+      "flags": 0,
+      "name": "My Action",
+      "trigger": {
+        "name": "move",
+        "description": "A command to move messages from one channel to another",
+        "parameters": [
+          {
+            "name": "link",
+            "type": 3,
+            "description": "The link to the message you want to move",
+            "required": true
+          },
+          {
+            "name": "channel",
+            "type": 7,
+            "description": "The channel the message should be sent to",
+            "required": true
+          },
+          {
+            "name": "delete_original",
+            "type": 5,
+            "description": "Whether or not the original message should be deleted",
+            "required": true
+          }
+        ],
+        "type": 0,
+        "keyword": null,
+        "targetType": null,
+        "channelId": null,
+        "emoji": null,
+        "afterVerification": null,
+        "roleId": null,
+        "voiceChannelId": null,
+        "contextChannelId": null,
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "nextRun": null,
+        "lockedAt": null
+      },
+      "disabled": false,
+      "content": "//Do not touch anything in this action unless you know what you're doing\r\n\r\n// catch if the input link leads to a valid message\r\n{catch;\r\n    {=message.content;{message.content;{message.link;{option;link}}}}\r\n    ;\r\n    {return;{responder.error;That is not a valid message link}}\r\n}\r\n// catch if the input channel is available to send messages to\r\n{catch;\r\n    {responder.channel;{option;channel}}\r\n    ;\r\n    {return;{responder.error;That is not a valid channel to send the message to}}\r\n}\r\n// transform the input link to a basic message link so we don't run into error's for no reason (cause you never know with discord)\r\n{=link;{message.link;{option;link}}}\r\n// fairly straightforward, we're checking if the input link's message content exists and if it does it adds it to the output\r\n{if;{$message.content};{=outputText;{$message.content}}}\r\n// checking if the input links message contains attachments, then if the output is > 2k characters long it will send the images in a seperate message (later in the script)\r\n{if;{message.attachments;{$link}};\r\n    {=outputImg;{join;{message.attachments single=false;{$link}}; }}\r\n    {if;{math;{length;{$outputText}}+{length;{$outputImg}}};<=;2000;\r\n        {responder.text;{$outputText}\r\n{$outputImg}}\r\n        {=outputImg;}\r\n        ;\r\n        {catch;{responder.text;{$outputText}};}\r\n    }\r\n    ;\r\n    {catch;{responder.text;{$outputText}};}\r\n}\r\n// checking if the input link's message includes an embed\r\n{=message.embed;{message.embed;{$link}}}\r\n// messages can have up to 10 embeds in them, so this will check the message for however many embeds are in the message and add it to the output\r\n{if;{$message.embed};\r\n    {=embed; }\r\n    {for;{=count};{[0;1;2;3;4;5;6;7;8;9]};\r\n        {=embed;{message.embed index={$count};{$link}}}\r\n        {if;{$embed};\r\n            {responder.embed;{$embed}}\r\n            ;\r\n            {break}\r\n        }\r\n    }\r\n}\r\n// catch if sending the message error's out (typically only happens when the response is empty)\r\n{catch;\r\n    {responder.send ignore_interaction=true}\r\n    ;\r\n    {return;\r\n        {responder.reset}\r\n        {responder.error;Failed to send the message.}\r\n    }\r\n}\r\n// this will only work when the text output + image links is > 2k characters (sends image links with a seperate message than the text)\r\n{if;{$outputImg};\r\n    {responder.text;{$outputImg}}\r\n    {responder.channel;{option;channel}}\r\n    {responder.send ignore_interaction=true}\r\n}\r\n// if the input delete_original option is true then it tries to delete the message\r\n{if;{option;delete_original};\r\n    {catch;\r\n        {message.delete;{$link}}\r\n        ;\r\n        {return;{responder.error;Failed to delete the original message}}\r\n    }\r\n}\r\n// finally, edits the original 'moving...' message to confirm that the action has run completely\r\n{responder.error;succesfully moved the message to {channel.mention;{option;channel}}}",
+      "restriction": {
+        "permissions": "8192",
+        "role": {
+          "mode": 0,
+          "value": []
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-05-04T06:29:05.167Z",
+      "updatedAt": "2022-05-14T07:57:38.417Z"
+    }
+  ]
+}
