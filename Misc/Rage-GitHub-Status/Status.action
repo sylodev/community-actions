@@ -1,0 +1,73 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2022-07-13T10:08:48.074Z",
+  "actions": [
+    {
+      "id": "c11bd533-f5c0-4d1d-93b2-5846ff90625a",
+      "flags": 0,
+      "name": "Server Status",
+      "trigger": {
+        "name": "status",
+        "description": "A custom command to display and send an embed message for a game server status.",
+        "parameters": [
+          {
+            "name": "channel",
+            "type": 7,
+            "description": "Choose a channel to send to.",
+            "required": true
+          },
+          {
+            "name": "status",
+            "type": 3,
+            "description": "Set the status type for the server being mentioned.",
+            "required": true
+          },
+          {
+            "name": "server_name",
+            "type": 3,
+            "description": "Choose the server name that you're showing the status for.",
+            "required": true
+          },
+          {
+            "name": "reason",
+            "type": 3,
+            "description": "Give a optional reason for why you're performing this type. Available only for offline and restarting",
+            "required": false
+          }
+        ],
+        "type": 0,
+        "keyword": null,
+        "targetType": null,
+        "channelId": null,
+        "emoji": null,
+        "afterVerification": null,
+        "roleId": null,
+        "voiceChannelId": null,
+        "contextChannelId": null,
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "schedule": null,
+        "gracePeriodMinutes": null
+      },
+      "disabled": false,
+      "content": "{=status;{[Online;Offline;Restarting]}} // Variables for the status type. Provided are case-sensitive, another set of lowercase ones provided below\r\n{=status;{[online;offline;restarting]}}\r\n\r\n// Defines the server names, for shorter abbreviations and easier command use. Replace SERVER_ABBREVIATION with yours and SERVER_NAME with the extended\r\n// I.E. Server abbreviation should be like ark1 with Server Name being [Server1] Ark: Survival Evolved, or the name of your server\r\n{=server.SERVER_ABBREVIATION;SERVER_NAME}\r\n\r\n// Indicates whether the status type you provide is a correct status from the variables above\r\n[#if;{$status};!includes;{option;status}]\r\n  {responder.embed;{{\r\n  \"title\": \"INVALID STATUS TYPE!\",\r\n  \"color\": 460551,\r\n  \"description\": \"Use any of the following statuses, case-sensitive, for the command.\",\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"Types\",\r\n      \"value\": \"• Online\\n• Restarting\\n• Offline\"\r\n    }\r\n  ]\r\n  }}}\r\n  {responder.ephemeral}\r\n  {return}\r\n[/if]\r\n\r\n\r\n// Informs if the server name from the variables listed above do not match.\r\n// Edit the fields value and list your server names from the list defined above.\r\n[#if;{$server};!includes;{option;server_name}]\r\n  {responder.embed;{{\r\n  \"title\": \"INVALID SERVER NAME!\",\r\n  \"color\": 460551,\r\n  \"description\": \"Use any of the following statuses, case-sensitive, for the command.\",\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"Types\",\r\n      \"value\": \"• SERVER_NAME \\n• NEW_SERVER_NAME\"\r\n    }\r\n  ]\r\n  }}}\r\n  {responder.ephemeral}\r\n  {return}\r\n[/if]\r\n\r\n// Individual status embeds, displaying their own messages for the status type.\r\n[#if;{option;status};===;{$status.0}]\r\n  {responder.embed;{{\r\n  \"title\": \":green_circle: {$server.{option;server_name}} is now {$status.0}\",\r\n  \"color\": 460551,\r\n  \"description\": \"**{$server.{option;server_name}}** is now **{$status.0}**. You may now join and if you have any issues, please raise a ticket via {channel.mention;995674224964407297}.\"\r\n  }}}\r\n  {responder.channel;{option;channel}}\r\n[/if]\r\n\r\n[#if;{option;status};===;{$status.1}]\r\n  {responder.embed;{{\r\n  \"title\": \":red_circle: {$server.{option;server_name}} is now {$status.1}\",\r\n  \"color\": 460551,\r\n  \"description\": \"**{$server.{option;server_name}}** is now **{$status.1}**. Please allow up to 30 minutes for the server to boot back online.\",\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"Reason\",\r\n      \"value\": \"{option;reason}\"\r\n    }\r\n  ]\r\n  }}}\r\n  {responder.channel;{option;channel}}\r\n[/if]\r\n\r\n[#if;{option;status};===;{$status.2}]\r\n  {responder.embed;{{\r\n  \"title\": \":yellow_circle: {$server.{option;server_name}} is now {$status.2}\",\r\n  \"color\": 460551,\r\n  \"description\": \"**{$server.{option;server_name}}** is now **{$status.2}**. Please allow up to 30 minutes for the server to boot back online.\",\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"Reason\",\r\n      \"value\": \"{option;reason}\"\r\n    }\r\n  ]\r\n  }}}\r\n  {responder.channel;{option;channel}}\r\n[/if]",
+      "restriction": {
+        "permissions": "6",
+        "role": {
+          "mode": 0,
+          "value": []
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-07-13T07:18:51.013Z",
+      "updatedAt": "2022-07-13T10:08:54.847Z",
+      "task": null
+    }
+  ]
+}
