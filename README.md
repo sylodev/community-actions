@@ -1,11 +1,11 @@
 # Atlas Community Actions Repository
-Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlas.bot) Discord bot to share custom-made actions and functions with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
+Welcome to the **Atlas Community Actions Repository**, a public resource for users of the [Atlas](https://atlas.bot) Discord bot to share custom-made actions and snippets of code with others in the Atlas community. Although every attempt is made to scan all actions submitted to this repository for malicious content, we assume no responsibility for any damages incurred from importing content from this source into your server.
 
 | WARNING: Folders marked as LEGACY are from the before the vX update. Working behavior may vary. |
 | --- |
 
 ## How To
-The following information is for actions only. For information on how to utilize functions, see [here](https://github.com/sylo-digital/community-actions/tree/master/Functions#what-are-functions).
+The following information is for actions only. For information on how to utilize snippets, see [here](https://github.com/sylo-digital/community-actions/tree/master/Snippets#what-are-snippets).
 
 ### Import Actions From This Repository Into Your Server
 If you're interested in importing one of the custom actions found within our repository into your server, here's how to do it:
@@ -31,13 +31,13 @@ Have an awesome action you want to share? Here's how to get it on this repositor
 * Create a pull request and wait for it to be approved by the repository moderators.
 
 ## Guidelines for Contributing
-**1.** - All uploaded actions _must_ be submitted in fluent, understandable English. Any pull requests that are made in a language other than English or that contain excessive typos will be automatically closed.
+**1.** - All uploaded actions  _must_  be submitted in fluent, understandable English. Any pull requests that are made in a language other than English or that contain excessive typos will be automatically closed.
 
 **2.** - All submitted actions must be placed in a folder per the **[Folder Format Requirements](https://github.com/sylo-digital/community-actions#folder-format-requirements)** along with a `README.md` file with a short (or long) description of what the action does. If you make a pull request comprised of an `.actionpack` file include any special setup required in the README.
 
 **4.** - If your action(pack) requires static end-user input to function such as a specific channel name or ID, message ID, user ID, etc., to contribute to ease of use, you must declare variables at the beginning of your action code with a `// note` explaining what the information will be used for so the end-user can populate it correctly. See [here](https://micro.sylo.digital/f/8XW4l3) for an example. You must also declare that there is end-user input required in your action(pack) README.
 
-**5.** - Wrappers or aliases for existing Atlas commands do not meet our requirements for contributing. Any action that is submitted in which its sole purpose is to execute a native Atlas command under a disguised name will be automatically denied. The only exception to this guideline is if the wrapper adds specific functionality to the execution of the command that is not available when running the native command alone.
+**5.** - Wrappers or aliases for existing Atlas commands do not meet our requirements for contributing. Any action that is submitted in which its sole purpose is to execute a native Atlas command under a disguised name will be automatically denied. The only exception to this guideline is if the wrapper adds a specific functionality to the execution of the command that is not available when running the native command alone.
 
 ## Folder Format Requirements
 We impose restrictions on how files are uploaded and organized to keep the repository neat and tidy. Please remember to follow these requirements when you upload your action(pack)'s or it may be denied.
