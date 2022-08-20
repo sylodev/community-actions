@@ -17,7 +17,7 @@
 * Create a pull request and wait for it to be merged by the repository moderators.
 
 ## Upload Requirements
-* All functions must be uploaded in Markdown (`.md`) using the template found [here](https://pastebin.com/raw/h72GqXN1). Any pull requests in text formats other than Markdown will result in said pull request being automatically closed.
+* All functions must be uploaded in Markdown (`.md`) using the template found [here](https://micro.sylo.digital/p/sXUCSM). Any pull requests in text formats other than Markdown will result in said pull request being automatically closed.
 * All functions must return a with a unique output variable.
 * Functions belong in the [Functions](https://github.com/sylo-digital/community-actions/tree/master/Functions) folder and must follow the [Folder Format Requirements](https://github.com/sylo-digital/community-actions/tree/master/Functions#folder-format-requirements). Any functions outside of this folder are not allowed and will be [re]moved.
 * As detailed in the [Folder Format Requirements](https://github.com/sylo-digital/community-actions/tree/master/Functions#folder-format-requirements), if your function file supports multiple "versions" or "variations" of modified code to achieve different outcomes, you must follow the **multiple-format** folder requirements which have the added step of including a `README.md` in the base folder that explains the difference between each "version" or "variant" of your function.
