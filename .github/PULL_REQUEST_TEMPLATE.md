@@ -13,16 +13,16 @@ After 14 days of inactivity, your PR will be closed and you will have to create 
 - This is a...
   - [x] Actionpack    
   - [ ] Action
-  - [ ] Snippet
+  - [ ] Function
   
 -->
 - This is a...
   - [ ] Actionpack    
   - [ ] Action
-  - [ ] Snippet
+  - [ ] Function
 - [ ] I have followed the Guidelines for Contributing as closely as possible.
-- [ ] I have thoroughly tested my action(pack) and ensured that it works properly, even when used incorrectly.
-- [ ] My action is not just a wrapper/alias for another command - it has an actual use.
+- [ ] I have thoroughly tested my action(pack) or function and ensured that it works properly, even when used incorrectly.
+- [ ] This is not just a wrapper/alias for another command - it has an actual use.
 
 <!-- If you have anything you need to include, please do so below this line! -->
 --------------------------------------------------------------------------------
