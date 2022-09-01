@@ -2,7 +2,7 @@
 AntiPing is a custom solution for discouraging tagging individual users from a predefined list. Previously this was a private action used exclusively on the Atlas support server, however I've decided to release it to the public. It's fairly simple to setup, so lets get right into it.
 
 ## Setup
-* Follow the instructions for importing action files into your guild by following the steps found on the repository [README](https://github.com/sylo-digital/community-actions/blob/master/README.md).
+* Follow the instructions for importing action files into your guild by following the steps found on the repository [README](https://github.com/sylodev/community-actions/blob/master/README.md).
 * Once imported to your guild, navigate to the **messageCreate** part of the action on your dashboard and populate the `NotifChannel` and `AP_List` variables at the top of the action according to the settings you want.
 * On the **messageCreate** action, blacklist any roles you dont want to be affected by the AntiPing. On the **Command** action, whitelist the roles you want to be able to use the command.
 * Woopdeedoo, if you didn't screw it up, AntiPing should be up and functioning in your guild. Try executing `a!ap help` in a text channel to see a complete list of AntiPing commands.

@@ -39,5 +39,5 @@ gamble | Gamble rolls a **d12** dice, whoever gets the higher roll, wins! | `a!g
 slots | Slot machine gives you **double** or even **triple** of your bet if you win a jackpot. | `a!slots <amount>` | Send Messages | true
 
 ### Credits
-* [Number Formatter](https://github.com/sylo-digital/community-actions/tree/master/Snippets/JaM-NumberFormatter) - JaM#8608
+* [Number Formatter](https://github.com/sylodev/community-actions/tree/master/Snippets/JaM-NumberFormatter) - JaM#8608
 * <a href="https://regexr.com" target="_blank">regexr.com</a> - My lovely assistant for Regular Expressions.
