@@ -9,8 +9,8 @@ This code contains the common function(s) we need to prevent repetition of the s
 
 // This cuts off the decimals from the input if it ever has. Do not modify unless you entirely know what you are doing.
 [#function;truncate;{=parameter}]
-  {=value;{split;parameter;.}
-  {return;{$value.0}}
+  {=parameter;{split;{$parameter};.}}
+  {return;{$parameter.0}}
 [/function]
 ```
 
