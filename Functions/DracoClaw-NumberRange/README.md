@@ -11,7 +11,7 @@
 
     {for;{=num};{$array};
         {push;{$output_range};{$index}}
-        {if;{math;{$index}+1};==;{$max};{break}}
+        {if;{math;{$index}+1};>=;{$max};{break}}
         {=index;{math;{$index}+{or;{$steps};1}}}
     }
 
