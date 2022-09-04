@@ -1,5 +1,5 @@
 # Number Parser
-This function parses your input into a valid number. Very useful when working with number-based user inputs like a calculator for example. The parser supports the following:
+This function parses your input into a valid number.
 
 **Examples:**
 * **Input:** `/parse parameter:100k`\
