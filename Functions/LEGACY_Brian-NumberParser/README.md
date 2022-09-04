@@ -1,5 +1,5 @@
 # Number Parser
-This snippet parses number resolvables into a valid integer. Very useful when working with number-based user inputs to for example, use in math tags to prevent breaking stuff. The parser supports **floats** and **human readable numbers** as shown by the examples below:
+This function parses your input into a valid number. Very useful when working with number-based user inputs like a calculator for example. The parser supports the following:
 
 **Examples:**
 * **Input:** `/parse parameter:100k`\
