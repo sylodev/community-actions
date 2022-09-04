@@ -27,12 +27,13 @@
 >**Folder Name:**    
 >`AuthorName-FunctionName`    
 >**Folder Contents:**    
->`FunctionName.md`
+>`README.md`
+
 * **All multiple-format files should adhere to the following naming format:**
 >**Folder Name:**    
 >`AuthorName-FunctionName`    
 >**Folder Contents:**    
->`FunctionName-FormatName.md`      
+>`FormatName.md`      
 >`...`    
 >`README.md`
 * **If multiple people contributed to a function's development, the other author(s) name should be appended to the original author's name:**
