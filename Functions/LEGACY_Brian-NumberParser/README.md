@@ -9,7 +9,7 @@ This function parses your input into a valid number. Very useful when working wi
   **Output:** `420000000`
 
 * **Input:** `/parse parameter:69b`\
-  **Output:** `6942000`
+  **Output:** `69000000000`
   
 * **Input:** `/parse parameter:56.4k`\
   **Output:** `56400`
