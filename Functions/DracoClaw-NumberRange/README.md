@@ -4,17 +4,17 @@
 
 **Code:**
 ```
-[#function;range;{=max};{=min};{=steps}]
-    {=array;{random length={$max} return_array=true;1}}
-    {=index;{or;{$min};0}}
-    {=output_range;{[]}}
+[#function;range;{=range_max};{=range_min};{=range_steps}]
+    {=range_array;{random length={math;{$range_max}-{or;{$range_min};0}} return_array=true;1}}
+    {=range_index;{or;{$range_min};0}}
+    {=range_output;{[]}}
 
-    {for;{=num};{$array};
-        {push;{$output_range};{$index}}
-        {if;{math;{$index}+1};>=;{$max};{break}}
-        {=index;{math;{$index}+{or;{$steps};1}}}
+    {for;{=range_num};{$range_array};
+        {push;{$range_output};{$range_index}}
+        {if;{math;{$range_index}+{or;{$range_steps};1}};>=;{$range_max};{break}}
+        {=range_index;{math;{$range_index}+{or;{$range_steps};1}}}
     }
 
-    {return;{$output_range}}
+    {return;{$range_output}}
 [/function]
 ```
