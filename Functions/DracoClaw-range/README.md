@@ -1,4 +1,4 @@
-**Description:** Returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.
+**Description:** Returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number. Mimics [range()](https://www.w3schools.com/python/ref_func_range.asp)
 
 **Instructions:** `{range;max;min?;steps?}`
 
