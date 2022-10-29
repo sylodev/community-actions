@@ -165,7 +165,7 @@
           {
             "name": "max_entries",
             "type": 4,
-            "description": "The maximum amount of users allowed to enter. Default=300",
+            "description": "The maximum amount of users allowed to enter. `Default=300`",
             "required": false
           },
           {
