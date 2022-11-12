@@ -1,6 +1,6 @@
 An advanced giveaway system with many configurable options.  
 
-This ActionPack contains **6** actions.  
+This ActionPack contains **6** actions, and is **Prime Only**.  
 
 All commands Required Permissions are set to `Manage Messages`.  
 
