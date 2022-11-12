@@ -37,4 +37,4 @@ winners? - How many winners to re-roll.
 list? - Outputs the full template JSON when true.  
 ```  
 __Interval__:  
-`*/2 * * * *` - Runs every two minutes. Ends pending giveaways, as well as clears old ones.
+`*/2 * * * *` - Runs every two minutes. Ends pending giveaways, as well as clears old ones. **Must** have a context channel set to run.
