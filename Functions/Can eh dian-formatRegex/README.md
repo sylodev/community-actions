@@ -1,4 +1,5 @@
 **Description:** takes a regular expression and formats it to work with atlas
+
 **Usage:** `{formatRegex;RegExp}`
 
 **Code:**
