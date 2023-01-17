@@ -1,0 +1,124 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2023-01-17T14:52:40.038Z",
+  "actions": [
+    {
+      "id": "2f040d87-4563-4f2a-a93e-97ae634840eb",
+      "flags": 256,
+      "name": "Team Config",
+      "trigger": {
+        "type": 0,
+        "name": "team config",
+        "channelId": null,
+        "description": "Config the team points action.",
+        "parameters": []
+      },
+      "disabled": false,
+      "content": "{=team.a.role;ROLE_ID}\r\n{=team.a.name;Gryffindor}\r\n{=team.a.color;#7F0909}\r\n{=team.a.icon;https://micro.sylo.digital/f/prK23A.png}\r\n{=team.a.points;0}\r\n\r\n{=team.b.role;ROLE_ID}\r\n{=team.b.name;Slytherin}\r\n{=team.b.color;#0D6217}\r\n{=team.b.icon;https://micro.sylo.digital/f/N6Do7Y.png}\r\n{=team.b.points;0}\r\n\r\n{=team.c.role;ROLE_ID}\r\n{=team.c.name;Hufflepuff}\r\n{=team.c.color;#EEE117}\r\n{=team.c.icon;https://micro.sylo.digital/f/xnNOC0.png}\r\n{=team.c.points;0}\r\n\r\n{=team.d.role;ROLE_ID}\r\n{=team.d.name;Ravenclaw}\r\n{=team.d.color;#0187AF}\r\n{=team.d.icon;https://micro.sylo.digital/f/5SA9BT.png}\r\n{=team.d.points;0}\r\n\r\n{=team.settings.pointChannel;CHANNEL_ID} // Channel to log point changes\r\n{=team.settings.staff;ROLE_ID} // Role allowed to adjust points\r\n\r\n```{$team}```\r\n\r\n{store.set;teams;{$team}}",
+      "cooldownSeconds": 0,
+      "createdAt": "2023-01-17T14:39:25.569Z",
+      "updatedAt": "2023-01-17T14:49:04.113Z",
+      "task": null
+    },
+    {
+      "id": "598e2153-181e-40fc-8823-e0eebbdb6a74",
+      "flags": 0,
+      "name": "Team Points",
+      "trigger": {
+        "type": 0,
+        "name": "team points",
+        "channelId": null,
+        "description": "Adjust the points of a team.",
+        "parameters": [
+          {
+            "name": "target",
+            "type": 9,
+            "description": "User or Role to target.",
+            "required": true
+          },
+          {
+            "name": "points",
+            "type": 4,
+            "description": "The amount of points to give/take. (-10/+10)",
+            "required": true
+          },
+          {
+            "name": "reason",
+            "type": 3,
+            "description": "A message to be included in the Points Channel.",
+            "required": false
+          },
+          {
+            "name": "ping",
+            "type": 5,
+            "description": "Mention the target? (Ping Disabled)",
+            "required": false
+          }
+        ]
+      },
+      "disabled": false,
+      "content": "{=team;{store.get;teams}}\n\n{if;{user.roles};!includes;{$team.settings.staff};\n{return;{responder.error;Only users with {role.mention;{$team.settings.staff}} may adjust points.}}}\n\n{#if;{#catch;{user.nickname;{option;target}};error};!==;error;\n{=target;user};\n{=target;role}\n}\n\n{#if;{$target};==;role;\n{#if;{option;target};==;{$team.a.role};{=X;a};\n{#if;{option;target};==;{$team.b.role};{=X;b};\n{#if;{option;target};==;{$team.c.role};{=X;c};\n{#if;{option;target};==;{$team.d.role};{=X;d};\n{return;{responder.error;That is not a valid team.}}\n}}}}}\n\n{#if;{$target};==;user;\n{#if;{user.roles;{option;target}};includes;{$team.a.role};{=X;a};\n{#if;{user.roles;{option;target}};includes;{$team.b.role};{=X;b};\n{#if;{user.roles;{option;target}};includes;{$team.c.role};{=X;c};\n{#if;{user.roles;{option;target}};includes;{$team.d.role};{=X;d};\n{return;{responder.error;That user is not on a valid team.}}\n}}}}}\n\n{#if;{option;points};>;0;\n{=modifier;to};\n{=modifier;from}\n}\n\n{=team.{$X}.points;{math;{$team.{$X}.points}+{option;points}}}\n\n{if;{channel.id};!==;{$team.settings.pointChannel};\n  {responder.embed color=\"{$team.{$X}.color}\";{{\n    \"title\": \"{option;points} points {$modifier} {$team.{$X}.name}\",\n    \"description\": \"{$team.{$X}.name} have **{$team.{$X}.points}** points.\",\n    \"thumbnail\": {\n      \"url\": \"{$team.{$X}.icon}\"\n    },\n    \"footer\": {\n      \"text\": \"Called by {user.tag}\"\n    },\n    \"timestamp\": \"now\"\n  }}}\n  {responder.send}\n  ;\n  {responder.embed color=\"{$team.{$X}.color}\";{{\n    \"title\": \"{option;points} points {$modifier} {$team.{$X}.name}\",\n    \"description\": \"{$team.{$X}.name} have **{$team.{$X}.points}** points.\",\n    \"thumbnail\": {\n      \"url\": \"{$team.{$X}.icon}\"\n    },\n    \"footer\": {\n      \"text\": \"Called by {user.tag}\"\n    },\n    \"timestamp\": \"now\"\n  }}}\n  {responder.ephemeral}\n  {responder.send}\n}\n\n{if;{$team.settings.pointChannel};!==;CHANNEL_ID;\n  {responder.text;{option;reason}{if;{and boolean;{if;{option;reason};true};{if;{option;ping};!==;false;true}};==;true; - }{if;{option;ping};!==;false;{if;{$target};==;user;{user.mention;{option;target}};{role.mention allow_mention=false;{option;target}}}}}\n  {responder.embed color=\"{$team.{$X}.color}\";{{\n    \"title\": \"{option;points} points {$modifier} {$team.{$X}.name}\",\n    \"description\": \"{$team.{$X}.name} have **{$team.{$X}.points}** points.\",\n    \"thumbnail\": {\n      \"url\": \"{$team.{$X}.icon}\"\n    },\n    \"footer\": {\n      \"text\": \"Called by {user.tag}\"\n    },\n    \"timestamp\": \"now\"\n  }}}\n  {responder.channel;{$team.settings.pointChannel}}\n  {responder.send}\n\n  {=sort;{sort;{[{$team.a};{$team.b};{$team.c};{$team.d}]};points}}\n\n  {responder.embed color=\"{$sort.3.color}\";{{\n    \"title\": \"Scoreboard\",\n    \"description\": \"🥇{role.mention;{$sort.3.role}} has {if;{$sort.3.points};==;;0;{$sort.3.points}} points.\\n🥈{role.mention;{$sort.2.role}} has {if;{$sort.2.points};==;;0;{$sort.2.points}} points.\\n🥉{role.mention;{$sort.1.role}} has {if;{$sort.1.points};==;;0;{$sort.1.points}} points.\\n🏅{role.mention;{$sort.0.role}} has {if;{$sort.0.points};==;;0;{$sort.0.points}} points.\",\n    \"timestamp\": \"now\"\n  }}}\n\n  {if;{$team.settings.pointEmbed};\n    {delete;{$team.settings.pointChannel}-{$team.settings.pointEmbed}}\n  }\n\n  {responder.channel;{$team.settings.pointChannel}}\n  {=team.settings.pointEmbed;{responder.send return_id}}\n}\n\n{store.set;teams;{$team}}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 0,
+          "value": [
+            "723281594286080100"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-04-20T10:13:34.009Z",
+      "updatedAt": "2023-01-17T14:51:55.274Z",
+      "task": null
+    },
+    {
+      "id": "168b63ad-1ff5-4e8b-ade5-d5bad7848be9",
+      "flags": 0,
+      "name": "View Team Points",
+      "trigger": {
+        "type": 0,
+        "name": "team view",
+        "channelId": null,
+        "description": "View the points of a team.",
+        "parameters": [
+          {
+            "name": "target",
+            "type": 9,
+            "description": "User or Role to target.",
+            "required": true
+          }
+        ]
+      },
+      "disabled": false,
+      "content": "{=team;{store.get;teams}}\n\n{#if;{#catch;{user.nickname;{option;target}};error};!==;error;\n{=target;user};\n{=target;role}\n}\n\n{#if;{$target};==;role;\n{#if;{option;target};==;{$team.a.role};{=X;a};\n{#if;{option;target};==;{$team.b.role};{=X;b};\n{#if;{option;target};==;{$team.c.role};{=X;c};\n{#if;{option;target};==;{$team.d.role};{=X;d};\n{return;{responder.error;That is not a valid team.}}\n}}}}}\n\n{#if;{$target};==;user;\n{#if;{user.roles;{option;target}};includes;{$team.a.role};{=X;a};\n{#if;{user.roles;{option;target}};includes;{$team.b.role};{=X;b};\n{#if;{user.roles;{option;target}};includes;{$team.c.role};{=X;c};\n{#if;{user.roles;{option;target}};includes;{$team.d.role};{=X;d};\n{return;{responder.error;That user is not on a valid team.}}\n}}}}}\n\n{responder.ephemeral}\n{responder.embed color=\"{$team.{$X}.color}\";{{\n  \"title\": \"{if;{$target};==;user;{user.username;{option;target}}'s Team;Team {role.name;{option;target}}}\",\n  \"description\": \"{$team.{$X}.name} have **{$team.{$X}.points}** points.\",\n  \"thumbnail\": {\n    \"url\": \"{$team.{$X}.icon}\"\n  },\n  \"timestamp\": \"now\"\n}}}",
+      "cooldownSeconds": 0,
+      "createdAt": "2022-04-20T10:13:34.007Z",
+      "updatedAt": "2023-01-15T18:43:44.962Z",
+      "task": null
+    },
+    {
+      "id": "da8fa3f2-881d-4889-8558-e02b33ce3101",
+      "flags": 0,
+      "name": "Teams Leaderboard",
+      "trigger": {
+        "type": 0,
+        "name": "team leaderboard",
+        "channelId": null,
+        "description": "View all the team's points.",
+        "parameters": []
+      },
+      "disabled": false,
+      "content": "{=team;{store.get;teams}}\n\n{=sort;{sort;{[{$team.a};{$team.b};{$team.c};{$team.d}]};points}}\n\n{responder.embed color=\"{$sort.3.color}\";{{\n  \"title\": \"Scoreboard\",\n  \"description\": \"🥇{role.mention;{$sort.3.role}} has {if;{$sort.3.points};==;;0;{$sort.3.points}} points.\\n🥈{role.mention;{$sort.2.role}} has {if;{$sort.2.points};==;;0;{$sort.2.points}} points.\\n🥉{role.mention;{$sort.1.role}} has {if;{$sort.1.points};==;;0;{$sort.1.points}} points.\\n🏅{role.mention;{$sort.0.role}} has {if;{$sort.0.points};==;;0;{$sort.0.points}} points.\",\n  \"footer\": {\n    \"text\": \"Called by {user.tag}\"\n  },\n  \"timestamp\": \"now\"\n}}}",
+      "cooldownSeconds": 0,
+      "createdAt": "2022-04-19T21:40:17.231Z",
+      "updatedAt": "2023-01-15T18:48:04.581Z",
+      "task": null
+    }
+  ]
+}
