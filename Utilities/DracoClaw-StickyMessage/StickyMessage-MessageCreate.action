@@ -1,38 +1,22 @@
 {
   "comment": "Exported from https://atlas.bot",
   "formatVersion": 2,
-  "exportedAt": "2022-05-19T22:11:30.479Z",
+  "exportedAt": "2023-04-13T22:26:02.997Z",
   "actions": [
     {
-      "id": "6b1a33f0-c2f7-41cb-84d6-2669a4661ca0",
+      "id": "4720e61a-9752-4a59-924f-5b83df15c023",
       "flags": 0,
       "name": "Sticky Message",
       "trigger": {
-        "name": "my_command",
-        "description": null,
-        "parameters": [],
         "type": 7,
-        "keyword": null,
-        "targetType": null,
-        "channelId": null,
-        "emoji": null,
-        "afterVerification": null,
-        "roleId": null,
-        "voiceChannelId": null,
-        "contextChannelId": null,
-        "handlerName": null,
-        "editOriginal": null,
-        "disableComponent": null,
-        "schedule": null,
-        "gracePeriodMinutes": null,
-        "nextRun": null,
-        "lockedAt": null
+        "channelId": null
       },
       "disabled": false,
-      "content": "{=sticky;{store.get;sticky}}\n\n// Paste Embed tag here.\n\n{responder.embed;{{\n  \"title\": \"Sticky Message\",\n  \"color\": 14508274,\n  \"description\": \"This message will stay at the bottom of the channel.\\n\\nUse the [Embed Builder](https://atlas.bot/tools/embed-builder) to make your own.\",\n  \"footer\": {\n    \"text\": \"Made by DracoClaw#0065\",\n    \"icon_url\": \"https://cdn.discordapp.com/avatars/341680387979870219/a_1fe7e9a63cc24206fad3680f5a3913cd.gif\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"How To:\",\n      \"value\": \"- Fill in whatever fields you want in the embed builder.\\n- \\\"Copy as tag\\\"\\n- Replace this Embed.\\n- Profit?\"\n    }\n  ],\n  \"timestamp\": true\n}}}\n\n// Don't touch anything below here, unless you know what you are doing.\n\n{if;{$sticky.{channel.id}};\n{delete;{$sticky.{channel.id}}}\n}\n\n{responder.reference}\n{=sticky.{channel.id};{responder.send return_id}}\n\n{store.set;sticky;{$sticky}}",
+      "content": "{=sticky;{store.get;sticky}}\n\n// Paste Embed tag here.\n\n{responder.embed;{{\n  \"title\": \"Sticky Message\",\n  \"color\": 14508274,\n  \"description\": \"This message will stay at the bottom of the channel.\\n\\nUse the [Embed Builder](https://atlas.bot/tools/embed-builder) to make your own.\",\n  \"footer\": {\n    \"text\": \"Made by DracoClaw#0065\",\n    \"icon_url\": \"https://cdn.discordapp.com/avatars/341680387979870219/a_1fe7e9a63cc24206fad3680f5a3913cd.gif\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"How To:\",\n      \"value\": \"- Fill in whatever fields you want in the embed builder.\\n- \\\"Copy as tag\\\"\\n- Replace this Embed.\\n- Profit?\"\n    }\n  ],\n  \"timestamp\": true\n}}}\n\n// Don't touch anything below here, unless you know what you are doing.\n\n{if;{$sticky.{channel.id}};\n  {if;{catch;{message.createdAt;{$sticky.{channel.id}}};err};!==;err;\n    {delete;{$sticky.{channel.id}}}\n  }\n}\n\n{responder.reference}\n{=sticky.{channel.id};{responder.send return_id}}\n\n{store.set;sticky;{$sticky}}",
       "cooldownSeconds": 0,
-      "createdAt": "2022-05-17T20:55:14.196Z",
-      "updatedAt": "2022-05-19T22:11:28.395Z"
+      "createdAt": "2023-04-13T22:24:30.197Z",
+      "updatedAt": "2023-04-13T22:24:39.557Z",
+      "task": null
     }
   ]
 }
