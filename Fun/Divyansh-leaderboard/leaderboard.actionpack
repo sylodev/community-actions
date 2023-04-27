@@ -16,7 +16,7 @@
           {
             "name": "page",
             "type": 10,
-            "description": "A very mysterious option",
+            "description": "The page of the leaderboard to view!",
             "required": false
           }
         ]
@@ -59,13 +59,13 @@
           {
             "name": "user",
             "type": 6,
-            "description": "A very mysterious option",
+            "description": "The user to edit points for",
             "required": true
           },
           {
             "name": "amount",
             "type": 4,
-            "description": "A very mysterious option",
+            "description": "Number of points to add/remove!",
             "required": true
           }
         ]
