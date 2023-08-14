@@ -1,81 +1,69 @@
 {
   "comment": "Exported from https://atlas.bot",
   "formatVersion": 2,
-  "exportedAt": "2023-07-05T05:22:24.301Z",
+  "exportedAt": "2023-08-14T17:06:12.686Z",
   "actions": [
     {
-      "id": "20fd47a2-dc73-4cdd-808f-c4fa1188bfdd",
-      "flags": 0,
-      "name": "lb callback",
       "trigger": {
+        "type": "ComponentCallback",
         "handlerName": "lb",
         "editOriginal": true,
-        "disableComponent": false,
-        "type": 17,
-        "channelId": null
+        "disableComponent": false
       },
       "disabled": false,
-      "content": "// Calling storage data and the option and formatting \r\n{=gdata;{[]}}\r\n{=donos;{store.get;user_lb}}\r\n{=state;{replace;{$state};1;}}\r\n\r\n// Getting the page to be viewed for the lb\r\n{=em;{message.embed}}\r\n{=footer;{$em.footer.text}}\r\n{=split1;{split;{$footer}; }}\r\n{=current;{$split1.2}}\r\n{=e.next;{math;{$current}+1}}\r\n{=e.last;{$totalpages}}\r\n{=e.first;1}\r\n{=e.previous;{math;{$current}-1}}\r\n{=page;{$e.{$state}}}\r\n\r\n// Getting the leaderboard list\r\n{=sorted;{sort;{$donos};dono}}\r\n{=totalmem;{length;{$sorted}}}\r\n{=totalpages;{split;{math;{$totalmem}/10};.}}\r\n{=totalpages;{if;{$totalpages.1};{math;{$totalpages.0}+1};{math;{$totalpages.0}}}}\r\n{if;{$page};>;{$totalpages};{return;{responder.reset}{responder.error;Error! The page you specied does not exist. Please try again!}}}\r\n{if;{$page};>;10;{return;{responder.reset}{responder.error;max 10 pages bruh}}}\r\n{=start;{math;{$page}*10-10}}\r\n{=start;{math;{$totalmem}-{$start}}}\r\n{=finish;{math;{$page}*10}}\r\n{=finish;{if;{$finish};>;{$totalmem};{$totalmem};{$finish}}}\r\n{=finish;{math;{$totalmem}-{$finish}}}\r\n{=slices;{slice;{$sorted};{$finish};{$start}}}\r\n  \r\n// Making the leaderboard\r\n{=lb;{$slices}}\r\n{=desc;{[]}}\r\n{=count;0}\r\n{=nlb;{[]}}\r\n\r\n// Switching it from top to bottm\r\n[#for;{=stuff};{$lb}]\r\n  {unshift;{$nlb};{$stuff}}\r\n[/for]\r\n\r\n// Forming the lb description\r\n[#for;{=stuff};{$nlb}]\r\n  {=count;{math;{$count}+1}}\r\n  {=num;{math;{$count}+{$page}*10-10}}\r\n  {=format1;**#{$num}** <@{$stuff.userid}> | {$stuff.dono}}\r\n  {push;{$desc};{$format1}}\r\n[/for]\r\n\r\n// Making the embed\r\n{responder.embed \r\n  description=\"{join;{$desc};\\n}\"\r\n  footer=\"Page No. {$page}\"\r\n  color=#F8C8DC\r\n  title=\"{server.name}'s donation leaderboard\"}\r\n\r\n// Making the buttons\r\n{if;{$page};==;1;\r\n  {responder.button \r\n    label=‎ emoji=▶️ state=\"next1\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last1\" handler=lb}\r\n  {return}}\r\n\r\n{if;{$page};<=;{$totalpages};\r\n  {responder.button label=‎ emoji=⏪ state=\"first\" handler=lb}\r\n  {responder.button label=‎ emoji=◀️ state=\"previous\" handler=lb}}\r\n\r\n{if;{$page};<;{$totalpages};\r\n  {responder.button label=‎ emoji=▶️ state=\"next\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last\" handler=lb}}\r\n{return}\r\n",
+      "name": "lb callback",
+      "content": "// Calling storage data and the option and formatting \r\n{=gdata;{[]}}\r\n{=donos;{store.get;user_lb}}\r\n{=state;{replace;{$state};1;}}\r\n\r\n// Getting the page to be viewed for the lb\r\n{=em;{message.embed}}\r\n{=footer;{$em.footer.text}}\r\n{=split1;{split;{$footer}; }}\r\n{=current;{$split1.2}}\r\n{=e.next;{math;{$current}+1}}\r\n{=e.last;{$totalpages}}\r\n{=e.first;1}\r\n{=e.previous;{math;{$current}-1}}\r\n{=page;{$e.{$state}}}\r\n\r\n// Getting the leaderboard list\r\n{=sorted;{sort;{$donos};dono}}\r\n{=totalmem;{length;{$sorted}}}\r\n{=totalpages;{split;{math;{$totalmem}/10};.}}\r\n{=totalpages;{if;{$totalpages.1};{math;{$totalpages.0}+1};{math;{$totalpages.0}}}}\r\n{if;{$page};>;{$totalpages};{return;{responder.reset}{responder.error;Error! The page you specied does not exist. Please try again!}}}\r\n{if;{$page};>;10;{return;{responder.reset}{responder.error;max 10 pages bruh}}}\r\n{=start;{math;{$page}*10-10}}\r\n{=start;{math;{$totalmem}-{$start}}}\r\n{=finish;{math;{$page}*10}}\r\n{=finish;{if;{$finish};>;{$totalmem};{$totalmem};{$finish}}}\r\n{=finish;{math;{$totalmem}-{$finish}}}\r\n{=slices;{slice;{$sorted};{$finish};{$start}}}\r\n  \r\n// Making the leaderboard\r\n{=lb;{$slices}}\r\n{=desc;{[]}}\r\n{=count;0}\r\n{=nlb;{[]}}\r\n\r\n// Switching it from top to bottm\r\n[#for;{=stuff};{$lb}]\r\n  {unshift;{$nlb};{$stuff}}\r\n[/for]\r\n\r\n// Forming the lb description\r\n[#for;{=stuff};{$nlb}]\r\n  {=count;{math;{$count}+1}}\r\n  {=num;{math;{$count}+{$page}*10-10}}\r\n  {=format1;**#{$num}** <@{$stuff.userid}> | {$stuff.dono}}\r\n  {push;{$desc};{$format1}}\r\n[/for]\r\n\r\n// Making the embed\r\n{responder.embed \r\n  description=\"{join;{$desc};\\n}\"\r\n  footer=\"Page No. {$page}\"\r\n  color=#F8C8DC\r\n  title=\"{server.name}'s donation leaderboard\"}\r\n\r\n// Making the buttons\r\n{if;{$page};==;1;\r\n  {responder.button \r\n    label=‎ emoji=▶️ state=\"next1\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last1\" handler=lb}\r\n  {return}}\r\n\r\n{if;{$page};<=;{$totalpages};\r\n  {responder.button label=‎ emoji=⏪ state=\"first\" handler=lb}\r\n  {responder.button label=‎ emoji=◀️ state=\"previous\" handler=lb}}\r\n\r\n{if;{$page};<;{$totalpages};\r\n  {responder.button label=‎ emoji=▶️ state=\"next\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last\" handler=lb}}\r\n\r\n{return}\r\n",
       "cooldownSeconds": 0,
-      "createdAt": "2023-04-25T19:15:07.687Z",
-      "updatedAt": "2023-07-04T06:14:20.500Z",
-      "task": null
+      "restriction": null,
+      "flags": "0"
     },
     {
-      "id": "c560e53a-f6f4-4915-a0c0-be652a91cab7",
-      "flags": 256,
-      "name": "editpoint",
       "trigger": {
-        "type": 0,
+        "type": "SlashCommand",
         "name": "editpoint",
-        "channelId": null,
         "description": "Edit a user's points! If the user isn't in the database it adds them as well. Supports -5 and +5",
         "parameters": [
           {
             "name": "user",
-            "type": 6,
+            "type": "User",
             "description": "The user to edit points for",
             "required": true
           },
           {
             "name": "amount",
-            "type": 4,
+            "type": "Integer",
             "description": "Number of points to add/remove!",
             "required": true
           }
         ]
       },
       "disabled": false,
+      "name": "editpoint",
       "content": "// SUPPORT FOR MULTIPLE STORAGE KEYS SHOULD BE LIKE THIS\r\n\r\n{=data;{or;{store.get;user_lb};{[]}}}\r\n{=user;{option;user}}\r\n{=amount;{option;amount}}\r\n\r\n// checking if the user is a human and in the server or not\r\n{if;1;==;2;\r\n[#if;{catch;{user.bot;{$user}};true}]\r\n  {return;\r\n    {responder.error;The user you mentioned is either not in the server or a bot!}}\r\n[/if]}\r\n\r\n// checking if the user's dono already existsss\r\n{=exists;{if;{$data};includes;{$user};yes;no}}\r\n[#if;{$exists};==;yes]\r\n    {=data.[userid:{$user}].dono;{math;{$data.[userid:{$user}].dono}+{$amount}}}\r\n[/if]\r\n\r\n[#if;{$exists};==;no]\r\n    {=e.userid;{$user}}\r\n    {=e.dono;{$amount}}\r\n    {push;{$data};{$e}}\r\n[/if]\r\n\r\n{if;{$data.[userid:{$user}].dono};<;0;\r\n    {=data.[userid:{$user}].dono;0}\r\n    {=e;yes}\r\n}\r\n\r\n{responder.embed\r\n  title=\"Editing user's points!\"\r\n  description=\"Successfully edited {user.mention;{$user}}'s points to `{$data.[userid:{$user}].dono}`{if;{$e};==;yes;\r\n   ⚠️ The points were reset to `0` as they were negative!\"}}\r\n{store.set;user_lb;{$data}}\r\n\r\n  ",
       "cooldownSeconds": 0,
-      "createdAt": "2023-04-25T18:13:34.567Z",
-      "updatedAt": "2023-07-04T08:11:01.918Z",
-      "task": null
+      "restriction": null,
+      "flags": "256"
     },
     {
-      "id": "1174d308-b686-44da-a466-a602673fadd9",
-      "flags": 0,
-      "name": "Leaderboard",
       "trigger": {
-        "type": 0,
+        "type": "SlashCommand",
         "name": "lb",
-        "channelId": null,
         "description": "View the server's point leaderboard!",
         "parameters": [
           {
             "name": "page",
-            "type": 10,
+            "type": "Number",
             "description": "The page of the leaderboard to view!",
             "required": false
           }
         ]
       },
       "disabled": false,
-      "content": "// Calling storage data and the option\r\n{=donos;{or;{store.get;user_lb};{[]}}}\r\n{=page;{or;{option;page};1}}\r\n\r\n// running check if lb is empty\r\n[#if;{$donos.0};==;]\r\n  {return;\r\n    {responder.error;There aren't any users on the leaderboard to display!}}\r\n[/if]\r\n\r\n// Getting the leaderboard list\r\n{=sorted;{sort;{$donos};dono}}\r\n{=totalmem;{length;{$sorted}}}\r\n{=totalpages;{split;{math;{$totalmem}/10};.}}\r\n{responder.text;{$totalpages}//{$totalpages.1}}\r\n{=totalpages;{if;{$totalpages.1};{math;{$totalpages.0}+1};{math;{$totalpages.0}}}}\r\n{if;{$page};>;{$totalpages};{return;{responder.error;The total pages on the leaderboard are `{$totalpages}`!}}}\r\n{if;{$page};>;10;{return;{responder.error;You can't go past page 10 of the leaderboard!}}}\r\n{=start;{math;{$page}*10-10}}\r\n{=start;{math;{$totalmem}-{$start}}}\r\n{=finish;{math;{$page}*10}}\r\n{=finish;{if;{$finish};>;{$totalmem};{$totalmem};{$finish}}}\r\n{=finish;{math;{$totalmem}-{$finish}}}\r\n{=slices;{slice;{$sorted};{$finish};{$start}}}\r\n  \r\n// Making the leaderboard\r\n{=lb;{$slices}}\r\n{=desc;{[]}}\r\n{=count;0}\r\n{=nlb;{[]}}\r\n\r\n// Switching it from top to bottm\r\n[#for;{=stuff};{$lb}]\r\n  {unshift;{$nlb};{$stuff}}\r\n[/for]\r\n\r\n// Forming the lb description\r\n{=im;{[]}}\r\n[#for;{=stuff};{$nlb}]\r\n  {=count;{math;{$count}+1}}\r\n  {=num;{math;{$count}+{$page}*10-10}}\r\n  {=format;#{$num}. <@{$stuff.userid}> | {formatNumber;{$stuff.dono}}}\r\n  {=eeee;{if;{$stuff.userid};==;{user.id};**{$format}**;{$format}}}\r\n  {push;{$desc};{$eeee}}\r\n[/for]\r\n\r\n// Making the embed\r\n{=smth;{if;{$data};includes;{user.id}; | {$data.[userid:{user.id}}. {user.tag}}}\r\n{responder.embed \r\n  footer=\"Page No. {$page}/{$totalpages}{$smth}\"\r\n  color=#F8C8DC}\r\n\r\n// Making the buttons\r\n{if;{$totalpages};==;1;{return}}\r\n{if;{$page};==;1;\r\n  {responder.button \r\n    label=‎ emoji=▶️ state=\"next\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last\" handler=lb}\r\n  {return}}\r\n\r\n{if;{$page};<=;{$totalpages};\r\n  {responder.button label=‎ emoji=⏪ state=\"first\" handler=lb}\r\n  {responder.button label=‎ emoji=◀️ state=\"previous\" handler=lb}}\r\n\r\n{if;{$page};<;{$totalpages};\r\n  {responder.button label=‎ emoji=▶️ state=\"next\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last\" handler=lb}}",
+      "name": "Leaderboard",
+      "content": "// Calling storage data and the option\r\n{=donos;{or;{store.get;user_lb};{[]}}}\r\n{=page;{or;{option;page};1}}\r\n\r\n// running check if lb is empty\r\n[#if;{$donos.0};==;]\r\n  {return;\r\n    {responder.error;There aren't any users on the leaderboard to display!}}\r\n[/if]\r\n\r\n// Setting the page number\r\n{=page;{or;{$page};1}}\r\n\r\n// Getting the leaderboard list\r\n{=sorted;{sort;{$donos};dono}}\r\n{=totalmem;{length;{$sorted}}}\r\n{=totalpages;{split;{math;{$totalmem}/10};.}}\r\n{=totalpages;{if;{$totalpages.1};{math;{$totalpages.0}+1};{math;{$totalpages.0}}}}\r\n{if;{$page};>;{$totalpages};{return;{responder.error;Error! The page you specied does not exist. Please try again!}}}\r\n{if;{$page};>;10;{return;{responder.error;max 10 pages bruh}}}\r\n{=start;{math;{$page}*10-10}}\r\n{=start;{math;{$totalmem}-{$start}}}\r\n{=finish;{math;{$page}*10}}\r\n{=finish;{if;{$finish};>;{$totalmem};{$totalmem};{$finish}}}\r\n{=finish;{math;{$totalmem}-{$finish}}}\r\n{=slices;{slice;{$sorted};{$finish};{$start}}}\r\n  \r\n// Making the leaderboard\r\n{=lb;{$slices}}\r\n{=desc;{[]}}\r\n{=count;0}\r\n{=nlb;{[]}}\r\n\r\n// Switching it from top to bottm\r\n[#for;{=stuff};{$lb}]\r\n  {unshift;{$nlb};{$stuff}}\r\n[/for]\r\n\r\n// Forming the lb description\r\n[#for;{=stuff};{$nlb}]\r\n  {=count;{math;{$count}+1}}\r\n  {=num;{math;{$count}+{$page}*10-10}}\r\n  {=format1;**#{$num}** <@{$stuff.userid}> | {$stuff.dono}}\r\n  {push;{$desc};{$format1}}\r\n[/for]\r\n\r\n// Making the embed\r\n{responder.embed \r\n  description=\"{join;{$desc};\\n}\"\r\n  footer=\"Page No. {$page}\"\r\n  color=#F8C8DC\r\n  title=\"{server.name}'s leaderboard\"}\r\n\r\n// Making the buttons\r\n{if;{$page};==;1;\r\n  {responder.button \r\n    label=‎ emoji=▶️ state=\"next\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last\" handler=lb}\r\n  {return}}\r\n\r\n{if;{$page};<=;{$totalpages};\r\n  {responder.button label=‎ emoji=⏪ state=\"first\" handler=lb}\r\n  {responder.button label=‎ emoji=◀️ state=\"previous\" handler=lb}}\r\n\r\n{if;{$page};<;{$totalpages};\r\n  {responder.button label=‎ emoji=▶️ state=\"next\" handler=lb}\r\n  {responder.button label=‎ emoji=⏩ state=\"last\" handler=lb}}",
       "cooldownSeconds": 0,
-      "createdAt": "2023-04-25T18:12:22.082Z",
-      "updatedAt": "2023-07-05T05:22:10.814Z",
-      "task": null
+      "restriction": null,
+      "flags": "0"
     }
   ]
 }
