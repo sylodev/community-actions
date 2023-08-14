@@ -5,4 +5,4 @@ HOW TO SETUP THE ACTION
 2) To add a user to the leaderboard, use the `/editpoint` command and the required flags to add to the user's points. It supports negative values to remove the points as well!
 3) After adding at least one user you will be able to view the lb!
 
-Please report any bugs to Divyansh.#6868 *There might be a VERY delayed reply and an even delayed fix due to me having a life :)*
+Please report any bugs to divyansh. *There might be a VERY delayed reply and an even delayed fix due to me having a life :)*
