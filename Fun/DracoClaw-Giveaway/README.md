@@ -1,6 +1,23 @@
 An advanced giveaway system with many configurable options.  
 
-This ActionPack contains **6** actions, and is **Prime Only**.  
+This ActionPack contains **7** actions. This includes one script action that must be imported into `GA End`, `GA End Early`, and `GA Reroll`.
+
+At the top of `GA End Early` and `GA Reroll` there is a boolean for if the host is allowed to end/reroll the giveaway. This is set to `false` by default.
+
+Scripts - 1
+  - GA Scripts
+Commands - 4
+  - GA Start
+  - GA End Early
+  - GA Reroll
+  - GA Template
+Intervals - 1
+  - GA End
+Component Callbacks - 1
+  - GA Enter/Exit
+
+**Base**: 100 max entries
+**Prime**:  600 max entries
 
 All commands Required Permissions are set to `Manage Messages`.  
 
