@@ -1,0 +1,272 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2023-08-21T19:18:59.464Z",
+  "actions": [
+    {
+      "trigger": {
+        "type": "Script"
+      },
+      "disabled": false,
+      "name": "GA Scripts",
+      "content": "\r\n[#function;listEntries;{=id}]\r\n    {=entries;{[]}}\r\n\r\n    {=a;{or;{store.get;gaTickets-{$id}-0};{{}}}}\r\n    {if;{$a};\r\n        [#for;{=user};{slice;{keys;{$a}};0;100}]\r\n            {=repeat;{$user}{repeat;-{$user};{$a.{$user}}}}\r\n            {=userEntries;{split;{$repeat};-}}\r\n            {=entries;{splice;{$entries};{$userEntries}}}\r\n        [/for]\r\n        \r\n        {if;{server.primeTier};\r\n            {if;{length;{keys;{$a}}};>;100;\r\n                [#for;{=user};{slice;{keys;{$a}};100}]\r\n                    {=repeat;{$user}{repeat;-{$user};{$a.{$user}}}}\r\n                    {=userEntries;{split;{$repeat};-}}\r\n                    {=entries;{splice;{$entries};{$userEntries}}}\r\n                [/for]\r\n            }\r\n        }\r\n    }\r\n\r\n    {if;{server.primeTier};\r\n        {if;{length;{keys;{$a}}};==;189;\r\n            {=b;{or;{store.get;gaTickets-{$id}-1};{{}}}}\r\n            {if;{$b};\r\n                [#for;{=user};{slice;{keys;{$b}};0;100}]\r\n                    {=repeat;{$user}{repeat;-{$user};{$b.{$user}}}}\r\n                    {=userEntries;{split;{$repeat};-}}\r\n                    {=entries;{splice;{$entries};{$userEntries}}}\r\n                [/for]\r\n\r\n                {if;{length;{slice;{keys;{$b}};100}};>;100;\r\n                    [#for;{=user};{slice;{keys;{$b}};100}]\r\n                        {=repeat;{$user}{repeat;-{$user};{$b.{$user}}}}\r\n                        {=userEntries;{split;{$repeat};-}}\r\n                        {=entries;{splice;{$entries};{$userEntries}}}\r\n                    [/for]\r\n                }\r\n\r\n                {if;{length;{keys;{$b}}};==;189;\r\n                    {=c;{or;{store.get;gaTickets-{$id}-2};{{}}}}\r\n                    {if;{$c};\r\n                        [#for;{=user};{slice;;{keys;{$c}};0;100}]\r\n                            {=repeat;{$user}{repeat;-{$user};{$c.{$user}}}}\r\n                            {=userEntries;{split;{$repeat};-}}\r\n                            {=entries;{splice;{$entries};{$userEntries}}}\r\n                        [/for]\r\n\r\n                        {if;{length;{slice;{keys;{$c}};100}};>;100;\r\n                            [#for;{=user};{slice;{keys;{$c}};100}]\r\n                                {=repeat;{$user}{repeat;-{$user};{$c.{$user}}}}\r\n                                {=userEntries;{split;{$repeat};-}}\r\n                                {=entries;{splice;{$entries};{$userEntries}}}\r\n                            [/for]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    {return;{$entries}}\r\n[/function]\r\n\r\n[#function;pickWinner;{=id};{=min};{=max}]\r\n    {=count;{sort;{[{$min};{$max}]}}}\r\n    {=winCount;{random return_array=true length={$count.0};0}}\r\n\r\n    {=winners;{[]}}\r\n    [#for;{=user};{$winCount}]\r\n        {if;{$entries.0};\r\n            {=num;{randomInt;{math;{length;{$entries}}-1}}}\r\n            {=winners;{push return;{$winners};{user.mention allow_mentions=true;{$entries.{$num}}}}}\r\n\r\n            {=entries;{filter;{$entries};{$entries.{$num}}}}\r\n            ;\r\n            {break}\r\n        }\r\n    [/for]\r\n\r\n    {return;{$winners}}\r\n[/function]",
+      "cooldownSeconds": 0,
+      "restriction": null,
+      "flags": "0"
+    },
+    {
+      "trigger": {
+        "type": "SlashCommand",
+        "name": "giveaway template",
+        "description": "Edit from the dashboard and then run for each template.",
+        "parameters": [
+          {
+            "name": "list",
+            "type": "Boolean",
+            "description": "Outputs the full template JSON when true.",
+            "required": false
+          }
+        ]
+      },
+      "disabled": false,
+      "name": "GA Template",
+      "content": "{=temp;{or;{store.get;gaTemplates};{{}}}}\r\n\r\n{if;{?list};==;true;\r\n    ```json\r\n    {$temp}```\r\n    ;\r\n    {=title;{casing mode=lower;partner}} // Name of the template\r\n    //{=temp.{$title}.requirements.wl;{[624644873596698624]}} // Requires one role to enter\r\n    //{=temp.{$title}.requirements.bl;{[624644873596698624]}} // Blocks any role from entering\r\n    //{=temp.{$title}.lvl;0} // Required level to enter\r\n    //{=temp.{$title}.age;1y} // Minimum account age (s/m/h/d/w/mo/y)\r\n    //{=temp.{$title}.join;5mo} // Minimum time since joining server (s/m/h/d/w/mo/y)\r\n    //{=temp.{$title}.limit;50} // Maximum user entries\r\n    {=temp.{$title}.ping;828707384540135444} // Role to ping on start\r\n\r\n    {=temp.{$title}.multipliers.roles.705237343472189490;2} // Copy for each multiplier\r\n    {=temp.{$title}.multipliers.roles.730040122464141392;3} // Copy for each multiplier\r\n    {=temp.{$title}.multipliers.roles.720407363844178007;2} // Copy for each multiplier\r\n\r\n    {=temp.{$title}.multipliers.mode;add} // add = All multipliers add up, max 10 ; top = highest multiplier applies\r\n\r\n    {store.set;gaTemplates;{$temp}}\r\n}",
+      "cooldownSeconds": 0,
+      "restriction": {
+        "permissions": "8192",
+        "role": {
+          "mode": "Blacklist",
+          "value": []
+        },
+        "channel": {
+          "mode": "Blacklist",
+          "value": []
+        }
+      },
+      "flags": "0"
+    },
+    {
+      "trigger": {
+        "type": "SlashCommand",
+        "name": "giveaway end",
+        "description": "End a giveaway before its set endtime.",
+        "parameters": [
+          {
+            "name": "message_id",
+            "type": "String",
+            "description": "ID of the giveaway to end.",
+            "required": true
+          }
+        ]
+      },
+      "disabled": false,
+      "name": "GA End Early",
+      "content": "{=data;{store.get;giveaways}}\r\n{=hostCanEnd;false}\r\n\r\n// Copy the Import tag from `GA Scripts` and paste it here.\r\n{import;}\r\n\r\n{if;{$data.active.0};\r\n    {if;{$data.active.[id:{?message_id}]};\r\n        {return;\r\n            {=ga;{$data.active.[id:{?message_id}]}}\r\n\r\n            {=embed;{message.embed;{$ga.id}}}\r\n\r\n            {if;{user.hasPermission;MANAGE_MESSAGES};;\r\n                {if;{$hostCanEnd};\r\n                    {if;{user.id};==;{user.id;{$embed.fields.[name:Host].value}};;\r\n                        {return;{responder.error;You must have `MANAGE_MESSAGES` or be the giveaway host to do that.}}\r\n                    }\r\n                    ;\r\n                    {return;{responder.error;You must have `MANAGE_MESSAGES` to do that.}}\r\n                }\r\n            }\r\n\r\n            {=entries;{listEntries;{$ga.id}}}\r\n\r\n            {if;{server.primeTier};\r\n                {catch;{message.unpin;{$ga.channel}-{$ga.id}};}\r\n            }\r\n\r\n            {if;{$entries.0};\r\n\r\n                {=winners;{pickWinner;{$ga.id};{$ga.count};{find group=1;{$embed.description};/Winners: \\*\\*(\\d+)\\*\\*/g}}}\r\n                \r\n                {responder.channel;{$ga.channel}}\r\n                {responder.reference;{$ga.channel}-{$ga.id}}\r\n                {responder.text;🎉 Congratulations, {join;{$winners};, }! You won the giveaway for **{$embed.title}** 🎉 {if;{$embed.fields.[name:Host]};\\nPlease contact {user.mention allowed_mentions=true;{$embed.fields.[name:Host].value}} for your prize.}}\r\n                {responder.send}\r\n                \r\n                {responder.channel;{$ga.channel}}\r\n                {responder.edit;{$ga.channel}-{$ga.id}}\r\n                {responder.text;Giveaway Ended}\r\n                {responder.embed\r\n                    description=\"{find;{$embed.description};/Winners: \\*\\*(\\d+)\\*\\*/g}\\n{join;{$winners};, }\"\r\n                    color=red\r\n                    footer=\"Entries are saved for 7 days.\"\r\n                ;{$embed}}\r\n                {responder.button disabled=true style=Secondary emoji=:tada: label=\"{$ga.count}\" handler=giveaway state=\"ga-enter|{$ga.id}\"}\r\n                {responder.send}\r\n\r\n                {=end.id;{$ga.id}}\r\n                {=end.channel;{$ga.channel}}\r\n                {=end.time;{time;7d}}\r\n                {=end.count;{$ga.count}}\r\n\r\n                {=data.ended;{push return;{or;{$data.ended};{[]}};{$end}}}\r\n                {=data.ended;{sort;{$data.ended};time}}\r\n                ;\r\n                {responder.channel;{$ga.channel}}\r\n                {responder.reference;{$ga.channel}-{$ga.id}}\r\n                {responder.text;😭 Looks like nobody entered the giveaway for **{$embed.title}**.}\r\n                {responder.send}\r\n\r\n                {responder.channel;{$ga.channel}}\r\n                {responder.edit;{$ga.channel}-{$ga.id}}\r\n                {responder.text;Giveaway Ended}\r\n                {responder.embed\r\n                    description=\"Winners: **N/A**\"\r\n                    color=red footer=\"Ended\"\r\n                    timestamp=\"{$ga.time}\";{$embed}\r\n                }\r\n                {responder.send}\r\n            }\r\n\r\n            {responder.reset}\r\n            {responder.error;Ended the giveaway for [{$embed.title}](<{message.link;{$ga.channel}-{$ga.id}}>).}\r\n\r\n\r\n            {=filtered;{filter;{$data.active};{$data.active.[id:{$ga.id}]}}}\r\n\r\n            {if;{$filtered.0};\r\n                {=data.active;{sort;{$filtered};time}}\r\n                ;\r\n                {=data.active;}\r\n            }\r\n            \r\n            {store.set;giveaways;{$data}}\r\n        }\r\n        ;\r\n        {responder.error;That is not an active giveaway.}\r\n    }\r\n    ;\r\n    {store.delete;giveaways}\r\n    {responder.error;There are no active giveaways.}\r\n}",
+      "cooldownSeconds": 0,
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": "Blacklist",
+          "value": []
+        },
+        "channel": {
+          "mode": "Blacklist",
+          "value": []
+        }
+      },
+      "flags": "0"
+    },
+    {
+      "trigger": {
+        "type": "SlashCommand",
+        "name": "giveaway start",
+        "description": "Create a giveaway with customizable conditions.",
+        "parameters": [
+          {
+            "name": "channel",
+            "type": "Channel",
+            "description": "The channel to run the giveaway.",
+            "required": true
+          },
+          {
+            "name": "prize",
+            "type": "String",
+            "description": "What is being given away.",
+            "required": true
+          },
+          {
+            "name": "duration",
+            "type": "String",
+            "description": "How long the giveaway should run for. `s/m/h/d/w/mo/y`",
+            "required": true
+          },
+          {
+            "name": "winners",
+            "type": "Number",
+            "description": "How many winners.",
+            "required": true
+          },
+          {
+            "name": "host",
+            "type": "User",
+            "description": "Who is hosting the giveaway.",
+            "required": false
+          },
+          {
+            "name": "ping",
+            "type": "Role",
+            "description": "A role to ping when the giveaway starts.",
+            "required": false
+          },
+          {
+            "name": "whitelist",
+            "type": "String",
+            "description": "Roles the user must have to enter. `@Role_1 | @Role_2`",
+            "required": false
+          },
+          {
+            "name": "blacklist",
+            "type": "String",
+            "description": "Prevent users with these roles from entering. `@Role_1 | @Role_2`",
+            "required": false
+          },
+          {
+            "name": "level_required",
+            "type": "Integer",
+            "description": "Minimum chat level to enter.",
+            "required": false
+          },
+          {
+            "name": "account_age",
+            "type": "String",
+            "description": "How old the users account must be to enter. `s/m/h/d/w/mo/y`",
+            "required": false
+          },
+          {
+            "name": "join_age",
+            "type": "String",
+            "description": "How long the user must be in the server to enter. `s/m/h/d/w/mo/y`",
+            "required": false
+          },
+          {
+            "name": "max_entries",
+            "type": "Integer",
+            "description": "The maximum amount of users allowed to enter. Default=600",
+            "required": false
+          },
+          {
+            "name": "multipliers",
+            "type": "String",
+            "description": "Roles that grant additional entries. `@Role_1 x2 | @Role_2 x3`",
+            "required": false
+          },
+          {
+            "name": "multi_highest",
+            "type": "Boolean",
+            "description": "How to count user multipliers. true=Top Multiplier false=Add Total",
+            "required": false
+          },
+          {
+            "name": "template",
+            "type": "String",
+            "description": "Use a predefined conditions template.",
+            "required": false
+          }
+        ]
+      },
+      "disabled": false,
+      "name": "GA Start",
+      "content": "{=temp;{store.get;gaTemplates}}\r\n{=data;{or;{store.get;giveaways};{{}}}}\r\n\r\n// If a template named `default` exists, it is used automatically.\r\n{if;{$temp.default};\r\n    {=template;{$temp.default}}\r\n}\r\n// If a template is provided, it will override the default.\r\n{if;{?template};\r\n    {if;{$temp.{casing mode=lower;{?template}}};\r\n        {=template;{$temp.{casing mode=lower;{?template}}}}\r\n        ;\r\n        {return;\r\n            {responder.error;A template with the name `{casing mode=lower;{?template}}` does could not be found.}\r\n        }\r\n    }\r\n}\r\n\r\n{if;{length;{$data.active}};==;100;\r\n    {return;\r\n        {responder.error;The maximum amount of active giveaways is **100**.}\r\n    }\r\n}\r\n{if;{?winners};>;100;\r\n    {return;\r\n        {responder.error;The amount of winners can not be higher than **100**.}\r\n    }\r\n}\r\n{if;{?winners};<;1;\r\n    {return;\r\n        {responder.error;The amount of winners can not be lower than **1**.}\r\n    }\r\n}\r\n{responder.channel;{?channel}}\r\n{if;{or;{$template.ping};{?ping}};\r\n    {responder.text;{role.mention allow_mentions=true;{or;{$template.ping};{?ping}}}}\r\n}\r\n{responder.embed \r\n    title=\"{?prize}\"\r\n    description=\"End Time: {time format=relative_time;{?duration}}\\nWinners: **{?winners}**\"\r\n    footer=\"Click the 🎉 button to enter!\"\r\n}\r\n{if;{?host};\r\n    {responder.embedField;Host;{user.mention;{?host}}}\r\n}\r\n{if;{or;{$template.multipliers.roles};{?multipliers}};\r\n    {=multi;{[]}}\r\n\r\n    {if;{or;{$template.multipliers.mode};{?multi_highest}};==;true;\r\n        {=multiMode;top}\r\n        ;\r\n        {=multiMode;add}\r\n    }\r\n\r\n    {if;{$template.multipliers.roles};\r\n        [#for;{=roleMulti};{keys;{$template.multipliers.roles}}]\r\n                {=amount;{$template.multipliers.roles.{$roleMulti}}}\r\n                    {if;{catch;{role.id;{$roleMulti}};error};==;error;\r\n                        {return;\r\n                            {responder.reset}\r\n                            {responder.error;{$roleMulti} is not a valid role.}\r\n                            {break}\r\n                        }\r\n                        ;\r\n                        {if;{$amount};!==; ;\r\n                            {if;{catch;{formatNumber;{$amount}};error};==;error;\r\n                                {return;\r\n                                    {responder.reset}\r\n                                    {responder.error;**{$amount}** is not a valid multiplier for {$roleMulti}.}\r\n                                    {break}\r\n                                }\r\n                                ;\r\n                                {=multi;{push return;{$multi};{role.mention;{$roleMulti}} {if;{$multiMode};==;add;+;x}{$amount}}}\r\n                            }\r\n                        }\r\n                    }\r\n        [/for]\r\n        ;\r\n        {=multipliers;{split;{replace;{?multipliers};/\\s/;};|}}\r\n        [#for;{=roleMulti};{$multipliers}]\r\n            {if;{$roleMulti};!==; ;\r\n                {=amount;{split;{replace;{replace;{replace;{$roleMulti};,;x};+;x};/\\s/;};x}}\r\n                {if;{$amount.0};!==; ;\r\n                    {if;{catch;{role.id;{$amount.0}};error};==;error;\r\n                        {return;\r\n                            {responder.reset}\r\n                            {responder.error;{$amount.0} is not a valid role.}\r\n                            {break}\r\n                        }\r\n                        ;\r\n                        {if;{$amount.1};!==; ;\r\n                            {if;{catch;{formatNumber;{$amount.1}};error};==;error;\r\n                                {return;\r\n                                    {responder.reset}\r\n                                    {responder.error;**{$amount.1}** is not a valid multiplier for {$amount.0}.}\r\n                                    {break}\r\n                                }\r\n                                ;\r\n                                {=multi;{push return;{$multi};{role.mention;{$amount.0}} {if;{$multiMode};==;add;+;x}{$amount.1}}}\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        [/for]\r\n    }\r\n    {responder.embedField;Multipliers: {casing mode=first;{$multiMode}};{join;{$multi};\\n}}\r\n}\r\n{if;{or;{$template.requirements.wl};{?whitelist}};\r\n    {=wl;{[]}}\r\n    {if;{$template.requirements.wl};\r\n        {=whitelist;{[]}}\r\n        [#for;{=roleWL};{$template.requirements.wl}]\r\n            {if;{$roleWL};!==; ;\r\n                {if;{catch;{role.id;{$roleWL}};error};==;error;\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;{$roleWL} is not a valid role.}\r\n                        {break}\r\n                    }\r\n                    ;\r\n                    {=wl;{push return;{$wl};{role.id;{$roleWL}}}}\r\n                    {=whitelist;{push return;{$whitelist};{role.mention;{$roleWL}}}}\r\n\r\n                }\r\n            }\r\n        [/for]\r\n        ;\r\n        {=whitelist;{split;{replace;{?whitelist};/\\s/;};|}}\r\n        [#for;{=roleWL};{$whitelist}]\r\n            {if;{$roleWL};!==; ;\r\n                {if;{catch;{role.id;{$roleWL}};error};==;error;\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;{$roleWL} is not a valid role.}\r\n                        {break}\r\n                    }\r\n                    ;\r\n                    {=wl;{push return;{$wl};{role.id;{$roleWL}}}}\r\n                }\r\n            }\r\n        [/for]\r\n    }\r\n    {responder.embedField;Required Roles;{join;{$whitelist};\\n}}\r\n}\r\n{if;{or;{$template.requirements.bl};{?blacklist}};\r\n    {=bl;{[]}}\r\n    {if;{$template.requirements.bl};\r\n        {=blacklist;{[]}}\r\n        [#for;{=roleBL};{$template.requirements.bl}]\r\n            {if;{$roleBL};!==; ;\r\n                {if;{catch;{role.id;{$roleBL}};error};==;error;\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;{$roleBL} is not a valid role.}\r\n                        {break}\r\n                    }\r\n                    ;\r\n                    {=bl;{push return;{$bl};{role.id;{$roleBL}}}}\r\n                    {=blacklist;{push return;{$blacklist};{role.mention;{$roleBL}}}}\r\n                }\r\n            }\r\n        [/for]\r\n        ;\r\n        {=blacklist;{split;{replace;{?blacklist};/\\s/;};|}}\r\n        [#for;{=roleBL};{$blacklist}]\r\n            {if;{$roleBL};!==; ;\r\n                {if;{catch;{role.id;{$roleBL}};error};==;error;\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;{$roleBL} is not a valid role.}\r\n                        {break}\r\n                    }\r\n                    ;\r\n                    {=bl;{push return;{$bl};{role.id;{$roleBL}}}}\r\n                }\r\n            }\r\n        [/for]\r\n    }\r\n    {responder.embedField;Blocked Roles;{join;{$blacklist};\\n}}\r\n}\r\n{if;{or;{$template.lvl};{?level_required}};\r\n    {responder.embedField;Required Level;Level: **{or;{$template.lvl};{?level_required}}**}\r\n}\r\n{if;{or;{$template.age};{?account_age}};\r\n    {if;{catch;{time;{or;{$template.age};{?account_age}}};error};==;error;\r\n        {return;\r\n            {responder.reset}\r\n            {responder.error;`{or;{$template.age};{?account_age}}` is not a valid time format.}\r\n        }\r\n    }\r\n    {responder.embedField;Minimum Account Age;Created Before: <t:{time;{or;{$template.age};{?account_age}} ago}>}\r\n}\r\n{if;{or;{$template.join};{?join_age}};\r\n    {if;{catch;{time;{or;{$template.join};{?join_age}}};error};==;error;\r\n        {return;\r\n            {responder.reset}\r\n            {responder.error;`{or;{$template.join};{?join_age}}` is not a valid time format.}\r\n        }\r\n    }\r\n    {responder.embedField;Minimum Join Time;Joined Before: <t:{time;{or;{$template.join};{?join_age}} ago}>}\r\n}\r\n{if;{or;{$template.limit};{?max_entries}};\r\n    {if;{or;{$template.limit};{?max_entries}};>;600;\r\n        {return;\r\n            {responder.reset}\r\n            {responder.error;The maximum amount of entries can not be more than **600**.}\r\n        }\r\n    }\r\n    {if;{or;{$template.limit};{?max_entries}};<;1;\r\n        {return;\r\n            {responder.reset}\r\n            {responder.error;The maximum amount of entries can not be less than **1**.}\r\n        }\r\n    }\r\n    {responder.embedField;Entry Limit;Max: **{or;{$template.limit};{?max_entries}}**}\r\n}\r\n\r\n{=id;{responder.send return_id=true}}\r\n\r\n{responder.edit;{?channel}-{$id}}\r\n{if;{message.content;{$id}};{responder.text;{message.content;{$id}}}}\r\n{responder.button style=Secondary emoji=:tada: label=\"‎\" handler=giveaway state=\"ga-enter|{$id}\"}\r\n{responder.send}\r\n\r\n{if;{server.primeTier};\r\n    {catch;{message.pin;{?channel}-{$id}};}\r\n}\r\n\r\n{responder.error;Giveaway started [here](<{message.link;{channel.id;{?channel}}-{$id}}>).}\r\n\r\n{=new.id;{$id}}\r\n{=new.channel;{channel.id;{?channel}}}\r\n{=new.time;{time;{?duration}}}\r\n{=new.count;0}\r\n\r\n{=ga;{$new}}\r\n\r\n{=data.active;{push return;{or;{$data.active};{[]}};{$ga}}}\r\n\r\n{=data.active;{sort;{$data.active};time}}\r\n\r\n{store.set;giveaways;{$data}}",
+      "cooldownSeconds": 0,
+      "restriction": {
+        "permissions": "8192",
+        "role": {
+          "mode": "Blacklist",
+          "value": []
+        },
+        "channel": {
+          "mode": "Blacklist",
+          "value": []
+        }
+      },
+      "flags": "0"
+    },
+    {
+      "trigger": {
+        "type": "SlashCommand",
+        "name": "giveaway reroll",
+        "description": "Re-roll a giveaway that has ended.",
+        "parameters": [
+          {
+            "name": "message_id",
+            "type": "String",
+            "description": "ID of the giveaway to re-roll.",
+            "required": true
+          },
+          {
+            "name": "winners",
+            "type": "Number",
+            "description": "How many winners to re-roll.",
+            "required": false
+          }
+        ]
+      },
+      "disabled": false,
+      "name": "GA Reroll",
+      "content": "{=data;{store.get;giveaways}}\r\n{=hostCanReroll;false}\r\n\r\n// Copy the Import tag from `GA Scripts` and paste it here.\r\n{import;}\r\n\r\n{if;{$data.ended.0};\r\n    {if;{$data.ended.[id:{?message_id}]};\r\n        {return;\r\n            {=ga;{$data.ended.[id:{?message_id}]}}\r\n            {=embed;{message.embed;{$ga.id}}}\r\n\r\n            {if;{user.hasPermission;MANAGE_MESSAGES};;\r\n                {if;{$hostCanReroll};\r\n                    {if;{user.id};==;{user.id;{$embed.fields.[name:Host].value}};;\r\n                        {return;{responder.error;You must have `MANAGE_MESSAGES` or be the giveaway host to do that.}}\r\n                    }\r\n                    ;\r\n                    {return;{responder.error;You must have `MANAGE_MESSAGES` to do that.}}\r\n                }\r\n            }\r\n\r\n            {=entries;{listEntries;{$ga.id}}}\r\n\r\n            {=win;{find group=1;{$embed.description};/Winners: \\*\\*(\\d+)\\*\\*/g}}\r\n\r\n            {if;{?winners};>;{$win};\r\n                {return;\r\n                    {responder.error;That giveaway only had **{$win}** winners.}\r\n                }\r\n                ;\r\n                {if;{?winners};>;{$ga.count};\r\n                    {return;\r\n                        {responder.error;Only **{$ga.count}** users entered that giveaway.}\r\n                    }\r\n                    ;\r\n                    {if;{$ga.count};<;{$win};{=ga.winners;{$ga.count}}}\r\n                }\r\n            }\r\n\r\n            {=winners;{pickWinner;{$ga.id};{$ga.count};{or;{?winners};{$ga.winners}}}}\r\n            \r\n            {responder.channel;{$ga.channel}}\r\n            {responder.reference;{$ga.channel}-{$ga.id}}\r\n            {responder.text;🎉 Congratulations, {join;{$winners};, }! You won **{$embed.title}** 🎉 (Re-rolled) {if;{$embed.fields.[name:Host]};\\nPlease contact {user.mention allow_mention=true;{$embed.fields.[name:Host].value}} for your prize.}}\r\n            {responder.send}\r\n\r\n            {responder.channel;{$ga.channel}}\r\n            {responder.edit;{$ga.channel}-{$ga.id}}\r\n            {responder.embed\r\n                description=\"Winners: **{$win}**\\n{join;{$winners};, }\"\r\n            ;{$embed}}\r\n            {responder.send}\r\n\r\n            {responder.reset}\r\n            {responder.error;Rerolled **{or;{?winners};{$ga.winners}}** winners for [{$embed.title}](<{message.link;{$ga.channel}-{$ga.id}}>)}\r\n        }\r\n        ;\r\n        {responder.error;That is not an ended giveaway.}\r\n    }\r\n    ;\r\n    {responder.error;There are no giveaways that can be re-rolled.}\r\n}\r\n",
+      "cooldownSeconds": 0,
+      "restriction": {
+        "permissions": "8192",
+        "role": {
+          "mode": "Blacklist",
+          "value": []
+        },
+        "channel": {
+          "mode": "Blacklist",
+          "value": []
+        }
+      },
+      "flags": "0"
+    },
+    {
+      "trigger": {
+        "type": "Interval",
+        "channelId": "629005643512021022",
+        "schedule": "*/1 * * * *",
+        "gracePeriodMinutes": 30
+      },
+      "disabled": false,
+      "name": "GA End",
+      "content": "{=data;{store.get;giveaways}}\r\n\r\n// Copy the Import tag from `GA Scripts` and paste it here.\r\n{import;}\r\n\r\n{if;{$data.active.0};\r\n    {if;{$data.active.0.time};<=;{time};\r\n        {return;\r\n            {=ga;{$data.active.0}}\r\n            {=embed;{message.embed;{$ga.channel}-{$ga.id}}}\r\n\r\n            {=entries;{listEntries;{$ga.id}}}\r\n\r\n            {if;{server.primeTier};\r\n                {catch;{message.unpin;{$ga.channel}-{$ga.id}};}\r\n            }\r\n\r\n            {if;{$entries.0};\r\n\r\n                {=winners;{pickWinner;{$ga.id};{$ga.count};{find group=1;{$embed.description};/Winners: \\*\\*(\\d+)\\*\\*/g}}}\r\n                \r\n                {responder.channel;{$ga.channel}}\r\n                {responder.reference;{$ga.channel}-{$ga.id}}\r\n                {responder.text;🎉 Congratulations, {join;{$winners};, }! You won the giveaway for **{$embed.title}** 🎉 {if;{$embed.fields.[name:Host]};\\nPlease contact {user.mention allow_mentions=true;{$embed.fields.[name:Host].value}} for your prize.}}\r\n                {responder.send}\r\n\r\n                {responder.channel;{$ga.channel}}\r\n                {responder.edit;{$ga.channel}-{$ga.id}}\r\n                {responder.text;Giveaway Ended}\r\n                {responder.embed\r\n                    description=\"{find;{$embed.description};/Winners: \\*\\*(\\d+)\\*\\*/g}\\n{join;{$winners};, }\"\r\n                    color=red\r\n                    footer=\"Entries are saved for 7 days.\"\r\n                ;{$embed}}\r\n                {responder.send}\r\n\r\n                {=end.id;{$ga.id}}\r\n                {=end.channel;{$ga.channel}}\r\n                {=end.time;{time;7d}}\r\n                {=end.count;{$ga.count}}\r\n\r\n                {=data.ended;{push return;{or;{$data.ended};{[]}};{$end}}}\r\n                {=data.ended;{sort;{$data.ended};time}}\r\n                ;\r\n                {responder.channel;{$ga.channel}}\r\n                {responder.reference;{$ga.channel}-{$ga.id}}\r\n                {responder.text;😭 Looks like nobody entered the giveaway for **{$embed.title}**.}\r\n                {responder.send}\r\n\r\n                {responder.channel;{$ga.channel}}\r\n                {responder.edit;{$ga.channel}-{$ga.id}}\r\n                {responder.text;Giveaway Ended}\r\n                {responder.embed\r\n                    description=\"Winners: **N/A**\"\r\n                    color=red footer=\"Ended\"\r\n                    timestamp=\"{$ga.time}\"\r\n                ;{$embed}}\r\n                {responder.send}\r\n            }\r\n\r\n            {=filtered;{filter;{$data.active};{$data.active.0}}}\r\n\r\n            {if;{$filtered.0};\r\n                {=data.active;{sort;{$filtered};time}}\r\n                ;\r\n                {=data.active;}\r\n            }\r\n            \r\n            {store.set;giveaways;{$data}}\r\n        }\r\n    }\r\n}\r\n\r\n{if;{$data.ended.0};\r\n   {if;{$data.ended.0.time};<=;{time};\r\n       {store.delete;gaTickets-{$data.ended.0.id}-0}\r\n       {store.delete;gaTickets-{$data.ended.0.id}-1}\r\n       {store.delete;gaTickets-{$data.ended.0.id}-2}\r\n\r\n        {=filtered;{filter;{$data.ended};{$data.ended.0}}}\r\n\r\n        {if;{$filtered.0};\r\n            {=data.ended;{sort;{$filtered};time}}\r\n            ;\r\n            {=data.ended;}\r\n        }\r\n        \r\n        {store.set;giveaways;{$data}}\r\n   }\r\n}",
+      "cooldownSeconds": 0,
+      "restriction": null,
+      "flags": "0"
+    },
+    {
+      "trigger": {
+        "type": "ComponentCallback",
+        "handlerName": "giveaway",
+        "editOriginal": false,
+        "disableComponent": false
+      },
+      "disabled": false,
+      "name": "GA Enter/Exit",
+      "content": "{=split;{split;{$state};|}}\r\n{=data;{store.get;giveaways}}\r\n\r\n{=ga;{$data.active.[id:{$split.1}]}}\r\n\r\n{=embed;{message.embed;{$ga.id}}}\r\n\r\n{=entries;{[]}}\r\n\r\n{=0;{or;{store.get;gaTickets-{$ga.id}-0};{{}}}}\r\n{if;{length;{keys;{$0}}};<;189;\r\n    {=group;0}\r\n    [#for;{=user};{slice;{keys;{$0}};0;100}]\r\n        {=entries;{push return;{$entries};{$user}}}\r\n    [/for]\r\n    {if;{length;{keys;{$0}}};>;100;\r\n        [#for;{=user};{slice;{keys;{$0}};100}]\r\n            {=entries;{push return;{$entries};{$user}}}\r\n        [/for]\r\n    }\r\n    ;\r\n    {if;{length;{keys;{$0}}};==;189;\r\n        {=1;{or;{store.get;gaTickets-{$ga.id}-1};{{}}}}\r\n        {if;{length;{keys;{$1}}};<;189;\r\n            {=group;1}\r\n                [#for;{=user};{slice;{keys;{$1}};0;100}]\r\n                    {=entries;{push return;{$entries};{$user}}}\r\n                [/for]\r\n                {if;{length;{keys;{$1}}};>;100;\r\n                    [#for;{=user};{slice;{keys;{$1}};100}]\r\n                        {=entries;{push return;{$entries};{$user}}}\r\n                    [/for]\r\n                }\r\n            ;\r\n            {if;{length;{keys;{$1}}};==;189;\r\n                {=2;{or;{store.get;gaTickets-{$ga.id}-2};{{}}}}\r\n                {if;{length;{keys;{$2}}};<;189;\r\n                    {=group;2}\r\n                    [#for;{=user};{slice;{keys;{$2}};0;100}]\r\n                        {=entries;{push return;{$entries};{$user}}}\r\n                    [/for]\r\n                    {if;{length;{keys;{$2}}};>;100;\r\n                        [#for;{=user};{slice;{keys;{$2}};100}]\r\n                            {=entries;{push return;{$entries};{$user}}}\r\n                        [/for]\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n{if;{$split.0};==;ga-enter;\r\n    {if;{$entries};includes;{user.id};\r\n        {return;\r\n            {responder.reset}\r\n            {responder.error;You've already entered this giveaway.}\r\n            {responder.button label=\"Leave Giveaway\" style=danger handler=giveaway state=\"ga-leave|{$ga.id}\"}\r\n        }\r\n        ;\r\n        {return;\r\n            {if;{$data.active.[id:{$ga.id}].time};<;{time};\r\n                {return;\r\n                    {responder.reset}\r\n                    {responder.error;This giveaway is no longer active.}\r\n                }\r\n            }\r\n\r\n            {if;{$embed.fields.[name:Blocked Roles]};\r\n                {=bl;{find return_all=true;{$embed.fields.[name:Blocked Roles].value};/(\\d+)/g}}\r\n\r\n                    {=user;{user.roles}}\r\n                    [#for;{=role};{$bl}]\r\n                        {if;{includes;{$user};{$role}};==;true;\r\n                            {return;\r\n                                {responder.reset}\r\n                                {responder.error;You have a role that is blacklisted from this giveaway.}\r\n                            }\r\n                            {break}\r\n                        }\r\n                    [/for]\r\n            }\r\n\r\n            {if;{$embed.fields.[name:Required Roles]};\r\n                {=wl;{find return_all=true;{$embed.fields.[name:Required Roles].value};/(\\d+)/g}}\r\n\r\n                {=user;{user.roles}}\r\n                [#for;{=role};{$wl}]\r\n                    {if;{includes;{$user};{$role}};==;true;\r\n                        {break}\r\n                        ;\r\n                        {return;\r\n                            {responder.reset}\r\n                            {responder.error;You do not have a role required role to enter this giveaway.}\r\n                        }\r\n                        {break}\r\n                    }\r\n                [/for]\r\n            }\r\n\r\n            {if;{$embed.fields.[name:Required Level]};\r\n                {=lvl;{find;{$embed.fields.[name:Required Level].value};/(\\d+)/}}\r\n\r\n                {=user;{user.level}}\r\n                {if;{$user};<;{$lvl};\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;You are not a high enough level to enter this giveaway.}\r\n                    }\r\n                }\r\n            }\r\n\r\n            {if;{$embed.fields.[name:Minimum Account Age]};\r\n                {=age;{find return_all=true;{$embed.fields.[name:Minimum Account Age].value};/(\\d+)/g}}\r\n\r\n                {=user;{user.createdAt}}\r\n                {if;{$user};<;{$age};\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;You're account is not old enough to enter this giveaway.}\r\n                    }\r\n                }\r\n            }\r\n\r\n            {if;{$embed.fields.[name:Minimum Join Time]};\r\n                {=join;{find return_all=true;{$embed.fields.[name:Minimum Join Time].value};/(\\d+)/g}}\r\n\r\n                {=user;{user.joinedAt}}\r\n                {if;{$user};<;{$join};\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;You have not been in this server long enough to enter this giveaway.}\r\n                    }\r\n                }\r\n            }\r\n\r\n            {if;{$embed.fields.[name:Entry Limit]};\r\n                {=limit;{find return_all=true;{$embed.fields.[name:Entry Limit].value};/(\\d+)/g}}\r\n\r\n                {if;{$ga.count};==;{or;{$limit};567};\r\n                    {return;\r\n                        {responder.reset}\r\n                        {responder.error;This giveaway is at its maximum amount of entries.}\r\n                    }\r\n                }\r\n            }\r\n\r\n            {=multi;{formatNumber;1}}\r\n            {=user;{user.roles}}\r\n\r\n            {if;{find return_all=true;{$embed};/<@&(\\d+)> x(\\d+)/g};\r\n                {=multiRoles;{find group=1 return_all=true;{$embed};/<@&(\\d+)> x(\\d+)/g}}\r\n                {=multiAmount;{find group=2 return_all=true;{$embed};/<@&(\\d+)> x(\\d+)/g}}\r\n                {=multiType;{find group=1;{$embed};/Multipliers: (\\w+)/}}\r\n\r\n                {=index;0}\r\n\r\n                [#for;{=role};{$multiRoles}]\r\n                    {if;{$user};includes;{$role};\r\n                        {if;{$ga.multipliers.mode};==;Top;\r\n                            {if;{$multiAmount.{$index}};>;{$multi};\r\n                                {=multi;{formatNumber;{$multiAmount.{$index}}}}\r\n                            }\r\n                            ;\r\n                            {=multi;{math;{$multi}+{$multiAmount.{$index}}}}\r\n                        }\r\n                    }\r\n\r\n                    {=index;{math;{$index}+1}}\r\n                [/for]\r\n            }\r\n\r\n            {if;{$multi};>;10;{=multi;{formatNumber;10}}}\r\n\r\n            {={$group}.{user.id};{$multi}}\r\n\r\n            {store.set;gaTickets-{$ga.id}-{$group};{${$group}}}\r\n\r\n            {responder.reference;{$ga.id}}\r\n            {responder.error;You have **{$multi}** entries in **{$embed.title}**.}\r\n            {responder.send}\r\n\r\n            {=ga.count;{math;{$ga.count}+1}}\r\n\r\n            {responder.edit;{$ga.channel}-{$ga.id}}\r\n            {if;{message.content;{$ga.id}};{responder.text;{message.content;{$ga.id}}}}\r\n            {responder.button style=Secondary emoji=:tada: label=\"{$ga.count}\" handler=giveaway state=\"ga-enter|{$ga.id}\"}\r\n            {responder.send}\r\n\r\n            {=data.active.[id:{$ga.id}];{$ga}}\r\n            {store.set;giveaways;{$data}}\r\n        }\r\n    }\r\n}\r\n\r\n{if;{$split.0};==;ga-leave;\r\n    {return;\r\n        {if;{$entries};includes;{user.id};\r\n\r\n            {={$group}.{user.id};}\r\n\r\n            {store.set;gaTickets-{$ga.id}-{$group};{${$group}}}\r\n\r\n            {responder.error;You have left the giveaway for **{$embed.title}**.}\r\n            {responder.send}\r\n\r\n            {=ga.count;{math;{$ga.count}-1}}\r\n\r\n            {responder.edit;{$ga.channel}-{$ga.id}}\r\n            {if;{message.content;{$ga.id}};{responder.text;{message.content;{$ga.id}}}}\r\n            {responder.button style=Secondary emoji=:tada: label=\"{if;{$ga.count};<=;0;‎;{$ga.count}}\" handler=giveaway state=\"ga-enter|{$ga.id}\"}\r\n            {responder.send}\r\n\r\n            {=data.active.[id:{$ga.id}];{$ga}}\r\n            {store.set;giveaways;{$data}}\r\n            ;\r\n            {responder.error;You have already left this giveaway.}\r\n        }\r\n    }\r\n}\r\n",
+      "cooldownSeconds": 0,
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": "Blacklist",
+          "value": [
+            "943656132633841685"
+          ]
+        },
+        "channel": {
+          "mode": "Blacklist",
+          "value": []
+        }
+      },
+      "flags": "256"
+    }
+  ]
+}
