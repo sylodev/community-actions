@@ -1,0 +1,22 @@
+{
+  "comment": "Exported from https://staging.atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2023-10-07T21:23:47.227Z",
+  "actions": [
+    {
+      "trigger": {
+        "type": "SlashCommand",
+        "name": "goal",
+        "description": "View the server member count and the goal!",
+        "parameters": []
+      },
+      "disabled": false,
+      "name": "goal",
+      "content": "// SET THE BOT MEMBER COUNT HERE\r\n{=botCount;0}\r\n\r\n// SET THE GOAL INTERVAL HERE\r\n{=goalInterval;10}\r\n\r\n// DO NOT EDIT BELOW THIS LINE IF YOU DON'T KNOW WHAT YOU ARE DOING\r\n\r\n// Throwing error if botcount and goalinterval is not a number\r\n{if;{catch;{formatNumber;{$botCount}};error};==;error;\r\n  {return;\r\n    {responder.embed\r\n      title=\"Error\"\r\n      description=\"The bot count is not a number. Contact {user.mention;{server.ownerId}} or admins for more info.\"\r\n    }\r\n    {responder.error}\r\n  }\r\n}\r\n{if;{catch;{formatNumber;{$goalInterval}};error};==;error;\r\n  {return;\r\n    {responder.embed\r\n      title=\"Error\"\r\n      description=\"The goal interval is not a number. Contact {user.mention;{server.ownerId}} or admins for more info.\"\r\n    }\r\n    {responder.error}\r\n  }\r\n}\r\n\r\n// Getting the total member count\r\n{=totalCount;{server.memberCount}}\r\n{=humanCount;{math;0{$totalCount}-0{$botCount}}}\r\n\r\n// Throwing error if the botcount is more than total\r\n[#if;{$botCount};>;{$totalCount}]\r\n  {return;\r\n    {responder.embed\r\n      title=\"Error\"\r\n      description=\"The bot count may not excede the total member count. Contact {user.mention;{server.ownerId}} or admins for more info.\"}\r\n    {responder.error}\r\n  }\r\n[/if]\r\n\r\n// Getting the next interval\r\n{=goal;{math;ceil({$humanCount}/{$goalInterval})*{$goalInterval}}}\r\n\r\n// Making stuff for the embed\r\n{=goalPercent;{math;round({$humanCount}/{$goal}*10)*10}}\r\n{=link;https://discord.com/vanityurl/dotcom/steakpants/flour/flower/index11.html}\r\n\r\n// Making the progress bar\r\n[#function;progressBar;{=percentage}]\r\n  {=bar1;{if;{$percentage};<=;5;<:bar1empty:1016590808721412126>;{if;{$percentage};<=;10;<a:bar1half:1016590517074661416>;{if;{$percentage};>;20;<a:bar1full:1016588733757272084>;<a:bar1mid:1017011517847248907>}}}}\r\n  {=bar2;{if;{$percentage};<=;25;<:bar2empty:1016590601766064149>;{if;{$percentage};<=;30;<a:bar2mid:1016589356070346812>;{if;{$percentage};>;40;<a:bar2full:1016589195923443752>;<a:bar2mid:1016589356070346812>}}}}\r\n  {=bar3;{if;{$percentage};<=;45;<:bar2empty:1016590601766064149>;{if;{$percentage};<=;50;<a:bar2mid:1016589356070346812>;{if;{$percentage};>;60;<a:bar2full:1016589195923443752>;<a:bar2mid:1016589356070346812>}}}}\r\n  {=bar4;{if;{$percentage};<=;65;<:bar2empty:1016590601766064149>;{if;{$percentage};<=;70;<a:bar2mid:1016589356070346812>;{if;{$percentage};>;80;<a:bar2full:1016589195923443752>;<a:bar2mid:1016589356070346812>}}}}\r\n  {=bar5;{if;{$percentage};<=;85;<:bar3empty:1016589721020928011>;{if;{$percentage};<=;90;<a:bar3mid:1016589842357948568>;{if;{$percentage};>;100;<a:bar3full:1016590263176675328>;<a:bar3mid:1016589842357948568>}}}}\r\n  {$bar1}{$bar2}{$bar3}{$bar4}{$bar5}\r\n[/function]\r\n\r\n// Checking if goal has been achieved\r\n{=reached;{if;{$humanCount};==;{$goal};true;false}}\r\n\r\n{=embed;{{\r\n  \"title\": \"Member Goal\",\r\n  \"color\": \"{random length=6;0ABCDEF123456}\",\r\n  \"description\": \"- **Goal**: `{formatNumber;{$goal}}`\\n- **Member Count**: `{formatNumber;{$humanCount}}`\\n{if;{$botCount};>;0;- **Bot Count**: `{formatNumber;{$botCount}}`\\n}- **Members Needed**: `{formatNumber;{math;{$goal}-{$humanCount}}}`\\n    \",\r\n  \"thumbnail\": {\r\n    \"url\": \"{or;{server.icon};{user.avatar}}\"\r\n  },\r\n  \"footer\": {\r\n    \"text\": \"{server.name}\"\r\n  }\r\n}}}\r\n\r\n// Making the embed\r\n[#if;{$reached};==;false]\r\n{responder.embed;{$embed}}\r\n{responder.embedField;Progress;<:div_replyblue:906069685110460446> {progressBar;{$goalPercent}} `{$goalPercent}%`}\r\n[/if]\r\n\r\n// Reached embed\r\n[#if;{$reached};==;true]\r\n    {responder.text;# Goal Reached!}\r\n    {responder.embed footer=\"{server.name} - Next Goal: {math;{$goal}+{$goalInterval}}\" image=\"https://minecraftskinstealer.com/achievement/11/Achievement+Reached%21/{$goal}+members+reached%21\";{$embed}}\r\n[/if]",
+      "cooldownSeconds": 0,
+      "cooldownType": "User",
+      "restriction": null,
+      "flags": "0"
+    }
+  ]
+}
