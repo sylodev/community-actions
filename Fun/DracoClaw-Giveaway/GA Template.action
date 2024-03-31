@@ -1,0 +1,41 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2024-03-31T20:21:11.719Z",
+  "actions": [
+    {
+      "trigger": {
+        "type": "SlashCommand",
+        "name": "giveaway template",
+        "description": "Edit from the dashboard and then run for each template.",
+        "parameters": [
+          {
+            "name": "list",
+            "type": "Boolean",
+            "description": "Outputs the full template JSON when true.",
+            "required": false,
+            "min_value": null,
+            "max_value": null,
+            "choices": [],
+            "min_length": null,
+            "max_length": null,
+            "channel_types": []
+          }
+        ]
+      },
+      "disabled": false,
+      "name": "GA Template",
+      "content": "{=temp;{or;{store.get;gaTemplates};{{}}}}\r\n\r\n{if;{?list};==;true;\r\n    ```json\r\n    {$temp}```\r\n    ;\r\n    {=title;{casing mode=lower;partner}} // Name of the template\r\n    //{=temp.{$title}.requirements.wl;{[624644873596698624]}} // Requires one role to enter\r\n    //{=temp.{$title}.requirements.bl;{[624644873596698624]}} // Blocks any role from entering\r\n    //{=temp.{$title}.lvl;0} // Required level to enter\r\n    //{=temp.{$title}.age;1y} // Minimum account age (s/m/h/d/w/mo/y)\r\n    //{=temp.{$title}.join;5mo} // Minimum time since joining server (s/m/h/d/w/mo/y)\r\n    //{=temp.{$title}.limit;50} // Maximum user entries\r\n    {=temp.{$title}.ping;828707384540135444} // Role to ping on start\r\n\r\n    {=temp.{$title}.multipliers.roles.705237343472189490;2} // Copy for each multiplier\r\n    {=temp.{$title}.multipliers.roles.730040122464141392;3} // Copy for each multiplier\r\n    {=temp.{$title}.multipliers.roles.720407363844178007;2} // Copy for each multiplier\r\n\r\n    {=temp.{$title}.multipliers.mode;add} // add = All multipliers add up, max 10 ; top = highest multiplier applies\r\n\r\n    {store.set;gaTemplates;{$temp}}\r\n}",
+      "cooldownSeconds": 0,
+      "cooldownType": "User",
+      "restriction": {
+        "permissions": "8192",
+        "roleMode": "Blacklist",
+        "roleValue": [],
+        "channelMode": "Blacklist",
+        "channelValue": []
+      },
+      "flags": "0"
+    }
+  ]
+}

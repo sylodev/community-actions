@@ -1,8 +1,11 @@
 An advanced giveaway system with many configurable options.  
 
-This ActionPack contains **7** actions. This includes one script action that must be imported into `GA End`, `GA End Early`, and `GA Reroll`.
+The included ActionPack contains the **6** core actions. There is also the additional `GA Template` command to set a template with the values specified via the dashboard.
+If you choose to use templates, you will have to manually set the `choices` for the `template` option in the `/giveaway start` command.
 
 At the top of `GA End Early` and `GA Reroll` there is a boolean for if the host is allowed to end/reroll the giveaway. This is set to `false` by default.
+
+**DO NOT** edit the giveaway embed as ga data is parsed from it, and it will break the giveaway system.
 
 Scripts - 1
   - GA Scripts
@@ -16,8 +19,8 @@ Intervals - 1
 Component Callbacks - 1
   - GA Enter/Exit
 
-**Base**: 100 max entries
-**Prime**:  600 max entries
+**Base**: 564 max entries
+**Prime**:  1134 max entries
 
 All commands Required Permissions are set to `Manage Messages`.  
 
@@ -54,4 +57,4 @@ winners? - How many winners to re-roll.
 list? - Outputs the full template JSON when true.  
 ```  
 __Interval__:  
-`*/2 * * * *` - Runs every two minutes. Ends pending giveaways, as well as clears old ones. **Must** have a context channel set to run.
+`*/1 * * * *` - Runs every minute. Ends pending giveaways, as well as clears old ones. **Must** have a context channel set to run.
